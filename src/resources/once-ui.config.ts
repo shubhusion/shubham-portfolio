@@ -21,7 +21,7 @@ const routes: RoutesConfig = {
   "/about": true,
   "/work": true,
   "/blog": true,
-  "/gallery": true,
+  // Gallery removed for engineering focus
 };
 
 const display: DisplayConfig = {
@@ -33,7 +33,7 @@ const display: DisplayConfig = {
 // Enable password protection on selected routes
 // Set password in the .env file, refer to .env.example
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/projects/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
 // Import and set font for each variant
@@ -189,7 +189,7 @@ const schema: SchemaConfig = {
   logo: "",
   type: "Organization",
   name: "Once UI",
-  description: home.description,
+  description: "Production-grade software engineering portfolio.",
   email: "lorant@once-ui.com",
 };
 
@@ -217,6 +217,7 @@ const socialSharing: SocialSharingConfig = {
 };
 
 export {
+  home,
   display,
   mailchimp,
   routes,

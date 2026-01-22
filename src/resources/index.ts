@@ -1,13 +1,13 @@
 // import a pre-defined template for config and content options
 export {
+  home,
   person,
   social,
   newsletter,
-  home,
   about,
   blog,
-  work,
-  gallery,
+  projects,
+  projects as work, // backward compatibility
 } from "./content";
 
 export {

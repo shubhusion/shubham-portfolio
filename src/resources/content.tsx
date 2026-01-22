@@ -2,14 +2,14 @@ import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Shubham",
+  lastName: "Sharma",
+  name: `Shubham Sharma`,
+  role: "Software Engineer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "shubham@example.com",
+  location: "Asia/Kolkata", // Update to your timezone
+  languages: ["English", "Hindi"],
 };
 
 const newsletter: Newsletter = {
@@ -241,12 +241,12 @@ const blog: Blog = {
   // All posts will be listed on the /blog route
 };
 
-const work: Work = {
+const projects: Work = {
   path: "/work",
   label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
+  title: `Work – ${person.name}`,
+  description: "Engineering projects focused on backend systems, AI, and production software.",
+  // Create new project pages by adding a new .mdx file to app/projects
   // All projects will be listed on the /home and /work routes
 };
 
@@ -301,4 +301,4 @@ const gallery: Gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { home , person, social, newsletter, about, blog, projects, projects as work };
