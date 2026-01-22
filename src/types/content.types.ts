@@ -86,6 +86,8 @@ export interface BasePageConfig {
  * Home page configuration.
  */
 export interface Home extends BasePageConfig {
+  /** Optional highlights for proof points (engineering, impact, etc.) */
+  highlights?: string[];
   /** The image to be displayed in metadata
    *
    * The image needs to be put inside `/public/images/` directory

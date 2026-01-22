@@ -44,37 +44,27 @@ export default function Home() {
       />
       <Column fillWidth horizontal="center" gap="m">
         <Column maxWidth="s" horizontal="center" align="center">
-          {home.featured.display && (
-            <RevealFx
-              fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
-            >
-              <Badge
-                background="brand-alpha-weak"
-                paddingX="12"
-                paddingY="4"
-                onBackground="neutral-strong"
-                textVariant="label-default-s"
-                arrow={false}
-                href={home.featured.href}
-              >
-                <Row paddingY="2">{home.featured.title}</Row>
-              </Badge>
-            </RevealFx>
-          )}
           <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
             <Heading wrap="balance" variant="display-strong-l">
-              {home.headline}
+              {home.title}
             </Heading>
           </RevealFx>
           <RevealFx translateY="8" delay={0.2} fillWidth horizontal="center" paddingBottom="32">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
-              {home.subline}
+              {home.description}
             </Text>
           </RevealFx>
+          {Array.isArray(home.highlights) && home.highlights.length > 0 && (
+            <RevealFx translateY="12" delay={0.3} fillWidth horizontal="center" paddingBottom="16">
+              <Column gap="4" align="center">
+                {(home.highlights ?? []).map((item: string) => (
+                  <Text key={item} variant="body-default-m" onBackground="brand-strong">
+                    • {item}
+                  </Text>
+                ))}
+              </Column>
+            </RevealFx>
+          )}
           <RevealFx paddingTop="12" delay={0.4} horizontal="center" paddingLeft="12">
             <Button
               id="about"

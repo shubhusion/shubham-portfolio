@@ -1,10 +1,10 @@
-export default function Projects() {
+import { Projects } from "@/components/work/Projects";
+
+export default function WorkPage() {
   return (
-    <div style={{ padding: 32, textAlign: 'center' }}>
-      <h2>This page has moved</h2>
-      <p>
-        The engineering projects section is now at <a href="/projects">/projects</a>.
-      </p>
+    <div>
+      <h1>Engineering Projects</h1>
+      <Projects />
     </div>
   );
 }
