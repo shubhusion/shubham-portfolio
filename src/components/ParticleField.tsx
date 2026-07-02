@@ -21,8 +21,8 @@ export default function ParticleField() {
     let W = 0, H = 0
 
     function resize() {
-      W = canvas.width = canvas.offsetWidth
-      H = canvas.height = canvas.offsetHeight
+      W = canvas!.width = canvas!.offsetWidth
+      H = canvas!.height = canvas!.offsetHeight
       init()
     }
 
