@@ -5,7 +5,6 @@ const links = [
   { icon: '✉', label: 'Email', value: 'shubham27.sharma03@gmail.com', href: 'mailto:shubham27.sharma03@gmail.com' },
   { icon: 'in', label: 'LinkedIn', value: 'linkedin.com/in/shubhusion', href: 'https://linkedin.com/in/shubhusion' },
   { icon: '⌥', label: 'GitHub', value: 'github.com/shubhusion', href: 'https://github.com/shubhusion' },
-  { icon: '☏', label: 'Phone', value: '+91 9958538871', href: 'tel:+919958538871' },
 ]
 
 export default function Contact() {

@@ -60,12 +60,10 @@ export default function Nav() {
             >
               {[0, 1].map(i => (
                 <span key={i} className="font-mono text-[11px] text-white/30 px-8">
-                  Building AI-powered GTM automation at{' '}
-                  <span className="text-violet-light">KEEL</span> · Chrome Extension + LLM pipelines ·{' '}
-                  <span className="text-violet-light">Vertex AI Imagen 3</span> · Pub/Sub task queues &nbsp;✦&nbsp;
-                  Open to full-time <span className="text-violet-light">Founding Engineer</span> /{' '}
-                  <span className="text-violet-light">AI Engineer</span> roles · Immediate availability · India / Remote &nbsp;✦&nbsp;
-                  Latest: <span className="text-violet-light">LinkedIn Lead Discovery</span> pipeline shipped · 50 backend tests · ~66% LLM token reduction &nbsp;✦&nbsp;
+                  Full Stack &amp; AI Engineer &nbsp;✦&nbsp;
+                  <span className="text-violet-light">Production systems</span> at scale · LLM pipelines · Distributed systems &nbsp;✦&nbsp;
+                  Open to full-time <span className="text-violet-light">Founding Engineer</span> / <span className="text-violet-light">AI Engineer</span> roles &nbsp;✦&nbsp;
+                  <span className="text-violet-light">Immediate availability</span> · Remote-first · India + Global &nbsp;✦&nbsp;
                 </span>
               ))}
             </motion.div>
