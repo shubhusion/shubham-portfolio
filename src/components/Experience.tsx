@@ -86,9 +86,9 @@ export default function Experience() {
 
                 {/* Meta */}
                 <div className="lg:sticky lg:top-24 lg:self-start">
-                  <div className="font-mono text-[10px] text-white/25 tracking-widest uppercase mb-3">{exp.period}</div>
+                  <div className="font-mono text-[10px] text-white/45 tracking-widest uppercase mb-3">{exp.period}</div>
                   <div className="font-display font-bold text-white text-[1.1rem] tracking-tight mb-1">{exp.company}</div>
-                  <div className="font-mono text-[11px] text-white/35 mb-3">{exp.type}</div>
+                  <div className="font-mono text-[11px] text-white/50 mb-3">{exp.type}</div>
                   <span className="inline-flex items-center gap-1.5 font-mono text-[10px] px-2.5 py-1 rounded-md"
                     style={{ background: exp.badge.bg, color: exp.badge.color, border: `1px solid ${exp.badge.border}` }}>
                     {exp.badge.label}
@@ -120,7 +120,7 @@ export default function Experience() {
                     {exp.tech.map(t => (
                       <motion.span
                         key={t}
-                        className="font-mono text-[10px] px-2.5 py-1 rounded-md text-white/30 transition-all duration-200 cursor-default"
+                        className="font-mono text-[10px] px-2.5 py-1 rounded-md text-white/50 transition-all duration-200 cursor-default"
                         style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
                         whileHover={{ borderColor: 'rgba(124,58,237,0.5)', color: '#A78BFA' }}
                       >

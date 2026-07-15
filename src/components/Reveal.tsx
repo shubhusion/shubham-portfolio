@@ -1,4 +1,4 @@
-import { motion, useInView } from 'framer-motion'
+import { motion, useInView, useReducedMotion } from 'framer-motion'
 import { useRef, ReactNode } from 'react'
 
 interface RevealProps {
@@ -9,8 +9,13 @@ interface RevealProps {
 }
 
 export default function Reveal({ children, delay = 0, y = 28, className = '' }: RevealProps) {
+  const prefersReducedMotion = useReducedMotion()
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '0px 0px -60px 0px' })
+
+  if (prefersReducedMotion) {
+    return <div className={className}>{children}</div>
+  }
 
   return (
     <motion.div

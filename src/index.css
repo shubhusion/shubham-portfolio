@@ -31,6 +31,11 @@
     color: white;
   }
 
+  *:focus-visible {
+    outline: 2px solid #A78BFA;
+    outline-offset: 2px;
+  }
+
   @media (hover: none) {
     html { cursor: auto; }
   }

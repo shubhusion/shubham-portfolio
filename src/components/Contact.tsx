@@ -72,7 +72,7 @@ export default function Contact() {
                       {l.icon}
                     </div>
                     <div>
-                      <div className="font-mono text-[9px] text-white/30 tracking-widest uppercase mb-0.5">{l.label}</div>
+                      <div className="font-mono text-[10px] text-white/45 tracking-widest uppercase mb-0.5">{l.label}</div>
                       <div className="font-display text-[13px] font-medium text-white">{l.value}</div>
                     </div>
                   </motion.a>

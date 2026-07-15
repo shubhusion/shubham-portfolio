@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 
 const SKILLS = [
   'Python', 'Golang', 'React.js', 'TypeScript', 'Vertex AI',
@@ -9,7 +9,27 @@ const SKILLS = [
 ]
 
 export default function Marquee() {
+  const prefersReducedMotion = useReducedMotion()
   const items = [...SKILLS, ...SKILLS]
+
+  if (prefersReducedMotion) {
+    return (
+      <div
+        className="overflow-hidden py-3 px-6 relative flex flex-wrap gap-2 justify-center"
+        style={{
+          background: 'rgba(14,14,24,0.8)',
+          borderTop: '1px solid rgba(124,58,237,0.1)',
+          borderBottom: '1px solid rgba(124,58,237,0.1)',
+        }}
+      >
+        {SKILLS.map((skill, i) => (
+          <span key={i} className="font-mono text-[11px] text-white/40 tracking-widest px-3 py-1">
+            {skill}
+          </span>
+        ))}
+      </div>
+    )
+  }
 
   return (
     <div
@@ -32,7 +52,7 @@ export default function Marquee() {
         transition={{ duration: 35, ease: 'linear', repeat: Infinity }}
       >
         {items.map((skill, i) => (
-          <span key={i} className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/25 tracking-widest">
+          <span key={i} className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/40 tracking-widest">
             {skill}
             <span className="text-violet/50 text-sm">·</span>
           </span>

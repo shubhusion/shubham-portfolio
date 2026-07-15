@@ -12,7 +12,7 @@ const achievements = [
 
 export default function Achievements() {
   return (
-    <section className="py-32 px-6 lg:px-12" style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
+    <section id="achievements" className="py-32 px-6 lg:px-12" style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="flex items-center gap-3 mb-4">
@@ -43,10 +43,10 @@ export default function Achievements() {
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.4 }}
                 />
-                <div className="font-mono text-[10px] text-white/20 mb-3">{a.n}</div>
+                <div className="font-mono text-[10px] text-white/35 mb-3">{a.n}</div>
                 <div className="text-2xl mb-3">{a.icon}</div>
                 <div className="font-display font-semibold text-white text-[14px] leading-snug mb-1.5">{a.title}</div>
-                <div className="font-mono text-[11px] text-white/35 leading-relaxed">{a.sub}</div>
+                <div className="font-mono text-[11px] text-white/50 leading-relaxed">{a.sub}</div>
               </motion.div>
             </Reveal>
           ))}

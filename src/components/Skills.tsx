@@ -30,7 +30,7 @@ export default function Skills() {
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
-              <p className="text-[15px] text-white/40 font-light leading-relaxed">
+              <p className="text-[15px] text-white/55 font-light leading-relaxed">
                 Technologies used in production — not a list of things I've heard of.
               </p>
             </Reveal>

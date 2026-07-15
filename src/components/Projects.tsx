@@ -64,7 +64,7 @@ export default function Projects() {
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
             Things I've <span className="text-gradient">built.</span>
           </h2>
-          <p className="mt-3 text-[15px] text-white/40 font-light">Production systems and AI products — each one shipped and running.</p>
+          <p className="mt-3 text-[15px] text-white/55 font-light">Production systems and AI products — each one shipped and running.</p>
         </Reveal>
       </div>
 
@@ -92,14 +92,14 @@ export default function Projects() {
 
               <div className="flex justify-between items-start relative z-10">
                 <div>
-                  <div className="font-mono text-[10px] text-white/20 mb-1">{p.num}</div>
+                  <div className="font-mono text-[10px] text-white/35 mb-1">{p.num}</div>
                   <div className="font-mono text-[10px] text-violet-light tracking-wider">{p.cat}</div>
                 </div>
                 <motion.a
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white/25 flex-shrink-0"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-white/40 flex-shrink-0"
                   style={{ border: '1px solid rgba(255,255,255,0.08)' }}
                   whileHover={{ borderColor: '#A78BFA', color: '#A78BFA', rotate: -45 }}
                   transition={{ duration: 0.25 }}
@@ -113,7 +113,7 @@ export default function Projects() {
                   style={{ fontSize: 'clamp(1.1rem,1.8vw,1.5rem)', letterSpacing: '-0.02em' }}>
                   {p.name}
                 </div>
-                <div className="font-mono text-[10px] text-white/25">{p.client}</div>
+                  <div className="font-mono text-[10px] text-white/40">{p.client}</div>
               </div>
 
               <p className="text-[13px] text-white/45 leading-relaxed font-light flex-1 relative z-10">{p.desc}</p>
@@ -126,14 +126,14 @@ export default function Projects() {
                     >
                       {m.green ? m.v : <span className="text-gradient">{m.v}</span>}
                     </div>
-                    <div className="font-mono text-[9px] text-white/25 tracking-wide">{m.l}</div>
+                    <div className="font-mono text-[10px] text-white/40 tracking-wide">{m.l}</div>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-1.5 relative z-10">
                 {p.tags.map(t => (
-                  <span key={t} className="font-mono text-[9px] px-2 py-1 rounded text-white/25"
+                  <span key={t} className="font-mono text-[10px] px-2 py-1 rounded text-white/40"
                     style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
                     {t}
                   </span>

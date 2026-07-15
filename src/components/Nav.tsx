@@ -8,6 +8,7 @@ const links = [
   { label: 'Projects', href: '#projects' },
   { label: 'Client Work', href: '#client-work' },
   { label: 'Skills', href: '#skills' },
+  { label: 'Achievements', href: '#achievements' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -59,7 +60,7 @@ export default function Nav() {
               transition={{ duration: 28, ease: 'linear', repeat: Infinity }}
             >
               {[0, 1].map(i => (
-                <span key={i} className="font-mono text-[11px] text-white/30 px-8">
+                <span key={i} className="font-mono text-[11px] text-white/45 px-8">
                   Full Stack &amp; AI Engineer &nbsp;✦&nbsp;
                   <span className="text-violet-light">Production systems</span> at scale · LLM pipelines · Distributed systems &nbsp;✦&nbsp;
                   Open to full-time <span className="text-violet-light">Founding Engineer</span> / <span className="text-violet-light">AI Engineer</span> roles &nbsp;✦&nbsp;

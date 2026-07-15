@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react'
+import { useReducedMotion } from 'framer-motion'
 
 interface Particle {
   x: number; y: number
@@ -9,11 +10,13 @@ interface Particle {
 }
 
 export default function ParticleField() {
+  const prefersReducedMotion = useReducedMotion()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const mouse = useRef({ x: -1000, y: -1000 })
   const raf = useRef(0)
 
   useEffect(() => {
+    if (prefersReducedMotion) return
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')!

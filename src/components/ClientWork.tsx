@@ -81,7 +81,7 @@ export default function ClientWork() {
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
             Live in <span className="text-gradient">production.</span>
           </h2>
-          <p className="text-[15px] text-white/40 font-light mb-4">7 live products across 4 clients. Click any to see the work.</p>
+          <p className="text-[15px] text-white/55 font-light mb-4">7 live products across 4 clients. Click any to see the work.</p>
         </Reveal>
 
         {/* Stats bar */}
@@ -96,7 +96,7 @@ export default function ClientWork() {
             ].map((s, i) => (
               <div key={i}>
                 <div className="font-display font-bold text-gradient" style={{ fontSize: '1.4rem', letterSpacing: '-0.03em' }}>{s.v}</div>
-                <div className="font-mono text-[10px] text-white/25 mt-0.5">{s.l}</div>
+                <div className="font-mono text-[10px] text-white/40 mt-0.5">{s.l}</div>
               </div>
             ))}
           </div>
@@ -150,7 +150,7 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
               style={{ fontSize: fullWidth ? 'clamp(1.2rem,2vw,1.5rem)' : '1.15rem', letterSpacing: '-0.02em' }}>
               {name}
             </div>
-            <div className="font-mono text-[10px] text-white/25">{url}</div>
+            <div className="font-mono text-[10px] text-white/40">{url}</div>
           </div>
           <motion.a
             href={link}
@@ -168,7 +168,7 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
         {!fullWidth && (
           <ul className="space-y-2 mb-4">
             {highlights.map((h: string, j: number) => (
-              <li key={j} className="flex gap-2.5 text-[12px] text-white/40 leading-relaxed">
+              <li key={j} className="flex gap-2.5 text-[12px] text-white/55 leading-relaxed">
                 <span className="mt-2 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                 {h}
               </li>
@@ -178,7 +178,7 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
 
         <div className="flex flex-wrap gap-1.5">
           {tags.map((t: string) => (
-            <span key={t} className="font-mono text-[9px] px-2 py-0.5 rounded text-white/25"
+            <span key={t} className="font-mono text-[10px] px-2 py-0.5 rounded text-white/40"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
               {t}
             </span>

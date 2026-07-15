@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { motion, useMotionValue, useSpring } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
 
 export default function Cursor() {
+  const prefersReducedMotion = useReducedMotion()
   const [hovered, setHovered] = useState(false)
   const [hidden, setHidden] = useState(false)
   const mx = useMotionValue(0)
@@ -34,6 +35,7 @@ export default function Cursor() {
     }
   }, [mx, my])
 
+  if (prefersReducedMotion) return null
   if (typeof window !== 'undefined' && !window.matchMedia('(hover: hover)').matches) return null
 
   return (

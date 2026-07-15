@@ -85,7 +85,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <motion.div variants={item} className="flex items-center gap-3 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80] animate-pulse" />
-            <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-white/40">
+            <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-white/60">
               Available for full-time · Immediate · India / Remote
             </span>
           </motion.div>
@@ -114,7 +114,7 @@ export default function Hero() {
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
-              <span className="font-mono text-[11px] text-white/25 ml-2">~/portfolio — zsh</span>
+              <span className="font-mono text-[11px] text-white/45 ml-2">~/portfolio — zsh</span>
             </div>
             {/* Terminal lines */}
             <div className="px-4 py-4 space-y-2">
@@ -182,7 +182,7 @@ export default function Hero() {
               <div className="font-display font-bold leading-none mb-2" style={{ fontSize: 'clamp(1.75rem,3.5vw,2.75rem)', letterSpacing: '-0.03em' }}>
                 <span className="text-gradient">{s.n}</span>
               </div>
-              <div className="font-mono text-[11px] text-white/30 tracking-wide leading-relaxed">{s.l}</div>
+              <div className="font-mono text-[11px] text-white/50 tracking-wide leading-relaxed">{s.l}</div>
             </div>
           ))}
         </motion.div>
@@ -195,7 +195,7 @@ export default function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-white/30">Scroll</span>
+        <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-white/50">Scroll</span>
         <motion.div
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}

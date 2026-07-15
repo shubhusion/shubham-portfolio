@@ -39,19 +39,11 @@ export default function About() {
               className="relative rounded-2xl overflow-hidden aspect-[4/3]"
               style={{ background: 'rgba(14,14,24,0.8)', border: '1px solid rgba(124,58,237,0.2)' }}
             >
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3">
-                <div
-                  className="w-20 h-20 rounded-full flex items-center justify-center text-3xl"
-                  style={{ border: '2px dashed rgba(124,58,237,0.3)' }}
-                >
-                  👤
-                </div>
-                <p className="font-mono text-[11px] text-white/20 text-center">
-                  Add your photo here<br />
-                  <span className="text-violet-light">Replace with headshot image</span>
-                </p>
-              </div>
-              {/* Overlay */}
+              <img
+                src="/images/shubham-headshot.png"
+                alt="Shubham Sharma"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
               <div className="absolute bottom-0 left-0 right-0 p-4" style={{ background: 'linear-gradient(to top, rgba(10,10,15,0.9), transparent)' }}>
                 <div className="font-display font-bold text-white text-lg tracking-tight">Shubham Sharma</div>
                 <div className="font-mono text-[11px] text-violet-light mt-0.5">Full Stack & AI Engineer</div>
@@ -114,7 +106,7 @@ export default function About() {
                 </div>
                 <div>
                   <div className="font-display font-semibold text-[14px] text-white leading-snug">{b.title}</div>
-                  <div className="font-mono text-[11px] text-white/35 mt-0.5">{b.sub}</div>
+                  <div className="font-mono text-[11px] text-white/50 mt-0.5">{b.sub}</div>
                 </div>
               </motion.div>
             </Reveal>
