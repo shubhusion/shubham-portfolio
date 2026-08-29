@@ -5,7 +5,7 @@ import ParticleField from './ParticleField'
 const command = [
   { key: 'role', value: 'Full Stack & AI Engineer', color: '#A78BFA' },
   { key: 'stack', value: 'Golang · Python · React · Vertex AI', color: '#93C5FD' },
-  { key: 'award', value: 'Google GenAI Hackathon Winner 🏆', color: '#86EFAC' },
+  { key: 'award', value: 'Google GenAI Hackathon Winner 🏆', color: '#10B981' },
   { key: 'status', value: 'open_to_work = true', color: '#FCD34D' },
 ]
 
@@ -121,7 +121,7 @@ export default function Hero() {
               {command.map((c, i) => (
                 <div key={c.key} className="font-mono text-[13px] leading-relaxed flex gap-3">
                   <span className="text-violet-light flex-shrink-0">❯</span>
-                  <span className="text-white/40 flex-shrink-0">{c.key.padEnd(8)}</span>
+                  <span className="text-white/50 flex-shrink-0">{c.key.padEnd(8)}</span>
                   <span style={{ color: c.color }}>
                     <TypewriterLine text={c.value} delay={600 + i * 400} />
                   </span>
@@ -156,7 +156,7 @@ export default function Hero() {
               href="https://github.com/shubhusion"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-display font-medium text-[14px] text-white/40 hover:text-white/80 transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-full font-display font-medium text-[14px] text-white/50 hover:text-white/80 transition-colors duration-300"
               style={{ border: '1px solid rgba(255,255,255,0.08)' }}
             >
               GitHub →

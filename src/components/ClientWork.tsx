@@ -95,8 +95,8 @@ export default function ClientWork() {
               { v: 'CRM', l: 'GoHighLevel' },
             ].map((s, i) => (
               <div key={i}>
-                <div className="font-display font-bold text-gradient" style={{ fontSize: '1.4rem', letterSpacing: '-0.03em' }}>{s.v}</div>
-                <div className="font-mono text-[10px] text-white/40 mt-0.5">{s.l}</div>
+                <div className="font-display font-bold text-gradient" style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}>{s.v}</div>
+                <div className="font-mono text-[10px] text-white/50 mt-0.5">{s.l}</div>
               </div>
             ))}
           </div>
@@ -147,10 +147,10 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
           <div>
             <div className="font-mono text-[10px] text-violet-light mb-1">{num} · {client}</div>
             <div className="font-display font-bold text-white leading-tight mb-0.5"
-              style={{ fontSize: fullWidth ? 'clamp(1.2rem,2vw,1.5rem)' : '1.15rem', letterSpacing: '-0.02em' }}>
+              style={{ fontSize: 'clamp(1.2rem,2vw,1.6rem)', letterSpacing: '-0.02em' }}>
               {name}
             </div>
-            <div className="font-mono text-[10px] text-white/40">{url}</div>
+            <div className="font-mono text-[10px] text-white/50">{url}</div>
           </div>
           <motion.a
             href={link}
@@ -178,7 +178,7 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
 
         <div className="flex flex-wrap gap-1.5">
           {tags.map((t: string) => (
-            <span key={t} className="font-mono text-[10px] px-2 py-0.5 rounded text-white/40"
+            <span key={t} className="font-mono text-[10px] px-2 py-0.5 rounded text-white/50"
               style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
               {t}
             </span>

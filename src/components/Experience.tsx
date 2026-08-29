@@ -87,7 +87,7 @@ export default function Experience() {
                 {/* Meta */}
                 <div className="lg:sticky lg:top-24 lg:self-start">
                   <div className="font-mono text-[10px] text-white/45 tracking-widest uppercase mb-3">{exp.period}</div>
-                  <div className="font-display font-bold text-white text-[1.1rem] tracking-tight mb-1">{exp.company}</div>
+                  <div className="font-display font-bold text-white tracking-tight mb-1" style={{ fontSize: 'clamp(1.2rem,2vw,1.6rem)' }}>{exp.company}</div>
                   <div className="font-mono text-[11px] text-white/50 mb-3">{exp.type}</div>
                   <span className="inline-flex items-center gap-1.5 font-mono text-[10px] px-2.5 py-1 rounded-md"
                     style={{ background: exp.badge.bg, color: exp.badge.color, border: `1px solid ${exp.badge.border}` }}>

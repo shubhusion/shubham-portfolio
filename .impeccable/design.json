@@ -1,0 +1,180 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-29T00:00:00.000Z",
+  "title": "Design System: Shubham Sharma — Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "signal-violet": {
+        "role": "primary",
+        "displayName": "Signal Violet",
+        "canonical": "#7C3AED",
+        "tonalRamp": ["#1E1033", "#341A5C", "#4B2385", "#5F2CAD", "#7C3AED", "#9A63F0", "#BC97F5", "#E4D4FC"]
+      },
+      "signal-violet-light": {
+        "role": "primary",
+        "displayName": "Signal Violet Light",
+        "canonical": "#A78BFA",
+        "tonalRamp": ["#2A1B4D", "#402A75", "#573A9E", "#7452C0", "#A78BFA", "#C1AAFB", "#DBCCFD", "#F1E9FE"]
+      },
+      "electric-sky": {
+        "role": "secondary",
+        "displayName": "Electric Sky",
+        "canonical": "#60A5FA",
+        "tonalRamp": ["#0B2A4D", "#123F73", "#1A5499", "#2E76C4", "#60A5FA", "#8CC0FB", "#B8DAFC", "#E3F0FE"]
+      },
+      "void-ink": {
+        "role": "neutral",
+        "displayName": "Void Ink",
+        "canonical": "#0A0A0F",
+        "tonalRamp": ["#050506", "#0A0A0F", "#14141C", "#1F1F2B", "#2C2C3D", "#45455C", "#6E6E8C", "#A6A6C2"]
+      },
+      "pale-paper": {
+        "role": "neutral",
+        "displayName": "Pale Paper",
+        "canonical": "#F5F3FF",
+        "tonalRamp": ["#8A85A6", "#A9A4C4", "#C6C2DD", "#DBD8EC", "#E9E7F5", "#F0EEF9", "#F5F3FF", "#FBFAFF"]
+      },
+      "status-green": {
+        "role": "accent",
+        "displayName": "Status Green",
+        "canonical": "#4ADE80",
+        "tonalRamp": ["#0B3320", "#12522F", "#1B7A46", "#2CA860", "#4ADE80", "#7EEBA5", "#B0F4CB", "#DDFBE9"]
+      },
+      "status-amber": {
+        "role": "accent",
+        "displayName": "Status Amber",
+        "canonical": "#FCD34D",
+        "tonalRamp": ["#4D3B0A", "#735A10", "#997816", "#C4A126", "#FCD34D", "#FDE080", "#FEECAF", "#FFF8DE"]
+      },
+      "status-amber-deep": {
+        "role": "accent",
+        "displayName": "Status Amber Deep",
+        "canonical": "#F59E0B",
+        "tonalRamp": ["#4D2E05", "#734508", "#995C0B", "#C47B12", "#F59E0B", "#FBBF4C", "#FDDA96", "#FEF0D2"]
+      },
+      "status-emerald": {
+        "role": "accent",
+        "displayName": "Status Emerald",
+        "canonical": "#10B981",
+        "tonalRamp": ["#052E22", "#0A4A37", "#0F6B4F", "#149468", "#10B981", "#4FD3A5", "#94E7C7", "#D6F8E9"]
+      },
+      "signal-violet-deep": {
+        "role": "primary",
+        "displayName": "Signal Violet Deep",
+        "canonical": "#6D28D9",
+        "tonalRamp": ["#1A0E33", "#2C185C", "#3F2285", "#552CAD", "#6D28D9", "#8C5BE8", "#B599F1", "#E0D2FA"]
+      }
+    },
+    "typographyMeta": {
+      "hero": { "displayName": "Hero Display", "purpose": "The name/role headline on the hero section only." },
+      "display": { "displayName": "Display", "purpose": "Section headlines (\"Things I've built.\", \"Where I've shipped.\")." },
+      "body": { "displayName": "Body", "purpose": "Paragraph copy, rendered at reduced white opacity over Void Ink." },
+      "label": { "displayName": "Label / Mono", "purpose": "Eyebrows, tags, ticker text, stat captions — anything reading as system metadata." }
+    },
+    "shadows": [
+      { "name": "cta-glow", "value": "0 12px 40px rgba(124,58,237,0.4)", "purpose": "The one true elevation event: primary button hover lift." },
+      { "name": "status-dot-glow", "value": "0 0 6px #4ade80", "purpose": "Ambient glow on the small pulsing 'available' status dot in the nav and ticker." },
+      { "name": "status-dot-glow-lg", "value": "0 0 8px #4ade80", "purpose": "Larger status-dot glow used on the hero eyebrow indicator." }
+    ],
+    "motion": [
+      { "name": "ease-reveal", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "Standard easing for scroll-triggered reveals and entrance animations." },
+      { "name": "duration-reveal", "value": "700ms", "purpose": "Fade+rise duration for the Reveal wrapper used on nearly every section element." },
+      { "name": "duration-hover", "value": "200-400ms", "purpose": "Hover/interaction transitions (background lighten, accent line growth, border brighten)." },
+      { "name": "ticker-scroll", "value": "linear 28-35s infinite", "purpose": "Marquee/ticker horizontal scroll speed." }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call-to-action pill (\"Let's build together\", \"Send me an email\") — the one component allowed to lift on hover.",
+      "html": "<button class=\"ds-btn-primary\">Let's build together</button>",
+      "css": ".ds-btn-primary { background: linear-gradient(135deg, #7C3AED, #6D28D9); color: #ffffff; font-family: 'Syne', sans-serif; font-weight: 600; font-size: 15px; padding: 14px 28px; border-radius: 9999px; border: none; box-shadow: 0 0 0 0 rgba(124,58,237,0.3); transition: transform 0.3s, box-shadow 0.3s; cursor: pointer; } .ds-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(124,58,237,0.4); } .ds-btn-primary:focus-visible { outline: 2px solid #A78BFA; outline-offset: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action (\"Download Resume\") with a gradient hairline ring instead of a fill.",
+      "html": "<button class=\"ds-btn-ghost\"><span>&#8595;</span> Download Resume</button>",
+      "css": ".ds-btn-ghost { position: relative; background: transparent; color: rgba(255,255,255,0.6); font-family: 'Syne', sans-serif; font-weight: 500; font-size: 14px; padding: 14px 24px; border-radius: 9999px; border: none; display: inline-flex; align-items: center; gap: 8px; transition: color 0.3s, background-color 0.3s; cursor: pointer; } .ds-btn-ghost::before { content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: linear-gradient(135deg, #7C3AED, #60A5FA); -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0); -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; } .ds-btn-ghost:hover { color: #ffffff; background-color: rgba(255,255,255,0.04); }"
+    },
+    {
+      "name": "Tag Chip",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Small mono-font tech/skill tag used across Projects, Experience, and Skills.",
+      "html": "<span class=\"ds-tag\">PostgreSQL</span>",
+      "css": ".ds-tag { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.4); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-radius: 8px; padding: 4px 8px; transition: border-color 0.2s, color 0.2s; } .ds-tag:hover { border-color: rgba(124,58,237,0.5); color: #A78BFA; }"
+    },
+    {
+      "name": "Status Badge",
+      "kind": "chip",
+      "refersTo": "tag",
+      "description": "Pulsing-dot status pill (nav availability, Client Work 'Live' tag, Experience role badges).",
+      "html": "<span class=\"ds-status-badge\"><span class=\"ds-status-dot\"></span>Live &#8599;</span>",
+      "css": ".ds-status-badge { display: inline-flex; align-items: center; gap: 6px; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: #10b981; background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 6px 10px; } .ds-status-dot { width: 6px; height: 6px; border-radius: 9999px; background: #4ade80; box-shadow: 0 0 6px #4ade80; animation: ds-pulse 2s ease-in-out infinite; } @keyframes ds-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }"
+    },
+    {
+      "name": "Grid Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Standard grid-cell card (Projects, Skills, Achievements) — border comes from the parent grid's 1px background gap, not the card itself.",
+      "html": "<div class=\"ds-card-grid-wrapper\"><div class=\"ds-card\"><div class=\"ds-card-accent\"></div><div class=\"ds-card-label\">01</div><div class=\"ds-card-title\">Card Title</div><p class=\"ds-card-body\">Supporting description text goes here.</p></div></div>",
+      "css": ".ds-card-grid-wrapper { background: rgba(124,58,237,0.08); padding: 1px; border-radius: 24px; overflow: hidden; } .ds-card { background: rgba(10,10,15,1); padding: 28px; position: relative; overflow: hidden; transition: background-color 0.25s; } .ds-card:hover { background: rgba(14,14,24,1); } .ds-card-accent { position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(to right, #7C3AED, #60A5FA); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; } .ds-card:hover .ds-card-accent { transform: scaleX(1); } .ds-card-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: rgba(255,255,255,0.35); margin-bottom: 12px; } .ds-card-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1.25rem; color: #ffffff; letter-spacing: -0.02em; margin-bottom: 8px; } .ds-card-body { font-family: 'Inter', sans-serif; font-weight: 300; font-size: 13px; color: rgba(255,255,255,0.45); line-height: 1.6; }"
+    },
+    {
+      "name": "Section Eyebrow",
+      "kind": "custom",
+      "refersTo": "label",
+      "description": "The recurring mono eyebrow label with a short accent tick that opens every section.",
+      "html": "<div class=\"ds-eyebrow\"><span class=\"ds-eyebrow-tick\"></span>Projects</div>",
+      "css": ".ds-eyebrow { display: flex; align-items: center; gap: 12px; font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #A78BFA; } .ds-eyebrow-tick { width: 16px; height: 1px; background: #A78BFA; }"
+    },
+    {
+      "name": "Nav Bar",
+      "kind": "nav",
+      "refersTo": "components",
+      "description": "Fixed main navigation: transparent at page top, blurred dark panel with a hairline bottom border after 40px of scroll.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-logo\"><span class=\"ds-status-dot\"></span>shubham.dev</a><div class=\"ds-nav-links\"><a href=\"#about\">About</a><a href=\"#projects\">Projects</a></div></nav>",
+      "css": ".ds-nav { display: flex; align-items: center; justify-content: space-between; padding: 0 24px; height: 60px; background: rgba(10,10,15,0.85); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(124,58,237,0.1); } .ds-nav-logo { display: flex; align-items: center; gap: 8px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #A78BFA; text-decoration: none; } .ds-nav-links { display: flex; align-items: center; gap: 32px; } .ds-nav-links a { font-family: 'Syne', sans-serif; font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.5); text-decoration: none; position: relative; transition: color 0.2s; } .ds-nav-links a:hover { color: #ffffff; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Command Deck",
+    "overview": "The site presents Shubham's work the way a monitored system console presents its own status: a scroll-progress bar tracks position like a load meter, a marquee ticker scrolls a live \"Now\" status line, a pulsing green dot signals \"available,\" and a typewriter-animated terminal block prints role, stack, and status one line at a time. Nothing is decorative chrome — every recurring motif (the ticker, the pulse, the progress bar, the mono labels) reads as instrumentation reporting real state, because everything it reports (metrics, uptime, client count) is a real, verified number.\n\nVisually, this plays out as a near-black control surface (Void Ink) lit by a single accent color family — violet warming to electric blue — used sparingly as signal, never as decoration. Depth comes from layering translucent panels and blurred ambient glows rather than shadows; the console is flat by design, like a dark-mode dashboard, not a lifted card stack. A mouse-reactive particle field in the hero is the one moment of pure atmosphere, standing in for \"the system is alive and watching your cursor,\" before the console settles into its instrumented, text-driven rhythm for the rest of the page.\n\nThe system explicitly rejects the generic \"gradient-hero SaaS portfolio\" look: no glassy hero illustrations, no stock-photo team feel, no rainbow gradients. Every gradient on this site runs the same two stops (violet → electric blue) and is reserved for accents, text, and active states — never full backgrounds.",
+    "keyCharacteristics": [
+      "Near-black console surface with a single violet→blue signal color, used sparingly",
+      "Flat by default; depth via translucent layering and blurred ambient glow, not shadows",
+      "Terminal/mono vocabulary (labels, tickers, typewriter text) treated as live instrumentation, not decoration",
+      "Hairline 1px violet grid lines standing in for card borders across every multi-item grid",
+      "Every visible metric is a real, verified number — the design's credibility depends on this"
+    ],
+    "rules": [
+      { "name": "The Hairline Rule", "body": "Every border on the site is Signal Violet at 8–20% opacity, never a solid neutral gray and never fully opaque.", "section": "colors" },
+      { "name": "The One Signal Rule", "body": "Signal Violet and Electric Sky are the only saturated colors on the page; everything else is Void Ink, white-opacity steps, or the two status accents.", "section": "colors" },
+      { "name": "The Mono-Means-System Rule", "body": "JetBrains Mono is reserved for labels, tags, tickers, and terminal/status text — never for prose or headlines.", "section": "typography" },
+      { "name": "The Flat-Console Rule", "body": "Nothing lifts except the primary CTA button on hover; new components express depth via background-lightness steps or hairline borders instead of shadows.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do keep every border a translucent Signal Violet hairline (8–20% opacity) — never a solid neutral gray.",
+      "Do render any multi-item grid with the 1px background-gap technique instead of individual card borders.",
+      "Do reserve JetBrains Mono for labels, tags, tickers, and terminal/status text — never for prose or headlines.",
+      "Do keep depth flat: convey elevation through background-lightness steps and blurred ambient glow, not box-shadow, with the single exception of the primary button's hover glow.",
+      "Do make every number on the page a real, verified metric — the design's entire credibility premise depends on this.",
+      "Do use the violet→electric-sky gradient consistently as the only two-stop gradient on the site."
+    ],
+    "donts": [
+      "Don't introduce a third saturated hue outside Signal Violet, Electric Sky, and the two status accents.",
+      "Don't add shadows to cards or buttons at rest — lift is reserved for the primary CTA's hover state only.",
+      "Don't use sharp/square corners anywhere; every surface is either a large-radius container or a full pill.",
+      "Don't fabricate or round up a stat to make a component look more impressive."
+    ]
+  }
+}

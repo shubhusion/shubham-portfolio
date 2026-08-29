@@ -29,6 +29,19 @@ export default function Nav() {
 
   const close = () => setOpen(false)
 
+  useEffect(() => {
+    if (!open) return
+    document.body.style.overflow = 'hidden'
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') close()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      document.body.style.overflow = ''
+      window.removeEventListener('keydown', onKeyDown)
+    }
+  }, [open])
+
   return (
     <>
       {/* Scroll progress */}
@@ -155,16 +168,29 @@ export default function Nav() {
                 {l.label}
               </motion.a>
             ))}
-            <motion.a
-              href="mailto:shubham27.sharma03@gmail.com"
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 20 }}
               transition={{ delay: links.length * 0.05 }}
-              className="mt-4 px-8 py-3 rounded-full bg-violet text-white font-display font-semibold"
+              className="mt-4 flex items-center gap-3"
             >
-              Hire me
-            </motion.a>
+              <a
+                href="/Shubham_Sharma_Resume.pdf"
+                download
+                onClick={close}
+                className="flex items-center gap-2 px-6 py-3 rounded-full font-display font-semibold text-white border-gradient"
+              >
+                <span>↓</span> Resume
+              </a>
+              <a
+                href="mailto:shubham27.sharma03@gmail.com"
+                onClick={close}
+                className="px-8 py-3 rounded-full bg-violet text-white font-display font-semibold"
+              >
+                Hire me
+              </a>
+            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>

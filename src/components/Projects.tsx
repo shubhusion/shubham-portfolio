@@ -3,7 +3,16 @@ import Reveal from './Reveal'
 
 const projects = [
   {
-    num: '01', cat: 'AI · Automation · Chrome Extension',
+    num: '01', cat: 'GovTech · AI · Full Stack',
+    name: 'Roothscale — Constituency War Room OS',
+    client: 'Personal Project · 2026', span: 'lg:col-span-12',
+    desc: 'NestJS + Next.js platform for political campaign operations — role-scoped CRUD across constituencies, wards, booths, voters, issues and tasks, plus a configuration-driven Social & News Intelligence pipeline (Apify collection → validation gate → AI analysis → signal detection) with automated daily briefings.',
+    metrics: [{ v: '6', l: 'Data domains covered' }, { v: '2', l: 'AI engines w/ deterministic fallback', green: true }],
+    tags: ['NestJS', 'Next.js', 'PostgreSQL', 'TypeORM', 'OpenRouter'],
+    link: 'https://roothscale-web.azurewebsites.net/',
+  },
+  {
+    num: '02', cat: 'AI · Automation · Chrome Extension',
     name: 'LinkedIn Lead Discovery Platform',
     client: 'KEEL — 2026', span: 'lg:col-span-7',
     desc: 'Chrome Extension + backend for Sales Navigator scraping — full ICP scoring pipeline, Cloud Run + Pub/Sub task queue, multi-platform content engine with Vertex AI Imagen 3, 48-hour channel deduplication, and Playbooks feature end-to-end.',
@@ -12,7 +21,7 @@ const projects = [
     link: 'https://usekeel.in',
   },
   {
-    num: '02', cat: 'Distributed · OSINT',
+    num: '03', cat: 'Distributed · OSINT',
     name: 'OSINT Investigation Platform',
     client: 'S2T AI · 2025–2026', span: 'lg:col-span-5',
     desc: 'Profile-centric investigation system with identity-resolution pipelines, SSE real-time tracking, distributed crawler orchestration across 6+ data sources.',
@@ -21,7 +30,7 @@ const projects = [
     link: 'https://s2t.ai/goldenspear-deep-webint.html',
   },
   {
-    num: '03', cat: 'Full Stack · AI · Production',
+    num: '04', cat: 'Full Stack · AI · Production',
     name: 'AI Ordering Platform',
     client: 'Platelink.ai · 2024–2025', span: 'lg:col-span-4',
     desc: 'Microservice ordering platform + AI nutrition tracking app. Sole backend founding engineer.',
@@ -30,7 +39,7 @@ const projects = [
     link: '#',
   },
   {
-    num: '04', cat: 'GenAI · RAG · Multi-Agent',
+    num: '05', cat: 'GenAI · RAG · Multi-Agent',
     name: 'Lumenslate',
     client: 'Personal Project · 2025', span: 'lg:col-span-4',
     desc: 'Multi-agent LLM-powered RAG system for question generation, automated grading, and performance analytics on Google Cloud.',
@@ -39,7 +48,7 @@ const projects = [
     link: 'https://github.com/shubhusion',
   },
   {
-    num: '05', cat: 'GenAI · Fintech · 🏆 Winner',
+    num: '06', cat: 'GenAI · Fintech · 🏆 Winner',
     name: 'AarthikSetu',
     client: 'Google GenAI Hackathon · 2024', span: 'lg:col-span-4',
     desc: 'GenAI financial platform for MSMEs — Golang APIs with Redis caching, multi-layer auth. Won 1st place Fintech Track among 100+ teams.',
@@ -92,14 +101,14 @@ export default function Projects() {
 
               <div className="flex justify-between items-start relative z-10">
                 <div>
-                  <div className="font-mono text-[10px] text-white/35 mb-1">{p.num}</div>
+                  <div className="font-mono text-[10px] text-white/45 mb-1">{p.num}</div>
                   <div className="font-mono text-[10px] text-violet-light tracking-wider">{p.cat}</div>
                 </div>
                 <motion.a
                   href={p.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full flex items-center justify-center text-white/40 flex-shrink-0"
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-white/50 flex-shrink-0"
                   style={{ border: '1px solid rgba(255,255,255,0.08)' }}
                   whileHover={{ borderColor: '#A78BFA', color: '#A78BFA', rotate: -45 }}
                   transition={{ duration: 0.25 }}
@@ -110,10 +119,10 @@ export default function Projects() {
 
               <div className="relative z-10">
                 <div className="font-display font-bold text-white leading-tight mb-1"
-                  style={{ fontSize: 'clamp(1.1rem,1.8vw,1.5rem)', letterSpacing: '-0.02em' }}>
+                  style={{ fontSize: 'clamp(1.2rem,2vw,1.6rem)', letterSpacing: '-0.02em' }}>
                   {p.name}
                 </div>
-                  <div className="font-mono text-[10px] text-white/40">{p.client}</div>
+                  <div className="font-mono text-[10px] text-white/50">{p.client}</div>
               </div>
 
               <p className="text-[13px] text-white/45 leading-relaxed font-light flex-1 relative z-10">{p.desc}</p>
@@ -122,18 +131,18 @@ export default function Projects() {
                 {p.metrics.map((m, j) => (
                   <div key={j}>
                     <div className="font-display font-bold leading-none mb-1"
-                      style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em', color: m.green ? '#34d399' : undefined }}
+                      style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em', color: m.green ? '#10b981' : undefined }}
                     >
                       {m.green ? m.v : <span className="text-gradient">{m.v}</span>}
                     </div>
-                    <div className="font-mono text-[10px] text-white/40 tracking-wide">{m.l}</div>
+                    <div className="font-mono text-[10px] text-white/50 tracking-wide">{m.l}</div>
                   </div>
                 ))}
               </div>
 
               <div className="flex flex-wrap gap-1.5 relative z-10">
                 {p.tags.map(t => (
-                  <span key={t} className="font-mono text-[10px] px-2 py-1 rounded text-white/40"
+                  <span key={t} className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
                     style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
                     {t}
                   </span>

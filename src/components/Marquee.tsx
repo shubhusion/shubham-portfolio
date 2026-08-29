@@ -23,7 +23,7 @@ export default function Marquee() {
         }}
       >
         {SKILLS.map((skill, i) => (
-          <span key={i} className="font-mono text-[11px] text-white/40 tracking-widest px-3 py-1">
+          <span key={i} className="font-mono text-[11px] text-white/50 tracking-widest px-3 py-1">
             {skill}
           </span>
         ))}
@@ -52,7 +52,7 @@ export default function Marquee() {
         transition={{ duration: 35, ease: 'linear', repeat: Infinity }}
       >
         {items.map((skill, i) => (
-          <span key={i} className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/40 tracking-widest">
+          <span key={i} className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/50 tracking-widest">
             {skill}
             <span className="text-violet/50 text-sm">·</span>
           </span>
