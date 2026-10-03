@@ -3,11 +3,11 @@ import Reveal from './Reveal'
 
 const groups = [
   { name: 'Languages', skills: ['Python', 'Golang', 'TypeScript / Node.js', 'Dart / Flutter'] },
-  { name: 'AI / GenAI', skills: ['Multi-Agent Systems', 'RAG Pipelines', 'LLM Orchestration', 'Vertex AI · Imagen 3', 'Agentic Workflows'] },
-  { name: 'Frontend', skills: ['React.js', 'TanStack Router', 'Tailwind CSS', 'Chrome Extensions', 'Framer Motion'] },
-  { name: 'Infrastructure', skills: ['AWS — ECS, RDS, S3, SNS', 'Google Cloud — Cloud Run, Pub/Sub', 'Docker · Kubernetes', 'GitHub Actions · CI/CD'] },
-  { name: 'Data & Systems', skills: ['PostgreSQL · MongoDB', 'Redis · Celery', 'SSE · Async Processing', 'Distributed Systems'] },
-  { name: 'Tools', skills: ['Playwright · Selenium', 'Firebase · Firestore', 'Flask · FastAPI', 'REST API Design'] },
+  { name: 'AI / GenAI', skills: ['Multi-Agent Systems', 'RAG Pipelines', 'LLM Orchestration', 'Gemini Live API — Voice + Video', 'Vertex AI · Imagen 3', 'Guardrailed Agents'] },
+  { name: 'Frontend', skills: ['React.js', 'TanStack Router', 'Flutter Web · BLoC', 'Tailwind CSS', 'Chrome Extensions', 'Framer Motion'] },
+  { name: 'Infrastructure', skills: ['AWS — ECS, RDS, S3, SNS', 'Google Cloud — Cloud Run, Pub/Sub', 'Render Blueprints · IaC', 'Docker · Kubernetes', 'GitHub Actions · CI/CD'] },
+  { name: 'Data & Realtime', skills: ['PostgreSQL · GORM · Atlas Migrations', 'WebSockets · Realtime Proxying', 'Deterministic State Machines', 'Redis · Celery', 'Distributed Systems'] },
+  { name: 'Tools', skills: ['Playwright · Selenium', 'Flask · FastAPI', 'Prometheus · OpenTelemetry', 'REST API Design'] },
 ]
 
 export default function Skills() {

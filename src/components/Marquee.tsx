@@ -6,6 +6,7 @@ const SKILLS = [
   'AWS', 'Google Cloud', 'PostgreSQL', 'Redis', 'Docker',
   'Chrome Extensions', 'Distributed Systems', 'Playwright',
   'Cloud Run', 'Pub/Sub', 'Firestore', 'TanStack Router',
+  'Flutter', 'Gemini Live API', 'WebSockets', 'FastAPI', 'Real-Time AI',
 ]
 
 export default function Marquee() {
@@ -49,7 +50,7 @@ export default function Marquee() {
       <motion.div
         className="flex whitespace-nowrap"
         animate={{ x: ['0%', '-50%'] }}
-        transition={{ duration: 35, ease: 'linear', repeat: Infinity }}
+        transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
       >
         {items.map((skill, i) => (
           <span key={i} className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/50 tracking-widest">

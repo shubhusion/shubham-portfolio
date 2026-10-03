@@ -3,16 +3,25 @@ import Reveal from './Reveal'
 
 const projects = [
   {
-    num: '01', cat: 'GovTech · AI · Full Stack',
-    name: 'Roothscale — Constituency War Room OS',
+    num: '01', cat: 'Multimodal AI · Realtime · Multi-Tenant SaaS',
+    name: 'Prentline — AI Hands-Free Training Platform',
     client: 'Personal Project · 2026', span: 'lg:col-span-12',
+    desc: 'Five-service SaaS that turns SOPs into live AI-coached training sessions — Gemini Live (voice + video over WebSocket) watches the workspace while a deterministic 683-line Go state machine owns step tracking, L1–L5 hint escalation and destructive-step gating, then emits a computable scorecard. Supervisors get a live command center with shadow mode, one-click audio takeover and cohort error analytics.',
+    metrics: [{ v: '50K+', l: 'LOC across 5 services' }, { v: '82', l: 'Test files', green: true }],
+    tags: ['Go · Gin', 'Flutter Web', 'Gemini Live API', 'PostgreSQL · Atlas', 'FastAPI', 'WebSocket'],
+    link: '#prentline',
+  },
+  {
+    num: '02', cat: 'GovTech · AI · Full Stack',
+    name: 'Roothscale — Constituency War Room OS',
+    client: 'Reclevo · 2026', span: 'lg:col-span-12',
     desc: 'NestJS + Next.js platform for political campaign operations — role-scoped CRUD across constituencies, wards, booths, voters, issues and tasks, plus a configuration-driven Social & News Intelligence pipeline (Apify collection → validation gate → AI analysis → signal detection) with automated daily briefings.',
     metrics: [{ v: '6', l: 'Data domains covered' }, { v: '2', l: 'AI engines w/ deterministic fallback', green: true }],
     tags: ['NestJS', 'Next.js', 'PostgreSQL', 'TypeORM', 'OpenRouter'],
     link: 'https://roothscale-web.azurewebsites.net/',
   },
   {
-    num: '02', cat: 'AI · Automation · Chrome Extension',
+    num: '03', cat: 'AI · Automation · Chrome Extension',
     name: 'LinkedIn Lead Discovery Platform',
     client: 'KEEL — 2026', span: 'lg:col-span-7',
     desc: 'Chrome Extension + backend for Sales Navigator scraping — full ICP scoring pipeline, Cloud Run + Pub/Sub task queue, multi-platform content engine with Vertex AI Imagen 3, 48-hour channel deduplication, and Playbooks feature end-to-end.',
@@ -21,7 +30,7 @@ const projects = [
     link: 'https://usekeel.in',
   },
   {
-    num: '03', cat: 'Distributed · OSINT',
+    num: '04', cat: 'Distributed · OSINT',
     name: 'OSINT Investigation Platform',
     client: 'S2T AI · 2025–2026', span: 'lg:col-span-5',
     desc: 'Profile-centric investigation system with identity-resolution pipelines, SSE real-time tracking, distributed crawler orchestration across 6+ data sources.',
@@ -30,7 +39,7 @@ const projects = [
     link: 'https://s2t.ai/goldenspear-deep-webint.html',
   },
   {
-    num: '04', cat: 'Full Stack · AI · Production',
+    num: '05', cat: 'Full Stack · AI · Production',
     name: 'AI Ordering Platform',
     client: 'Platelink.ai · 2024–2025', span: 'lg:col-span-4',
     desc: 'Microservice ordering platform + AI nutrition tracking app. Sole backend founding engineer.',
@@ -39,7 +48,7 @@ const projects = [
     link: '#',
   },
   {
-    num: '05', cat: 'GenAI · RAG · Multi-Agent',
+    num: '06', cat: 'GenAI · RAG · Multi-Agent',
     name: 'Lumenslate',
     client: 'Personal Project · 2025', span: 'lg:col-span-4',
     desc: 'Multi-agent LLM-powered RAG system for question generation, automated grading, and performance analytics on Google Cloud.',
@@ -48,7 +57,7 @@ const projects = [
     link: 'https://github.com/shubhusion',
   },
   {
-    num: '06', cat: 'GenAI · Fintech · 🏆 Winner',
+    num: '07', cat: 'GenAI · Fintech · 🏆 Winner',
     name: 'AarthikSetu',
     client: 'Google GenAI Hackathon · 2024', span: 'lg:col-span-4',
     desc: 'GenAI financial platform for MSMEs — Golang APIs with Redis caching, multi-layer auth. Won 1st place Fintech Track among 100+ teams.',
@@ -82,7 +91,9 @@ export default function Projects() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-px"
           style={{ background: 'rgba(124,58,237,0.08)', borderTop: '1px solid rgba(124,58,237,0.08)', borderBottom: '1px solid rgba(124,58,237,0.08)' }}
         >
-          {projects.map((p, i) => (
+          {projects.map((p, i) => {
+            const isExternal = p.link.startsWith('http')
+            return (
             <motion.div
               key={i}
               className={`${p.span} flex flex-col gap-4 p-8 relative overflow-hidden group`}
@@ -106,8 +117,8 @@ export default function Projects() {
                 </div>
                 <motion.a
                   href={p.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  target={isExternal ? '_blank' : undefined}
+                  rel={isExternal ? 'noopener noreferrer' : undefined}
                   className="w-9 h-9 rounded-full flex items-center justify-center text-white/50 flex-shrink-0"
                   style={{ border: '1px solid rgba(255,255,255,0.08)' }}
                   whileHover={{ borderColor: '#A78BFA', color: '#A78BFA', rotate: -45 }}
@@ -149,7 +160,8 @@ export default function Projects() {
                 ))}
               </div>
             </motion.div>
-          ))}
+            )
+          })}
         </div>
       </Reveal>
     </section>

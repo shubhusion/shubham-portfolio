@@ -35,7 +35,21 @@ const clients = [
     tags: ['Frontend', 'GoHighLevel', 'GitHub', 'VPS Deploy'],
   },
   {
-    num: '05', client: 'Reclevo · Technical Consultant',
+    num: '05', client: 'Reclevo · Full Stack & AI',
+    name: 'Roothscale — Constituency War Room OS',
+    url: 'roothscale-web.azurewebsites.net',
+    link: 'https://roothscale-web.azurewebsites.net/',
+    highlights: [
+      'Role-scoped CRUD across constituencies, wards, booths, voters, issues and tasks',
+      '6 operational data domains under a single access model',
+      'Configuration-driven Social & News Intelligence pipeline — Apify collection → validation gate → AI analysis → signal detection',
+      'Automated daily briefings; 2 AI engines with deterministic fallback',
+    ],
+    tags: ['NestJS', 'Next.js', 'PostgreSQL', 'TypeORM', 'OpenRouter', 'Apify'],
+    wide: true,
+  },
+  {
+    num: '06', client: 'Reclevo · Technical Consultant',
     name: 'SmartOps 360',
     url: 'reclevo.in/products/smartops-360',
     link: 'https://www.reclevo.in/products/smartops-360',
@@ -44,7 +58,7 @@ const clients = [
     wide: true,
   },
   {
-    num: '06', client: 'KEEL · AI Architect & Full Stack',
+    num: '07', client: 'KEEL · AI Architect & Full Stack',
     name: 'KEEL Platform',
     url: 'usekeel.in',
     link: 'https://usekeel.in',
@@ -53,7 +67,7 @@ const clients = [
     wide: true,
   },
   {
-    num: '07', client: 'S2T AI · Full Stack Engineer',
+    num: '08', client: 'S2T AI · Full Stack Engineer',
     name: 'GoldenSpear — Deep Web Intelligence',
     url: 's2t.ai/goldenspear-deep-webint.html',
     link: 'https://s2t.ai/goldenspear-deep-webint.html',
@@ -81,7 +95,7 @@ export default function ClientWork() {
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
             Live in <span className="text-gradient">production.</span>
           </h2>
-          <p className="text-[15px] text-white/55 font-light mb-4">7 live products across 4 clients. Click any to see the work.</p>
+          <p className="text-[15px] text-white/55 font-light mb-4">8 live products across 4 clients. Click any to see the work.</p>
         </Reveal>
 
         {/* Stats bar */}
@@ -89,7 +103,7 @@ export default function ClientWork() {
           <div className="flex gap-8 flex-wrap mb-16 py-6"
             style={{ borderTop: '1px solid rgba(124,58,237,0.1)', borderBottom: '1px solid rgba(124,58,237,0.1)' }}>
             {[
-              { v: '7', l: 'Live products' },
+              { v: '8', l: 'Live products' },
               { v: 'CI/CD', l: 'GitHub Actions' },
               { v: 'VPS', l: 'Production infra' },
               { v: 'CRM', l: 'GoHighLevel' },
