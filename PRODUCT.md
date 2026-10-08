@@ -31,7 +31,7 @@ AI-native engineering with production-grade backend depth: a full-stack/backend 
 
 ## Capabilities and Constraints
 
-- Static single-page site: React + TypeScript + Vite + Tailwind CSS + Framer Motion, deployed as a static build (README targets Vercel).
+- Static multi-page site (two Vite HTML entries — no router): `/` (home) and `/prentline` (Prentline case study; also reachable at `/prentline.html` without Vercel clean URLs). React + TypeScript + Vite + Tailwind CSS + Framer Motion, deployed as a static build (README targets Vercel).
 - No backend, CMS, or forms on the site itself — contact is via `mailto:` and external links (LinkedIn, GitHub).
 - Content updates mean editing the data arrays directly in `src/components/*.tsx` (Projects, Experience, ClientWork, Achievements, About).
 

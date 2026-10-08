@@ -9,7 +9,7 @@ const projects = [
     desc: 'Five-service SaaS that turns SOPs into live AI-coached training sessions — Gemini Live (voice + video over WebSocket) watches the workspace while a deterministic 683-line Go state machine owns step tracking, L1–L5 hint escalation and destructive-step gating, then emits a computable scorecard. Supervisors get a live command center with shadow mode, one-click audio takeover and cohort error analytics.',
     metrics: [{ v: '50K+', l: 'LOC across 5 services' }, { v: '82', l: 'Test files', green: true }],
     tags: ['Go · Gin', 'Flutter Web', 'Gemini Live API', 'PostgreSQL · Atlas', 'FastAPI', 'WebSocket'],
-    link: '#prentline',
+    link: '/prentline.html',
   },
   {
     num: '02', cat: 'GovTech · AI · Full Stack',

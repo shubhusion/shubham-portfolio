@@ -1,4 +1,7 @@
 export default function Footer() {
+  // On sub-pages (e.g. /prentline) section anchors must point back to the homepage
+  const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')
+  const prefix = isHome ? '' : '/'
   return (
     <footer className="px-6 lg:px-12 py-8 flex items-center justify-between flex-wrap gap-4"
       style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
@@ -7,7 +10,7 @@ export default function Footer() {
       </div>
       <div className="flex gap-6">
         {['About', 'Experience', 'Projects', 'Client Work', 'Skills', 'Achievements', 'Contact'].map(l => (
-          <a key={l} href={`#${l.toLowerCase()}`}
+          <a key={l} href={`${prefix}#${l === 'Client Work' ? 'client-work' : l.toLowerCase()}`}
             className="font-mono text-[11px] text-white/45 hover:text-white/60 transition-colors">
             {l}
           </a>

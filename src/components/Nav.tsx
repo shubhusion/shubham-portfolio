@@ -2,20 +2,23 @@ import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
-const links = [
-  { label: 'About', href: '#about' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Client Work', href: '#client-work' },
-  { label: 'Skills', href: '#skills' },
-  { label: 'Achievements', href: '#achievements' },
-  { label: 'Contact', href: '#contact' },
-]
-
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [progress, setProgress] = useState(0)
+
+  // On sub-pages (e.g. /prentline) section anchors must point back to the homepage
+  const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')
+  const prefix = isHome ? '' : '/'
+  const links = [
+    { label: 'About', href: `${prefix}#about` },
+    { label: 'Experience', href: `${prefix}#experience` },
+    { label: 'Projects', href: `${prefix}#projects` },
+    { label: 'Client Work', href: `${prefix}#client-work` },
+    { label: 'Skills', href: `${prefix}#skills` },
+    { label: 'Achievements', href: `${prefix}#achievements` },
+    { label: 'Contact', href: `${prefix}#contact` },
+  ]
 
   useEffect(() => {
     const onScroll = () => {
@@ -99,7 +102,7 @@ export default function Nav() {
           borderBottom: scrolled ? '1px solid rgba(124,58,237,0.1)' : '1px solid transparent',
         }}
       >
-        <a href="#" className="font-mono text-[13px] text-violet-light flex items-center gap-2">
+        <a href={isHome ? '#' : '/'} className="font-mono text-[13px] text-violet-light flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_#4ade80] animate-pulse" />
           shubham.dev
         </a>

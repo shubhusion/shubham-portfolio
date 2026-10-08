@@ -135,8 +135,7 @@ export default function PrentlineCaseStudy() {
   return (
     <section
       id="prentline"
-      className="py-32 px-6 lg:px-12 scroll-mt-24"
-      style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}
+      className="pt-12 pb-32 px-6 lg:px-12 scroll-mt-24"
     >
       <div className="max-w-7xl mx-auto">
         {/* Header */}

@@ -5,7 +5,7 @@ import Marquee from './components/Marquee'
 import About from './components/About'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
-import PrentlineCaseStudy from './components/PrentlineCaseStudy'
+import PrentlineTeaser from './components/PrentlineTeaser'
 import ClientWork from './components/ClientWork'
 import Skills from './components/Skills'
 import Achievements from './components/Achievements'
@@ -23,7 +23,7 @@ export default function App() {
         <About />
         <Experience />
         <Projects />
-        <PrentlineCaseStudy />
+        <PrentlineTeaser />
         <ClientWork />
         <Skills />
         <Achievements />
