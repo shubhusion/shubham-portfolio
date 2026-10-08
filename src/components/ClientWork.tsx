@@ -50,9 +50,9 @@ const clients = [
   },
   {
     num: '06', client: 'Reclevo · Technical Consultant',
-    name: 'SmartOps 360',
-    url: 'reclevo.in/products/smartops-360',
-    link: 'https://www.reclevo.in/products/smartops-360',
+    name: 'Rapid Waste Asset Management (RwAM)',
+    url: 'reclevo.in/products/rwam',
+    link: 'https://www.reclevo.in/products/rwam',
     highlights: ['Defined scalable architecture across frontend, backend, and cloud', 'Advised on speed-vs-scalability trade-offs', 'Established long-term engineering direction'],
     tags: ['Architecture Advisory', 'System Design', 'Technical Consulting'],
     wide: true,
