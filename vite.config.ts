@@ -11,6 +11,7 @@ export default defineConfig({
         main: fileURLToPath(new URL('index.html', import.meta.url)),
         prentline: fileURLToPath(new URL('prentline.html', import.meta.url)),
         aarthiksetu: fileURLToPath(new URL('aarthik-setu.html', import.meta.url)),
+        lumenslate: fileURLToPath(new URL('lumenslate.html', import.meta.url)),
       },
     },
   },

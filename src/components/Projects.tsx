@@ -55,12 +55,12 @@ const projects = [
   },
   {
     num: '06', cat: 'GenAI · RAG · Multi-Agent',
-    name: 'Lumenslate',
-    client: 'Personal Project · 2025', span: 'lg:col-span-4',
-    desc: 'Multi-agent LLM-powered RAG system for question generation, automated grading, and performance analytics on Google Cloud.',
+    name: 'Lumen Slate',
+    client: 'AI in Action Hackathon · 2025', span: 'lg:col-span-4',
+    desc: 'AI teaching assistant for high student-teacher-ratio classrooms — auto-assessment across MCQ, MSQ, NAT and subjective answers, per-student feedback, unique question variations and progress reports. Agentic Gemini + Google ADK workflow on a Go + Python service stack.',
     metrics: [{ v: '40%', l: 'Teacher productivity ↑', green: true }],
-    tags: ['RAG', 'Vertex AI', 'Golang', 'Firestore'],
-    link: 'https://github.com/shubhusion',
+    tags: ['Gemini · ADK', 'Flutter', 'Golang', 'gRPC'],
+    link: '/lumenslate',
     media: null,
   },
   {
