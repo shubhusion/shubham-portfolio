@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 
-const achievements = [
-  { n: '01', icon: '🏆', title: 'Google GenAI Exchange Hackathon', sub: '1st place · Fintech Track · 100+ teams · 2024' },
+type Achievement = { n: string; icon: string; title: string; sub: string; link?: string }
+
+const achievements: Achievement[] = [
+  { n: '01', icon: '🏆', title: 'Google GenAI Exchange Hackathon', sub: '1st place · Fintech Track · 100+ teams · 2024', link: '/aarthik-setu' },
   { n: '02', icon: '🥉', title: 'IIT Madras GenAI Hackathon', sub: '3rd Prize · surpassed 50+ teams' },
   { n: '03', icon: '⚡', title: 'UnityHack Open Source Bounties', sub: 'Recipient 2024 & 2025 · 20+ repositories' },
   { n: '04', icon: '📊', title: 'Kaggle Expert', sub: 'Notebook Expert & Dataset Expert' },
@@ -47,6 +49,14 @@ export default function Achievements() {
                 <div className="text-2xl mb-3" aria-hidden="true">{a.icon}</div>
                 <div className="font-display font-semibold text-white text-[14px] leading-snug mb-1.5">{a.title}</div>
                 <div className="font-mono text-[11px] text-white/50 leading-relaxed">{a.sub}</div>
+                {a.link && (
+                  <a
+                    href={a.link}
+                    className="inline-flex items-center gap-1.5 mt-3 font-mono text-[10px] tracking-[0.12em] uppercase text-violet-light hover:text-white transition-colors duration-200"
+                  >
+                    Case study <span aria-hidden="true">↗</span>
+                  </a>
+                )}
               </motion.div>
             </Reveal>
           ))}

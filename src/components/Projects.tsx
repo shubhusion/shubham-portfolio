@@ -65,12 +65,12 @@ const projects = [
   },
   {
     num: '07', cat: 'GenAI · Fintech · 🏆 Winner',
-    name: 'AarthikSetu',
-    client: 'Google GenAI Hackathon · 2024', span: 'lg:col-span-4',
-    desc: 'GenAI financial platform for MSMEs — Golang APIs with Redis caching, multi-layer auth. Won 1st place Fintech Track among 100+ teams.',
+    name: 'Aarthik Setu',
+    client: 'Google GenAI Exchange Hackathon · 2024', span: 'lg:col-span-4',
+    desc: 'GenAI credit platform connecting underserved MSMEs to lenders, investors and schemes like Mudra — AI-driven cash-flow assessment, voice-to-text applications and OCEN-standard rails. Won 1st place, Fintech Track, among 100+ teams.',
     metrics: [{ v: '30%', l: 'API response time ↓', green: true }],
-    tags: ['Golang', 'Redis', 'Cloud Run', 'Firebase'],
-    link: 'https://github.com/shubhusion',
+    tags: ['Golang', 'Flutter · BLoC', 'Gemini', 'Firebase'],
+    link: '/aarthik-setu',
     media: null,
   },
 ]
