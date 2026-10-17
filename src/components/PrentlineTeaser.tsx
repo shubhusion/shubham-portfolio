@@ -46,7 +46,7 @@ export default function PrentlineTeaser() {
                 ))}
               </div>
               <motion.a
-                href="/prentline.html"
+                href="/prentline"
                 className="inline-flex items-center gap-2 mt-6 font-display text-[13px] font-semibold px-5 py-2.5 rounded-full text-white border-gradient hover:bg-violet/10 transition-colors duration-300"
                 whileHover={{ x: 2 }}
               >

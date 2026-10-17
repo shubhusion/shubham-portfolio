@@ -14,24 +14,23 @@ export default function Cursor() {
     const move = (e: MouseEvent) => { mx.set(e.clientX); my.set(e.clientY) }
     const enter = () => setHidden(false)
     const leave = () => setHidden(true)
+
+    // Delegated hover detection: one bubbling listener covers dynamically
+    // added nodes without per-element listeners or a MutationObserver, and
+    // everything is removed on unmount.
+    const over = (e: MouseEvent) => {
+      const el = e.target as Element | null
+      setHovered(!!el?.closest?.('a, button, [data-cursor="hover"]'))
+    }
     window.addEventListener('mousemove', move)
+    document.addEventListener('mouseover', over)
     document.addEventListener('mouseenter', enter)
     document.addEventListener('mouseleave', leave)
-
-    const addHover = () => {
-      document.querySelectorAll('a, button, [data-cursor="hover"]').forEach(el => {
-        el.addEventListener('mouseenter', () => setHovered(true))
-        el.addEventListener('mouseleave', () => setHovered(false))
-      })
-    }
-    addHover()
-    const obs = new MutationObserver(addHover)
-    obs.observe(document.body, { childList: true, subtree: true })
     return () => {
       window.removeEventListener('mousemove', move)
+      document.removeEventListener('mouseover', over)
       document.removeEventListener('mouseenter', enter)
       document.removeEventListener('mouseleave', leave)
-      obs.disconnect()
     }
   }, [mx, my])
 
@@ -56,7 +55,7 @@ export default function Cursor() {
           height: hovered ? 44 : 32,
           opacity: hidden ? 0 : 1,
           borderColor: hovered ? 'rgba(124,58,237,0.8)' : 'rgba(124,58,237,0.4)',
-          backgroundColor: hovered ? 'rgba(124,58,237,0.06)' : 'transparent',
+          backgroundColor: hovered ? 'rgba(124,58,237,0.06)' : 'rgba(124,58,237,0)',
         }}
         transition={{ duration: 0.2 }}
       />

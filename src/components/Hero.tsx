@@ -14,16 +14,19 @@ function TypewriterLine({ text, delay }: { text: string; delay: number }) {
   const [done, setDone] = useState(false)
 
   useEffect(() => {
+    let interval: ReturnType<typeof setInterval> | undefined
     const timer = setTimeout(() => {
       let i = 0
-      const interval = setInterval(() => {
+      interval = setInterval(() => {
         setDisplayed(text.slice(0, i + 1))
         i++
-        if (i >= text.length) { clearInterval(interval); setDone(true) }
+        if (i >= text.length) { clearInterval(interval); interval = undefined; setDone(true) }
       }, 22)
-      return () => clearInterval(interval)
     }, delay)
-    return () => clearTimeout(timer)
+    return () => {
+      clearTimeout(timer)
+      clearInterval(interval)
+    }
   }, [text, delay])
 
   return (
@@ -176,7 +179,7 @@ export default function Hero() {
             { n: '10K+', l: 'Orders/month in production' },
             { n: '99.95%', l: 'Production uptime' },
             { n: '100+', l: 'Teams beaten at GenAI Hackathon' },
-            { n: '7', l: 'Live products shipped' },
+            { n: '8', l: 'Live products shipped' },
           ].map((s, i) => (
             <div key={i} className="pt-6 pr-6">
               <div className="font-display font-bold leading-none mb-2" style={{ fontSize: 'clamp(1.75rem,3.5vw,2.75rem)', letterSpacing: '-0.03em' }}>

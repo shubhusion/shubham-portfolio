@@ -26,7 +26,7 @@ AI-native engineering with production-grade backend depth: a full-stack/backend 
 
 - Currently freelancing independently (Oct 2025–present) across four concurrent early-stage startup clients (Transportvibes, Reclevo, KEEL) while open to full-time offers.
 - Prior full-time roles: S2T AI (Full Stack Engineer, OSINT platform), Platelink.ai (Founding Full Stack Engineer).
-- 7 live, production products across 4 clients are the core proof points (Client Work section).
+- 8 live, production products across 4 clients are the core proof points (Client Work section).
 - Resume is served as a static PDF at `/Shubham_Sharma_Resume.pdf`; content across sections (Projects, Experience, Client Work, Achievements) is maintained as hardcoded data arrays per component, not a CMS.
 
 ## Capabilities and Constraints
@@ -49,9 +49,9 @@ All metrics currently on the site are real and confirmed by the user as fixed fa
 - 10K+ records/search, 40% wait-time reduction (S2T AI / GoldenSpear)
 - 30% API response time reduction (AarthikSetu)
 - 40% teacher productivity increase (Lumenslate)
-- 7 live products across 4 clients; Google GenAI Hackathon 1st place (Fintech Track, 100+ teams, 2024)
+- 8 live products across 4 clients; Google GenAI Hackathon 1st place (Fintech Track, 100+ teams, 2024)
 
-Real assets in repo: headshot at `/images/shubham-headshot.png`, resume PDF path, verified client URLs (safeedsautotransport.com, transportvibe.com, broadwayautotransport.com, trustlinecarriers.com, reclevo.in, usekeel.in, s2t.ai, roothscale-web.azurewebsites.net).
+Real assets in repo: headshot at `/images/shubham-headshot.webp` (optimized; source PNG and unused gallery/project media live in `/assets`, outside the deployed bundle), resume PDF path, verified client URLs (safeedsautotransport.com, transportvibe.com, broadwayautotransport.com, trustlinecarriers.com, reclevo.in, usekeel.in, s2t.ai, roothscale-web.azurewebsites.net).
 
 Future work must not fabricate new metrics, testimonials, client names, or claims — only add facts the user confirms.
 

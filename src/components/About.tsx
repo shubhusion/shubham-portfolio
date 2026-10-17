@@ -40,8 +40,12 @@ export default function About() {
               style={{ background: 'rgba(14,14,24,0.8)', border: '1px solid rgba(124,58,237,0.2)' }}
             >
               <img
-                src="/images/shubham-headshot.png"
+                src="/images/shubham-headshot.webp"
                 alt="Shubham Sharma"
+                width={1000}
+                height={1000}
+                loading="lazy"
+                decoding="async"
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-4" style={{ background: 'linear-gradient(to top, rgba(10,10,15,0.9), transparent)' }}>
@@ -101,6 +105,7 @@ export default function About() {
                 <div
                   className="w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0"
                   style={{ background: 'rgba(124,58,237,0.1)', border: '1px solid rgba(124,58,237,0.2)' }}
+                  aria-hidden="true"
                 >
                   {b.icon}
                 </div>

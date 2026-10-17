@@ -49,6 +49,16 @@ const experiences = [
   },
 ]
 
+function renderEmphasis(text: string) {
+  return text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+    part.startsWith('**') && part.endsWith('**') ? (
+      <strong key={i} className="text-white font-medium">{part.slice(2, -2)}</strong>
+    ) : (
+      part
+    )
+  )
+}
+
 export default function Experience() {
   return (
     <section id="experience" className="py-32 px-6 lg:px-12" style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
@@ -112,7 +122,7 @@ export default function Experience() {
                     {exp.bullets.map((b, j) => (
                       <li key={j} className="flex gap-3 text-[13.5px] text-white/50 leading-relaxed">
                         <span className="mt-2 w-1.5 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
-                        <span dangerouslySetInnerHTML={{ __html: b.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-medium">$1</strong>') }} />
+                        <span>{renderEmphasis(b)}</span>
                       </li>
                     ))}
                   </ul>

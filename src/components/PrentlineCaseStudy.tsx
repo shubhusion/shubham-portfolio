@@ -184,6 +184,34 @@ export default function PrentlineCaseStudy() {
           ))}
         </div>
 
+        {/* Demo video */}
+        <div className="mb-20">
+          <Reveal delay={0.1}>
+            <div className="flex items-center gap-3 mb-4">
+              <span className="w-4 h-px bg-violet-light" />
+              <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">
+                See It Running
+              </span>
+            </div>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <video
+              className="w-full h-auto rounded-xl block"
+              style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}
+              poster="/media/prentline/poster.webp"
+              controls
+              preload="none"
+              playsInline
+            >
+              <source src="/media/prentline/demo.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <p className="mt-3 font-mono text-[11px] text-white/45">
+              80 seconds · no audio · click to play
+            </p>
+          </Reveal>
+        </div>
+
         {/* Architecture */}
         <Reveal delay={0.1}>
           <div className="flex items-center gap-3 mb-4">

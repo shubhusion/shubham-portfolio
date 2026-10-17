@@ -44,7 +44,7 @@ export default function Achievements() {
                   transition={{ duration: 0.4 }}
                 />
                 <div className="font-mono text-[10px] text-white/45 mb-3">{a.n}</div>
-                <div className="text-2xl mb-3">{a.icon}</div>
+                <div className="text-2xl mb-3" aria-hidden="true">{a.icon}</div>
                 <div className="font-display font-semibold text-white text-[14px] leading-snug mb-1.5">{a.title}</div>
                 <div className="font-mono text-[11px] text-white/50 leading-relaxed">{a.sub}</div>
               </motion.div>

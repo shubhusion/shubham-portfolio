@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
+import { DevicePair } from './DeviceFrame'
 
 const clients = [
   {
@@ -9,6 +10,7 @@ const clients = [
     link: 'https://safeedsautotransport.com',
     highlights: ['GoHighLevel CRM integration for lead capture', 'Google Analytics for conversion tracking', 'Custom REST APIs for internal integrations'],
     tags: ['Frontend', 'REST APIs', 'VPS Deploy', 'GoHighLevel'],
+    media: { desktop: '/images/projects/safeeds-auto-transport/desktop.webp', mobile: '/images/projects/safeeds-auto-transport/mobile.webp' },
   },
   {
     num: '02', client: 'Transportvibes',
@@ -17,6 +19,7 @@ const clients = [
     link: 'https://transportvibe.com',
     highlights: ['GitHub Actions CI/CD for automatic deployments', 'Secrets management and environment isolation', 'Full-stack frontend + backend API layer'],
     tags: ['Frontend', 'GitHub Actions', 'CI/CD', 'Backend APIs'],
+    media: { desktop: '/images/projects/transportvibe/desktop.webp', mobile: '/images/projects/transportvibe/mobile.webp' },
   },
   {
     num: '03', client: 'Transportvibes',
@@ -25,6 +28,7 @@ const clients = [
     link: 'https://broadwayautotransport.com',
     highlights: ['Full VPS provisioning and environment config', 'Third-party API integrations', 'Google Analytics for data-driven decisions'],
     tags: ['Frontend', 'VPS', 'REST APIs', 'Analytics'],
+    media: { desktop: '/images/projects/broadway-auto-transport/desktop.webp', mobile: '/images/projects/broadway-auto-transport/mobile.webp' },
   },
   {
     num: '04', client: 'Transportvibes',
@@ -33,6 +37,7 @@ const clients = [
     link: 'https://trustlinecarriers.com',
     highlights: ['Repository migration to GitHub with access control', 'GoHighLevel CRM for lead management', 'API stability and scalable deployment'],
     tags: ['Frontend', 'GoHighLevel', 'GitHub', 'VPS Deploy'],
+    media: { desktop: '/images/projects/trustline-carriers/desktop.webp', mobile: '/images/projects/trustline-carriers/mobile.webp' },
   },
   {
     num: '05', client: 'Reclevo · Full Stack & AI',
@@ -46,6 +51,7 @@ const clients = [
       'Automated daily briefings; 2 AI engines with deterministic fallback',
     ],
     tags: ['NestJS', 'Next.js', 'PostgreSQL', 'TypeORM', 'OpenRouter', 'Apify'],
+    media: { desktop: '/images/projects/roothscale/desktop.webp', mobile: '/images/projects/roothscale/mobile.webp' },
     wide: true,
   },
   {
@@ -55,6 +61,7 @@ const clients = [
     link: 'https://www.reclevo.in/products/rwam',
     highlights: ['Defined scalable architecture across frontend, backend, and cloud', 'Advised on speed-vs-scalability trade-offs', 'Established long-term engineering direction'],
     tags: ['Architecture Advisory', 'System Design', 'Technical Consulting'],
+    media: { desktop: '/images/projects/rwam/desktop.webp', mobile: '/images/projects/rwam/mobile.webp' },
     wide: true,
   },
   {
@@ -64,6 +71,7 @@ const clients = [
     link: 'https://usekeel.in',
     highlights: ['Chrome Extension for LinkedIn Lead Discovery', 'Multi-platform content engine with Vertex AI', 'Eliminated ~66% duplicate LLM token usage', '50 backend tests passing end-to-end'],
     tags: ['Chrome Extension', 'Cloud Run', 'Pub/Sub', 'Vertex AI', 'Python'],
+    media: { desktop: '/images/projects/keel/desktop.webp', mobile: '/images/projects/keel/mobile.webp' },
     wide: true,
   },
   {
@@ -73,6 +81,7 @@ const clients = [
     link: 'https://s2t.ai/goldenspear-deep-webint.html',
     highlights: ['Distributed OSINT investigation platform', 'Identity-resolution pipelines across 6+ sources', 'SSE real-time tracking — 40% wait time reduction', '10K+ records per search processed reliably'],
     tags: ['Python', 'PostgreSQL', 'React.js', 'SSE', 'Distributed Systems'],
+    media: { desktop: '/images/projects/goldenspear/desktop.webp', mobile: '/images/projects/goldenspear/mobile.webp' },
     wide: true,
   },
 ]
@@ -140,7 +149,7 @@ export default function ClientWork() {
   )
 }
 
-function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth }: any) {
+function ClientCard({ num, client, name, url, link, highlights, tags, media, fullWidth }: any) {
   return (
     <motion.div
       className={`flex flex-col gap-4 p-7 relative ${fullWidth ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : ''}`}
@@ -170,14 +179,21 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
             href={link}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Open ${name} live site`}
             className="flex items-center gap-1.5 font-mono text-[10px] px-2.5 py-1.5 rounded-lg flex-shrink-0 ml-4"
             style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981', border: '1px solid rgba(16,185,129,0.2)' }}
             whileHover={{ scale: 1.05 }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-            Live ↗
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
+            Live <span aria-hidden="true">↗</span>
           </motion.a>
         </div>
+
+        {!fullWidth && media && (
+          <div className="mb-4">
+            <DevicePair desktop={media.desktop} mobile={media.mobile} alt={name} url={url} />
+          </div>
+        )}
 
         {!fullWidth && (
           <ul className="space-y-2 mb-4">
@@ -201,14 +217,19 @@ function ClientCard({ num, client, name, url, link, highlights, tags, fullWidth 
       </div>
 
       {fullWidth && (
-        <ul className="space-y-2.5">
-          {highlights.map((h: string, j: number) => (
-            <li key={j} className="flex gap-3 text-[13px] text-white/45 leading-relaxed">
-              <span className="mt-2 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
-              {h}
-            </li>
-          ))}
-        </ul>
+        <div className="flex flex-col gap-6">
+          {media && (
+            <DevicePair desktop={media.desktop} mobile={media.mobile} alt={name} url={url} />
+          )}
+          <ul className="space-y-2.5">
+            {highlights.map((h: string, j: number) => (
+              <li key={j} className="flex gap-3 text-[13px] text-white/45 leading-relaxed">
+                <span className="mt-2 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
+                {h}
+              </li>
+            ))}
+          </ul>
+        </div>
       )}
     </motion.div>
   )
