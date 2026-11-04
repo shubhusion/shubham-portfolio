@@ -2,7 +2,30 @@ import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 import { DeviceFrame, DevicePair } from './DeviceFrame'
 
-const projects = [
+type ProjectMetric = { v: string; l: string; green?: boolean }
+
+type ProjectMedia = {
+  desktop: string
+  mobile?: string
+  url?: string
+  w?: number
+  h?: number
+}
+
+type Project = {
+  num: string
+  cat: string
+  name: string
+  client: string
+  span: string
+  desc: string
+  metrics: ProjectMetric[]
+  tags: string[]
+  link: string
+  media: ProjectMedia | null
+}
+
+const projects: Project[] = [
   {
     num: '01', cat: 'Multimodal AI · Realtime · Multi-Tenant SaaS',
     name: 'Prentline — AI Hands-Free Training Platform',
@@ -24,7 +47,17 @@ const projects = [
     media: { desktop: '/images/projects/roothscale/desktop.webp', mobile: '/images/projects/roothscale/mobile.webp', url: 'roothscale-web.azurewebsites.net' },
   },
   {
-    num: '03', cat: 'AI · Automation · Chrome Extension',
+    num: '03', cat: 'Agentic AI · Cultural Taste · Hackathon',
+    name: 'Karum — Retail Expansion Agent',
+    client: 'Qloo Agentic Hackathon · 2026', span: 'lg:col-span-12',
+    desc: 'Karum turns a brand and a city into a ranked field plan: which stores to pitch, where to open a pop-up, who to partner with, which doors to skip, and the driving route between them. Qloo ranks cultural fit, Gemini audits live menus through Google Search, and every number is labelled Qloo fact, Google fact, model inference or input.',
+    metrics: [{ v: '5', l: 'Connected repos' }, { v: '3', l: 'Scout modes', green: true }],
+    tags: ['Qloo', 'Gemini · Vertex AI', 'Google Maps', 'Flutter Web', 'Go', 'Python · gRPC'],
+    link: '/karum',
+    media: { desktop: '/images/projects/karum/gallery-04.webp', url: 'karum-512016.web.app', w: 1800, h: 928 },
+  },
+  {
+    num: '04', cat: 'AI · Automation · Chrome Extension',
     name: 'LinkedIn Lead Discovery Platform',
     client: 'KEEL — 2026', span: 'lg:col-span-7',
     desc: 'Chrome Extension + backend for Sales Navigator scraping — full ICP scoring pipeline, Cloud Run + Pub/Sub task queue, multi-platform content engine with Vertex AI Imagen 3, 48-hour channel deduplication, and Playbooks feature end-to-end.',
@@ -34,7 +67,7 @@ const projects = [
     media: { desktop: '/images/projects/keel/desktop.webp', mobile: '/images/projects/keel/mobile.webp', url: 'usekeel.in' },
   },
   {
-    num: '04', cat: 'Distributed · OSINT',
+    num: '05', cat: 'Distributed · OSINT',
     name: 'OSINT Investigation Platform',
     client: 'S2T AI · 2025–2026', span: 'lg:col-span-5',
     desc: 'Profile-centric investigation system with identity-resolution pipelines, SSE real-time tracking, distributed crawler orchestration across 6+ data sources.',
@@ -44,7 +77,7 @@ const projects = [
     media: { desktop: '/images/projects/goldenspear/desktop.webp', mobile: '/images/projects/goldenspear/mobile.webp', url: 's2t.ai' },
   },
   {
-    num: '05', cat: 'Full Stack · AI · Production',
+    num: '06', cat: 'Full Stack · AI · Production',
     name: 'AI Ordering Platform',
     client: 'Platelink.ai · 2024–2025', span: 'lg:col-span-4',
     desc: 'Microservice ordering platform + AI nutrition tracking app. Sole backend founding engineer.',
@@ -54,7 +87,7 @@ const projects = [
     media: null,
   },
   {
-    num: '06', cat: 'GenAI · RAG · Multi-Agent',
+    num: '07', cat: 'GenAI · RAG · Multi-Agent',
     name: 'Lumen Slate',
     client: 'AI in Action Hackathon · 2025', span: 'lg:col-span-4',
     desc: 'AI teaching assistant for high student-teacher-ratio classrooms — auto-assessment across MCQ, MSQ, NAT and subjective answers, per-student feedback, unique question variations and progress reports. Agentic Gemini + Google ADK workflow on a Go + Python service stack.',
@@ -64,7 +97,7 @@ const projects = [
     media: null,
   },
   {
-    num: '07', cat: 'GenAI · Fintech · 🏆 Winner',
+    num: '08', cat: 'GenAI · Fintech · 🏆 Winner',
     name: 'Aarthik Setu',
     client: 'Google GenAI Exchange Hackathon · 2024', span: 'lg:col-span-4',
     desc: 'GenAI credit platform connecting underserved MSMEs to lenders, investors and schemes like Mudra — AI-driven cash-flow assessment, voice-to-text applications and OCEN-standard rails. Won 1st place, Fintech Track, among 100+ teams.',
@@ -151,10 +184,17 @@ export default function Projects() {
 
                 {p.media && (
                   <div className="relative z-10">
-                    {p.span === 'lg:col-span-12' ? (
+                    {p.media.mobile ? (
                       <DevicePair desktop={p.media.desktop} mobile={p.media.mobile} alt={p.name} url={p.media.url} />
                     ) : (
-                      <DeviceFrame variant="desktop" src={p.media.desktop} alt={`${p.name} — desktop view`} url={p.media.url} width={1280} height={800} />
+                      <DeviceFrame
+                        variant="desktop"
+                        src={p.media.desktop}
+                        alt={`${p.name} — desktop view`}
+                        url={p.media.url}
+                        width={p.media.w ?? 1280}
+                        height={p.media.h ?? 800}
+                      />
                     )}
                   </div>
                 )}
