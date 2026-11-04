@@ -1,5 +1,5 @@
 import { motion, useInView, useReducedMotion } from 'framer-motion'
-import { useRef, ReactNode } from 'react'
+import { type ReactNode, useRef } from 'react'
 
 interface RevealProps {
   children: ReactNode

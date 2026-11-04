@@ -1,0 +1,20 @@
+{
+  "name": "Shubham Sharma — Portfolio",
+  "short_name": "Shubham Sharma",
+  "description": "Full Stack & AI Engineer building production-grade AI systems and distributed platforms.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#0A0A0F",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["portfolio", "developer", "engineering"],
+  "lang": "en"
+}

@@ -1,46 +1,79 @@
 import { motion } from 'framer-motion'
-import Reveal from './Reveal'
 import { DevicePair } from './DeviceFrame'
+import Reveal from './Reveal'
 
 const clients = [
   {
-    num: '01', client: 'Transportvibes',
-    name: 'Safeed\'s Auto Transport',
+    num: '01',
+    client: 'Transportvibes',
+    name: "Safeed's Auto Transport",
     url: 'safeedsautotransport.com',
     link: 'https://safeedsautotransport.com',
-    highlights: ['GoHighLevel CRM integration for lead capture', 'Google Analytics for conversion tracking', 'Custom REST APIs for internal integrations'],
+    highlights: [
+      'GoHighLevel CRM integration for lead capture',
+      'Google Analytics for conversion tracking',
+      'Custom REST APIs for internal integrations',
+    ],
     tags: ['Frontend', 'REST APIs', 'VPS Deploy', 'GoHighLevel'],
-    media: { desktop: '/images/projects/safeeds-auto-transport/desktop.webp', mobile: '/images/projects/safeeds-auto-transport/mobile.webp' },
+    media: {
+      desktop: '/images/projects/safeeds-auto-transport/desktop.webp',
+      mobile: '/images/projects/safeeds-auto-transport/mobile.webp',
+    },
   },
   {
-    num: '02', client: 'Transportvibes',
+    num: '02',
+    client: 'Transportvibes',
     name: 'TransportVibe',
     url: 'transportvibe.com',
     link: 'https://transportvibe.com',
-    highlights: ['GitHub Actions CI/CD for automatic deployments', 'Secrets management and environment isolation', 'Full-stack frontend + backend API layer'],
+    highlights: [
+      'GitHub Actions CI/CD for automatic deployments',
+      'Secrets management and environment isolation',
+      'Full-stack frontend + backend API layer',
+    ],
     tags: ['Frontend', 'GitHub Actions', 'CI/CD', 'Backend APIs'],
-    media: { desktop: '/images/projects/transportvibe/desktop.webp', mobile: '/images/projects/transportvibe/mobile.webp' },
+    media: {
+      desktop: '/images/projects/transportvibe/desktop.webp',
+      mobile: '/images/projects/transportvibe/mobile.webp',
+    },
   },
   {
-    num: '03', client: 'Transportvibes',
+    num: '03',
+    client: 'Transportvibes',
     name: 'Broadway Auto Transport',
     url: 'broadwayautotransport.com',
     link: 'https://broadwayautotransport.com',
-    highlights: ['Full VPS provisioning and environment config', 'Third-party API integrations', 'Google Analytics for data-driven decisions'],
+    highlights: [
+      'Full VPS provisioning and environment config',
+      'Third-party API integrations',
+      'Google Analytics for data-driven decisions',
+    ],
     tags: ['Frontend', 'VPS', 'REST APIs', 'Analytics'],
-    media: { desktop: '/images/projects/broadway-auto-transport/desktop.webp', mobile: '/images/projects/broadway-auto-transport/mobile.webp' },
+    media: {
+      desktop: '/images/projects/broadway-auto-transport/desktop.webp',
+      mobile: '/images/projects/broadway-auto-transport/mobile.webp',
+    },
   },
   {
-    num: '04', client: 'Transportvibes',
+    num: '04',
+    client: 'Transportvibes',
     name: 'Trustline Carriers',
     url: 'trustlinecarriers.com',
     link: 'https://trustlinecarriers.com',
-    highlights: ['Repository migration to GitHub with access control', 'GoHighLevel CRM for lead management', 'API stability and scalable deployment'],
+    highlights: [
+      'Repository migration to GitHub with access control',
+      'GoHighLevel CRM for lead management',
+      'API stability and scalable deployment',
+    ],
     tags: ['Frontend', 'GoHighLevel', 'GitHub', 'VPS Deploy'],
-    media: { desktop: '/images/projects/trustline-carriers/desktop.webp', mobile: '/images/projects/trustline-carriers/mobile.webp' },
+    media: {
+      desktop: '/images/projects/trustline-carriers/desktop.webp',
+      mobile: '/images/projects/trustline-carriers/mobile.webp',
+    },
   },
   {
-    num: '05', client: 'Reclevo · Full Stack & AI',
+    num: '05',
+    client: 'Reclevo · Full Stack & AI',
     name: 'Roothscale — Constituency War Room OS',
     url: 'roothscale-web.azurewebsites.net',
     link: 'https://roothscale-web.azurewebsites.net/',
@@ -51,66 +84,110 @@ const clients = [
       'Automated daily briefings; 2 AI engines with deterministic fallback',
     ],
     tags: ['NestJS', 'Next.js', 'PostgreSQL', 'TypeORM', 'OpenRouter', 'Apify'],
-    media: { desktop: '/images/projects/roothscale/desktop.webp', mobile: '/images/projects/roothscale/mobile.webp' },
+    media: {
+      desktop: '/images/projects/roothscale/desktop.webp',
+      mobile: '/images/projects/roothscale/mobile.webp',
+    },
     wide: true,
   },
   {
-    num: '06', client: 'Reclevo · Technical Consultant',
+    num: '06',
+    client: 'Reclevo · Technical Consultant',
     name: 'Rapid Waste Asset Management (RwAM)',
     url: 'reclevo.in/products/rwam',
     link: 'https://www.reclevo.in/products/rwam',
-    highlights: ['Defined scalable architecture across frontend, backend, and cloud', 'Advised on speed-vs-scalability trade-offs', 'Established long-term engineering direction'],
+    highlights: [
+      'Defined scalable architecture across frontend, backend, and cloud',
+      'Advised on speed-vs-scalability trade-offs',
+      'Established long-term engineering direction',
+    ],
     tags: ['Architecture Advisory', 'System Design', 'Technical Consulting'],
-    media: { desktop: '/images/projects/rwam/desktop.webp', mobile: '/images/projects/rwam/mobile.webp' },
+    media: {
+      desktop: '/images/projects/rwam/desktop.webp',
+      mobile: '/images/projects/rwam/mobile.webp',
+    },
     wide: true,
   },
   {
-    num: '07', client: 'KEEL · AI Architect & Full Stack',
+    num: '07',
+    client: 'KEEL · AI Architect & Full Stack',
     name: 'KEEL Platform',
     url: 'usekeel.in',
     link: 'https://usekeel.in',
-    highlights: ['Chrome Extension for LinkedIn Lead Discovery', 'Multi-platform content engine with Vertex AI', 'Eliminated ~66% duplicate LLM token usage', '50 backend tests passing end-to-end'],
+    highlights: [
+      'Chrome Extension for LinkedIn Lead Discovery',
+      'Multi-platform content engine with Vertex AI',
+      'Eliminated ~66% duplicate LLM token usage',
+      '50 backend tests passing end-to-end',
+    ],
     tags: ['Chrome Extension', 'Cloud Run', 'Pub/Sub', 'Vertex AI', 'Python'],
-    media: { desktop: '/images/projects/keel/desktop.webp', mobile: '/images/projects/keel/mobile.webp' },
+    media: {
+      desktop: '/images/projects/keel/desktop.webp',
+      mobile: '/images/projects/keel/mobile.webp',
+    },
     wide: true,
   },
   {
-    num: '08', client: 'S2T AI · Full Stack Engineer',
+    num: '08',
+    client: 'S2T AI · Full Stack Engineer',
     name: 'GoldenSpear — Deep Web Intelligence',
     url: 's2t.ai/goldenspear-deep-webint.html',
     link: 'https://s2t.ai/goldenspear-deep-webint.html',
-    highlights: ['Distributed OSINT investigation platform', 'Identity-resolution pipelines across 6+ sources', 'SSE real-time tracking — 40% wait time reduction', '10K+ records per search processed reliably'],
+    highlights: [
+      'Distributed OSINT investigation platform',
+      'Identity-resolution pipelines across 6+ sources',
+      'SSE real-time tracking — 40% wait time reduction',
+      '10K+ records per search processed reliably',
+    ],
     tags: ['Python', 'PostgreSQL', 'React.js', 'SSE', 'Distributed Systems'],
-    media: { desktop: '/images/projects/goldenspear/desktop.webp', mobile: '/images/projects/goldenspear/mobile.webp' },
+    media: {
+      desktop: '/images/projects/goldenspear/desktop.webp',
+      mobile: '/images/projects/goldenspear/mobile.webp',
+    },
     wide: true,
   },
 ]
 
 export default function ClientWork() {
-  const narrow = clients.filter(c => !c.wide)
-  const wide = clients.filter(c => c.wide)
+  const narrow = clients.filter((c) => !c.wide)
+  const wide = clients.filter((c) => c.wide)
 
   return (
-    <section id="client-work" className="py-32 px-6 lg:px-12" style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
+    <section
+      id="client-work"
+      className="py-32 px-6 lg:px-12"
+      style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}
+    >
       <div className="max-w-7xl mx-auto">
         <Reveal>
           <div className="flex items-center gap-3 mb-4">
             <span className="w-4 h-px bg-violet-light" />
-            <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">Client Work</span>
+            <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">
+              Client Work
+            </span>
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-bold tracking-[-0.03em] text-white mb-4"
-            style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
+          <h2
+            className="font-display font-bold tracking-[-0.03em] text-white mb-4"
+            style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}
+          >
             Live in <span className="text-gradient">production.</span>
           </h2>
-          <p className="text-[15px] text-white/50 font-light mb-4">8 live products across 4 clients. Click any to see the work.</p>
+          <p className="text-[15px] text-white/50 font-light mb-4">
+            8 live products across 4 clients. Click any to see the work.
+          </p>
         </Reveal>
 
         {/* Stats bar */}
         <Reveal delay={0.15}>
-          <div className="flex gap-8 flex-wrap mb-16 py-6"
-            style={{ borderTop: '1px solid rgba(124,58,237,0.1)', borderBottom: '1px solid rgba(124,58,237,0.1)' }}>
+          <div
+            className="flex gap-8 flex-wrap mb-16 py-6"
+            style={{
+              borderTop: '1px solid rgba(124,58,237,0.1)',
+              borderBottom: '1px solid rgba(124,58,237,0.1)',
+            }}
+          >
             {[
               { v: '8', l: 'Live products' },
               { v: 'CI/CD', l: 'GitHub Actions' },
@@ -118,7 +195,12 @@ export default function ClientWork() {
               { v: 'CRM', l: 'GoHighLevel' },
             ].map((s, i) => (
               <div key={i}>
-                <div className="font-display font-bold text-gradient" style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}>{s.v}</div>
+                <div
+                  className="font-display font-bold text-gradient"
+                  style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}
+                >
+                  {s.v}
+                </div>
                 <div className="font-mono text-[10px] text-white/50 mt-0.5">{s.l}</div>
               </div>
             ))}
@@ -126,8 +208,10 @@ export default function ClientWork() {
         </Reveal>
 
         {/* 2-col narrow cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-px mb-px"
-          style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.08)' }}>
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-px mb-px"
+          style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.08)' }}
+        >
           {narrow.map((c, i) => (
             <Reveal key={i} delay={0.05 * i}>
               <ClientCard {...c} />
@@ -136,8 +220,15 @@ export default function ClientWork() {
         </div>
 
         {/* Full-width wide cards */}
-        <div className="flex flex-col gap-px"
-          style={{ background: 'rgba(124,58,237,0.08)', borderLeft: '1px solid rgba(124,58,237,0.08)', borderRight: '1px solid rgba(124,58,237,0.08)', borderBottom: '1px solid rgba(124,58,237,0.08)' }}>
+        <div
+          className="flex flex-col gap-px"
+          style={{
+            background: 'rgba(124,58,237,0.08)',
+            borderLeft: '1px solid rgba(124,58,237,0.08)',
+            borderRight: '1px solid rgba(124,58,237,0.08)',
+            borderBottom: '1px solid rgba(124,58,237,0.08)',
+          }}
+        >
           {wide.map((c, i) => (
             <Reveal key={i} delay={0.1}>
               <ClientCard {...c} fullWidth />
@@ -149,7 +240,29 @@ export default function ClientWork() {
   )
 }
 
-function ClientCard({ num, client, name, url, link, highlights, tags, media, fullWidth }: any) {
+type ClientCardProps = {
+  num: string
+  client: string
+  name: string
+  url: string
+  link: string
+  highlights: string[]
+  tags: string[]
+  media?: { desktop: string; mobile: string }
+  fullWidth?: boolean
+}
+
+function ClientCard({
+  num,
+  client,
+  name,
+  url,
+  link,
+  highlights,
+  tags,
+  media,
+  fullWidth,
+}: ClientCardProps) {
   return (
     <motion.div
       className={`flex flex-col gap-4 p-7 relative ${fullWidth ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : ''}`}
@@ -168,9 +281,13 @@ function ClientCard({ num, client, name, url, link, highlights, tags, media, ful
       <div className={fullWidth ? '' : ''}>
         <div className="flex justify-between items-start mb-4">
           <div>
-            <div className="font-mono text-[10px] text-violet-light mb-1">{num} · {client}</div>
-            <div className="font-display font-bold text-white leading-tight mb-0.5"
-              style={{ fontSize: 'clamp(1.2rem,2vw,1.6rem)', letterSpacing: '-0.02em' }}>
+            <div className="font-mono text-[10px] text-violet-light mb-1">
+              {num} · {client}
+            </div>
+            <div
+              className="font-display font-bold text-white leading-tight mb-0.5"
+              style={{ fontSize: 'clamp(1.2rem,2vw,1.6rem)', letterSpacing: '-0.02em' }}
+            >
               {name}
             </div>
             <div className="font-mono text-[10px] text-white/50">{url}</div>
@@ -181,10 +298,17 @@ function ClientCard({ num, client, name, url, link, highlights, tags, media, ful
             rel="noopener noreferrer"
             aria-label={`Open ${name} live site`}
             className="flex items-center gap-1.5 font-mono text-[10px] px-2.5 py-1.5 rounded-lg flex-shrink-0 ml-4"
-            style={{ background: 'rgba(16,185,129,0.1)', color: '#10b981', border: '1px solid rgba(16,185,129,0.2)' }}
+            style={{
+              background: 'rgba(16,185,129,0.1)',
+              color: '#10b981',
+              border: '1px solid rgba(16,185,129,0.2)',
+            }}
             whileHover={{ scale: 1.05 }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" aria-hidden="true" />
+            <span
+              className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"
+              aria-hidden="true"
+            />
             Live <span aria-hidden="true">↗</span>
           </motion.a>
         </div>
@@ -208,8 +332,14 @@ function ClientCard({ num, client, name, url, link, highlights, tags, media, ful
 
         <div className="flex flex-wrap gap-1.5">
           {tags.map((t: string) => (
-            <span key={t} className="font-mono text-[10px] px-2 py-0.5 rounded text-white/50"
-              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+            <span
+              key={t}
+              className="font-mono text-[10px] px-2 py-0.5 rounded text-white/50"
+              style={{
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(255,255,255,0.06)',
+              }}
+            >
               {t}
             </span>
           ))}

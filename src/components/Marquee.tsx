@@ -1,12 +1,31 @@
 import { motion, useReducedMotion } from 'framer-motion'
 
 const SKILLS = [
-  'Python', 'Golang', 'React.js', 'TypeScript', 'Vertex AI',
-  'Multi-Agent Systems', 'RAG Pipelines', 'LLM Orchestration',
-  'AWS', 'Google Cloud', 'PostgreSQL', 'Redis', 'Docker',
-  'Chrome Extensions', 'Distributed Systems', 'Playwright',
-  'Cloud Run', 'Pub/Sub', 'Firestore', 'TanStack Router',
-  'Flutter', 'Gemini Live API', 'WebSockets', 'FastAPI', 'Real-Time AI',
+  'Python',
+  'Golang',
+  'React.js',
+  'TypeScript',
+  'Vertex AI',
+  'Multi-Agent Systems',
+  'RAG Pipelines',
+  'LLM Orchestration',
+  'AWS',
+  'Google Cloud',
+  'PostgreSQL',
+  'Redis',
+  'Docker',
+  'Chrome Extensions',
+  'Distributed Systems',
+  'Playwright',
+  'Cloud Run',
+  'Pub/Sub',
+  'Firestore',
+  'TanStack Router',
+  'Flutter',
+  'Gemini Live API',
+  'WebSockets',
+  'FastAPI',
+  'Real-Time AI',
 ]
 
 export default function Marquee() {
@@ -42,10 +61,14 @@ export default function Marquee() {
       }}
     >
       {/* Edge fades */}
-      <div className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to right, rgba(10,10,15,1), transparent)' }} />
-      <div className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
-        style={{ background: 'linear-gradient(to left, rgba(10,10,15,1), transparent)' }} />
+      <div
+        className="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        style={{ background: 'linear-gradient(to right, rgba(10,10,15,1), transparent)' }}
+      />
+      <div
+        className="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+        style={{ background: 'linear-gradient(to left, rgba(10,10,15,1), transparent)' }}
+      />
 
       <motion.div
         className="flex whitespace-nowrap"

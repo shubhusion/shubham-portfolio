@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
 import Cursor from '../components/Cursor'
-import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import KarumCaseStudy from '../components/KarumCaseStudy'
+import Nav from '../components/Nav'
 
 export default function KarumPage() {
   return (

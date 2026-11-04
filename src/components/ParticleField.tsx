@@ -1,11 +1,15 @@
-import { useEffect, useRef } from 'react'
 import { useReducedMotion } from 'framer-motion'
+import { useEffect, useRef } from 'react'
 
 interface Particle {
-  x: number; y: number
-  ox: number; oy: number
-  vx: number; vy: number
-  size: number; alpha: number
+  x: number
+  y: number
+  ox: number
+  oy: number
+  vx: number
+  vy: number
+  size: number
+  alpha: number
   speed: number
 }
 
@@ -21,7 +25,8 @@ export default function ParticleField() {
     if (!canvas) return
     const ctx = canvas.getContext('2d')!
     let particles: Particle[] = []
-    let W = 0, H = 0
+    let W = 0,
+      H = 0
 
     function resize() {
       W = canvas!.width = canvas!.offsetWidth
@@ -36,8 +41,12 @@ export default function ParticleField() {
         const x = Math.random() * W
         const y = Math.random() * H
         particles.push({
-          x, y, ox: x, oy: y,
-          vx: 0, vy: 0,
+          x,
+          y,
+          ox: x,
+          oy: y,
+          vx: 0,
+          vy: 0,
           size: Math.random() * 1.2 + 0.3,
           alpha: Math.random() * 0.5 + 0.1,
           speed: Math.random() * 0.02 + 0.005,
@@ -62,7 +71,7 @@ export default function ParticleField() {
           p.vx -= (dx / dist) * force * 2.5
           p.vy -= (dy / dist) * force * 2.5
         } else if (dist < attractRadius && dist > repelRadius) {
-          const force = (attractRadius - dist) / attractRadius * 0.15
+          const force = ((attractRadius - dist) / attractRadius) * 0.15
           p.vx += (dx / dist) * force
           p.vy += (dy / dist) * force
         }
@@ -113,7 +122,9 @@ export default function ParticleField() {
       const rect = canvas.getBoundingClientRect()
       mouse.current = { x: e.clientX - rect.left, y: e.clientY - rect.top }
     }
-    const onLeave = () => { mouse.current = { x: -1000, y: -1000 } }
+    const onLeave = () => {
+      mouse.current = { x: -1000, y: -1000 }
+    }
 
     window.addEventListener('mousemove', onMove)
     canvas.addEventListener('mouseleave', onLeave)
@@ -128,7 +139,7 @@ export default function ParticleField() {
       canvas.removeEventListener('mouseleave', onLeave)
       ro.disconnect()
     }
-  }, [])
+  }, [prefersReducedMotion])
 
   return (
     <canvas

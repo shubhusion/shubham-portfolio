@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 — Page not found | Shubham Sharma</title>
+    <meta name="description" content="The page you're looking for doesn't exist. Head back to the homepage or explore the projects." />
+    <link rel="canonical" href="https://shubham-portfolio-pink-five.vercel.app/404" />
+    <meta name="theme-color" content="#0A0A0F" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Shubham Sharma — Portfolio" />
+    <meta property="og:url" content="https://shubham-portfolio-pink-five.vercel.app/404" />
+    <meta property="og:title" content="404 — Page not found | Shubham Sharma" />
+    <meta property="og:description" content="The page you're looking for doesn't exist. Head back to the homepage." />
+    <meta property="og:image" content="https://shubham-portfolio-pink-five.vercel.app/images/og/home.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="404 — Page not found | Shubham Sharma" />
+    <meta name="twitter:description" content="The page you're looking for doesn't exist." />
+    <meta name="twitter:image" content="https://shubham-portfolio-pink-five.vercel.app/images/og/home.jpg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <style>
+      @tailwind base;
+      @tailwind components;
+      @tailwind utilities;
+      @layer base {
+        :root { --ink: #0A0A0F; --violet: #7C3AED; --electric: #A78BFA; }
+        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; cursor: none; }
+        body { background: var(--ink); color: #F5F3FF; font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; margin: 0; }
+        @media (hover: none) { html { cursor: auto; } }
+      }
+      @layer utilities {
+        .font-display { font-family: 'Syne', sans-serif; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+        .text-gradient {
+          background: linear-gradient(135deg, #A78BFA 0%, #60A5FA 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div className="min-h-screen flex flex-col items-center justify-center py-24 px-6">
+      <div className="max-w-2xl text-center">
+        <div className="font-mono text-[11px] text-violet-light tracking-widest uppercase mb-6">404</div>
+        <h1 className="font-display font-bold tracking-[-0.03em] text-white mb-6" style={{ fontSize: 'clamp(2.5rem,8vw,4rem)' }}>
+          Page not<br />
+          <span className="text-gradient">found.</span>
+        </h1>
+        <p className="text-[15px] text-white/50 font-light mb-10 max-w-lg mx-auto leading-relaxed">
+          The route you requested doesn't exist. Head back to the homepage or explore the case studies below.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-3 justify-center">
+          <a
+            href="/"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-display font-semibold text-white text-[15px] transition-colors duration-300"
+            style={{ background: 'linear-gradient(135deg, #7C3AED, #6D28D9)', boxShadow: '0 0 0 0 rgba(124,58,237,0.3)' }}
+          >
+            Back to homepage
+            <span className="text-lg">↗</span>
+          </a>
+          <a
+            href="/prentline"
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light hover:text-white border border-white/10 transition-colors duration-200"
+          >
+            View projects
+          </a>
+        </div>
+      </div>
+    </div>
+    <script type="module">
+      if (typeof window !== 'undefined' && !window.matchMedia('(hover: none)').matches) {
+        document.documentElement.style.cursor = 'none';
+      }
+    </script>
+  </body>
+</html>

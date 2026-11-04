@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-import { motion, useMotionValue, useSpring, useReducedMotion } from 'framer-motion'
+import { motion, useMotionValue, useReducedMotion, useSpring } from 'framer-motion'
+import { useEffect, useState } from 'react'
 
 export default function Cursor() {
   const prefersReducedMotion = useReducedMotion()
@@ -11,7 +11,10 @@ export default function Cursor() {
   const sy = useSpring(my, { stiffness: 120, damping: 18 })
 
   useEffect(() => {
-    const move = (e: MouseEvent) => { mx.set(e.clientX); my.set(e.clientY) }
+    const move = (e: MouseEvent) => {
+      mx.set(e.clientX)
+      my.set(e.clientY)
+    }
     const enter = () => setHidden(false)
     const leave = () => setHidden(true)
 

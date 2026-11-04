@@ -5,22 +5,26 @@ const shots = [
   {
     src: '/images/projects/aarthik-setu/gallery-01.webp',
     alt: 'Aarthik Setu borrower dashboard — loan categories, profile and pending applications',
-    caption: 'The borrower dashboard — loan categories, pending applications and the assistant one tap away.',
+    caption:
+      'The borrower dashboard — loan categories, pending applications and the assistant one tap away.',
   },
   {
     src: '/images/projects/aarthik-setu/gallery-02.webp',
     alt: 'Government scheme search powered by generative AI',
-    caption: 'Government-scheme discovery — generative search over programmes like Mudra, in plain language.',
+    caption:
+      'Government-scheme discovery — generative search over programmes like Mudra, in plain language.',
   },
   {
     src: '/images/projects/aarthik-setu/gallery-03.webp',
     alt: 'Aarthik Setu loan form in Hindi',
-    caption: 'The loan application in Hindi — forms localised for the people the platform is built for.',
+    caption:
+      'The loan application in Hindi — forms localised for the people the platform is built for.',
   },
   {
     src: '/images/projects/aarthik-setu/gallery-04.webp',
     alt: 'Bank details screen — bank statement upload for up to three accounts',
-    caption: 'Bank-statement capture — up to three accounts feed the cash-flow assessment pipeline.',
+    caption:
+      'Bank-statement capture — up to three accounts feed the cash-flow assessment pipeline.',
   },
   {
     src: '/images/projects/aarthik-setu/gallery-05.webp',
@@ -105,16 +109,13 @@ const links = [
     kicker: 'Hackathon submission',
     label: 'Devfolio case',
     href: 'https://devfolio.co/projects/aarthiksetu-f3a4',
-    desc: 'The original Gen AI Exchange Hackathon submission — write-up, features and the OCEN notes.',
+    desc: 'The original Google GenAI Exchange Hackathon 2024 submission — write-up, features and the OCEN notes.',
   },
 ]
 
 export default function AarthikSetuCaseStudy() {
   return (
-    <section
-      id="aarthik-setu"
-      className="pt-12 pb-32 px-6 lg:px-12 scroll-mt-24"
-    >
+    <section id="aarthik-setu" className="pt-12 pb-32 px-6 lg:px-12 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Reveal>
@@ -128,23 +129,35 @@ export default function AarthikSetuCaseStudy() {
         <Reveal delay={0.1}>
           <h1
             className="font-display font-bold tracking-[-0.03em] text-white"
-            style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
-            Innovative credit access.<br />
+            style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}
+          >
+            Innovative credit access.
+            <br />
             <span className="text-gradient">For a better tomorrow.</span>
           </h1>
           <p className="mt-4 text-[15px] text-white/55 font-light max-w-3xl leading-relaxed">
-            A GenAI-powered platform that connects underserved MSMEs to lenders, investors
-            and government schemes like Mudra — AI-driven credit assessment, cash-flow-based
-            lending and standardised OCEN rails for short-tenor, small-ticket loans. Built in
-            October 2024 at the Gen AI Exchange Hackathon by Google; 1st place, Fintech Track,
-            among 100+ teams.
+            A GenAI-powered platform that connects underserved MSMEs to lenders, investors and
+            government schemes like Mudra — AI-driven credit assessment, cash-flow-based lending and
+            standardised OCEN rails for short-tenor, small-ticket loans. Built in October 2024 at
+            the Google GenAI Exchange Hackathon 2024; 1st place, Fintech Track, among 100+ teams.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
           <div className="mt-6 flex flex-wrap gap-2">
-            {['🏆 1st — Fintech Track', 'Google Gen AI Exchange Hackathon', 'October 2024', 'Team Hare&Tortoise'].map(c => (
-              <span key={c} className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
-                style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+            {[
+              '🏆 1st — Fintech Track',
+              'Google GenAI Exchange Hackathon 2024',
+              'October 2024',
+              'Team Hare&Tortoise',
+            ].map((c) => (
+              <span
+                key={c}
+                className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
+                style={{
+                  background: 'rgba(255,255,255,0.04)',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                }}
+              >
                 {c}
               </span>
             ))}
@@ -152,8 +165,10 @@ export default function AarthikSetuCaseStudy() {
         </Reveal>
 
         {/* Problem → Response */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px mt-16 mb-20 rounded-2xl overflow-hidden"
-          style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-px mt-16 mb-20 rounded-2xl overflow-hidden"
+          style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+        >
           {[
             {
               kicker: 'The problem',
@@ -186,8 +201,10 @@ export default function AarthikSetuCaseStudy() {
             </div>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="relative w-full aspect-video overflow-hidden rounded-xl"
-              style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}>
+            <div
+              className="relative w-full aspect-video overflow-hidden rounded-xl"
+              style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}
+            >
               <iframe
                 src="https://drive.google.com/file/d/1neZgRz0oCR-sccCiUR7YKXx13afZZLGh/preview"
                 title="Aarthik Setu — product demo"
@@ -212,15 +229,19 @@ export default function AarthikSetuCaseStudy() {
                 The Product
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               Screens from <span className="text-gradient">the live build.</span>
             </h3>
           </Reveal>
 
           <Reveal delay={0.15}>
-            <div className="overflow-hidden rounded-xl"
-              style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}>
+            <div
+              className="overflow-hidden rounded-xl"
+              style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}
+            >
               <img
                 src={shots[0].src}
                 alt={shots[0].alt}
@@ -235,8 +256,13 @@ export default function AarthikSetuCaseStudy() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
             {shots.slice(1).map((s, i) => (
               <Reveal key={i} delay={0.1 + 0.05 * i}>
-                <div className="overflow-hidden rounded-xl"
-                  style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}>
+                <div
+                  className="overflow-hidden rounded-xl"
+                  style={{
+                    border: '1px solid rgba(124,58,237,0.2)',
+                    background: 'rgba(10,10,15,1)',
+                  }}
+                >
                   <img
                     src={s.src}
                     alt={s.alt}
@@ -261,14 +287,21 @@ export default function AarthikSetuCaseStudy() {
                 What It Does
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               Two sides of <span className="text-gradient">the journey.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px"
-            style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.08)' }}>
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-px"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.08)',
+            }}
+          >
             {[
               { title: 'For the MSME', items: borrowerFeatures },
               { title: 'The platform underneath', items: platformFeatures },
@@ -280,7 +313,10 @@ export default function AarthikSetuCaseStudy() {
                   </div>
                   <ul className="space-y-3">
                     {col.items.map((f, j) => (
-                      <li key={j} className="flex gap-3 text-[12.5px] text-white/50 leading-relaxed font-light">
+                      <li
+                        key={j}
+                        className="flex gap-3 text-[12.5px] text-white/50 leading-relaxed font-light"
+                      >
                         <span className="mt-2.5 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                         <span>{f}</span>
                       </li>
@@ -301,20 +337,25 @@ export default function AarthikSetuCaseStudy() {
                 What Was Hard
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               Challenges, and <span className="text-gradient">how they fell.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-2xl overflow-hidden"
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
+          >
             {challenges.map((h, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <div className="p-7 h-full" style={{ background: 'rgba(10,10,15,1)' }}>
-                  <div className="font-mono text-[10px] text-violet-light mb-3">
-                    0{i + 1}
-                  </div>
+                  <div className="font-mono text-[10px] text-violet-light mb-3">0{i + 1}</div>
                   <div className="font-display font-semibold text-white text-[14px] leading-snug mb-2.5">
                     {h.title}
                   </div>
@@ -334,14 +375,21 @@ export default function AarthikSetuCaseStudy() {
                 Stack
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               The stack, <span className="text-gradient">end to end.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px"
-            style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.08)' }}>
+          <div
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-px"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.08)',
+            }}
+          >
             {stack.map((s, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <div className="h-full p-6" style={{ background: 'rgba(10,10,15,1)' }}>
@@ -349,9 +397,15 @@ export default function AarthikSetuCaseStudy() {
                     {s.group}
                   </div>
                   <div className="flex flex-wrap gap-1.5">
-                    {s.items.map(t => (
-                      <span key={t} className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
-                        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                    {s.items.map((t) => (
+                      <span
+                        key={t}
+                        className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
+                        style={{
+                          background: 'rgba(255,255,255,0.04)',
+                          border: '1px solid rgba(255,255,255,0.06)',
+                        }}
+                      >
                         {t}
                       </span>
                     ))}
@@ -364,12 +418,19 @@ export default function AarthikSetuCaseStudy() {
 
         {/* By the numbers */}
         <Reveal delay={0.1}>
-          <div className="flex gap-8 flex-wrap mt-24 py-6"
-            style={{ borderTop: '1px solid rgba(124,58,237,0.1)', borderBottom: '1px solid rgba(124,58,237,0.1)' }}>
+          <div
+            className="flex gap-8 flex-wrap mt-24 py-6"
+            style={{
+              borderTop: '1px solid rgba(124,58,237,0.1)',
+              borderBottom: '1px solid rgba(124,58,237,0.1)',
+            }}
+          >
             {numbers.map((n, i) => (
               <div key={i}>
-                <div className="font-display font-bold text-gradient"
-                  style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}>
+                <div
+                  className="font-display font-bold text-gradient"
+                  style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}
+                >
                   {n.v}
                 </div>
                 <div className="font-mono text-[10px] text-white/50 mt-0.5">{n.l}</div>
@@ -387,14 +448,21 @@ export default function AarthikSetuCaseStudy() {
                 Links
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               Live, and <span className="text-gradient">on the record.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px rounded-2xl overflow-hidden"
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
+          >
             {links.map((l, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <motion.a
@@ -411,7 +479,9 @@ export default function AarthikSetuCaseStudy() {
                   </div>
                   <div className="font-display font-semibold text-white text-[15px] leading-snug mb-2 flex items-center gap-2">
                     {l.label}
-                    <span className="text-white/50 text-[13px]" aria-hidden="true">↗</span>
+                    <span className="text-white/50 text-[13px]" aria-hidden="true">
+                      ↗
+                    </span>
                   </div>
                   <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{l.desc}</p>
                 </motion.a>
@@ -421,7 +491,8 @@ export default function AarthikSetuCaseStudy() {
 
           <Reveal delay={0.15}>
             <p className="mt-6 font-mono text-[11px] text-white/50 leading-relaxed">
-              Built with team Hare&Tortoise — Shubham Sharma · Varun Vilvadrinath · Aadarsh Verma · Harish Sahadev M.
+              Built with team Hare&Tortoise — Shubham Sharma · Varun Vilvadrinath · Aadarsh Verma ·
+              Harish Sahadev M.
             </p>
           </Reveal>
         </div>

@@ -1,11 +1,11 @@
-import { useEffect, useRef, useState } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
+import { useEffect, useRef, useState } from 'react'
 import ParticleField from './ParticleField'
 
 const command = [
   { key: 'role', value: 'Full Stack & AI Engineer', color: '#A78BFA' },
   { key: 'stack', value: 'Golang · Python · React · Vertex AI', color: '#93C5FD' },
-  { key: 'award', value: 'Google GenAI Hackathon Winner 🏆', color: '#10B981' },
+  { key: 'award', value: 'Google GenAI Exchange Hackathon Winner 🏆', color: '#10B981' },
   { key: 'status', value: 'open_to_work = true', color: '#FCD34D' },
 ]
 
@@ -20,7 +20,11 @@ function TypewriterLine({ text, delay }: { text: string; delay: number }) {
       interval = setInterval(() => {
         setDisplayed(text.slice(0, i + 1))
         i++
-        if (i >= text.length) { clearInterval(interval); interval = undefined; setDone(true) }
+        if (i >= text.length) {
+          clearInterval(interval)
+          interval = undefined
+          setDone(true)
+        }
       }, 22)
     }, delay)
     return () => {
@@ -53,23 +57,41 @@ export default function Hero() {
   }
 
   return (
-    <section ref={ref} className="relative min-h-screen flex flex-col justify-center overflow-hidden" style={{ paddingTop: '92px' }}>
+    <section
+      ref={ref}
+      className="relative min-h-screen flex flex-col justify-center overflow-hidden"
+      style={{ paddingTop: '92px' }}
+    >
       {/* Particle field — the wow moment */}
       <ParticleField />
 
       {/* Ambient glow */}
-      <div className="absolute pointer-events-none" style={{
-        width: 700, height: 700, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)',
-        filter: 'blur(80px)', top: -200, right: -100,
-        animation: 'drift 18s ease-in-out infinite',
-      }} />
-      <div className="absolute pointer-events-none" style={{
-        width: 400, height: 400, borderRadius: '50%',
-        background: 'radial-gradient(circle, rgba(96,165,250,0.1) 0%, transparent 70%)',
-        filter: 'blur(60px)', bottom: -100, left: -100,
-        animation: 'drift 14s ease-in-out infinite reverse',
-      }} />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: 700,
+          height: 700,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+          top: -200,
+          right: -100,
+          animation: 'drift 18s ease-in-out infinite',
+        }}
+      />
+      <div
+        className="absolute pointer-events-none"
+        style={{
+          width: 400,
+          height: 400,
+          borderRadius: '50%',
+          background: 'radial-gradient(circle, rgba(96,165,250,0.1) 0%, transparent 70%)',
+          filter: 'blur(60px)',
+          bottom: -100,
+          left: -100,
+          animation: 'drift 14s ease-in-out infinite reverse',
+        }}
+      />
 
       <style>{`
         @keyframes drift {
@@ -84,7 +106,6 @@ export default function Hero() {
         className="relative z-10 max-w-7xl mx-auto w-full px-6 lg:px-12"
       >
         <motion.div variants={container} initial="hidden" animate="show">
-
           {/* Eyebrow */}
           <motion.div variants={item} className="flex items-center gap-3 mb-8">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_8px_#4ade80] animate-pulse" />
@@ -101,7 +122,10 @@ export default function Hero() {
           >
             <span className="block text-white">Shubham</span>
             <span className="block text-gradient">Sharma</span>
-            <span className="block" style={{ color: 'transparent', WebkitTextStroke: '1px rgba(245,243,255,0.15)' }}>
+            <span
+              className="block"
+              style={{ color: 'transparent', WebkitTextStroke: '1px rgba(245,243,255,0.15)' }}
+            >
               Engineer.
             </span>
           </motion.h1>
@@ -110,10 +134,17 @@ export default function Hero() {
           <motion.div
             variants={item}
             className="mb-10 max-w-[520px] rounded-xl overflow-hidden"
-            style={{ background: 'rgba(14,14,24,0.8)', backdropFilter: 'blur(16px)', border: '1px solid rgba(124,58,237,0.2)' }}
+            style={{
+              background: 'rgba(14,14,24,0.8)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid rgba(124,58,237,0.2)',
+            }}
           >
             {/* Terminal header */}
-            <div className="flex items-center gap-2 px-4 py-3" style={{ borderBottom: '1px solid rgba(124,58,237,0.1)' }}>
+            <div
+              className="flex items-center gap-2 px-4 py-3"
+              style={{ borderBottom: '1px solid rgba(124,58,237,0.1)' }}
+            >
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
@@ -142,8 +173,12 @@ export default function Hero() {
                 background: 'linear-gradient(135deg, #7C3AED, #6D28D9)',
                 boxShadow: '0 0 0 0 rgba(124,58,237,0.3)',
               }}
-              onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 12px 40px rgba(124,58,237,0.4)')}
-              onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 0 0 0 rgba(124,58,237,0.3)')}
+              onMouseEnter={(e) =>
+                (e.currentTarget.style.boxShadow = '0 12px 40px rgba(124,58,237,0.4)')
+              }
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.boxShadow = '0 0 0 0 rgba(124,58,237,0.3)')
+              }
             >
               Let's build together
               <span className="text-lg">↗</span>
@@ -178,14 +213,19 @@ export default function Hero() {
           {[
             { n: '10K+', l: 'Orders/month in production' },
             { n: '99.95%', l: 'Production uptime' },
-            { n: '100+', l: 'Teams beaten at GenAI Hackathon' },
+            { n: '100+', l: 'Teams beaten at GenAI Exchange Hackathon 2024' },
             { n: '8', l: 'Live products shipped' },
           ].map((s, i) => (
             <div key={i} className="pt-6 pr-6">
-              <div className="font-display font-bold leading-none mb-2" style={{ fontSize: 'clamp(1.75rem,3.5vw,2.75rem)', letterSpacing: '-0.03em' }}>
+              <div
+                className="font-display font-bold leading-none mb-2"
+                style={{ fontSize: 'clamp(1.75rem,3.5vw,2.75rem)', letterSpacing: '-0.03em' }}
+              >
                 <span className="text-gradient">{s.n}</span>
               </div>
-              <div className="font-mono text-[11px] text-white/50 tracking-wide leading-relaxed">{s.l}</div>
+              <div className="font-mono text-[11px] text-white/50 tracking-wide leading-relaxed">
+                {s.l}
+              </div>
             </div>
           ))}
         </motion.div>
@@ -198,7 +238,9 @@ export default function Hero() {
         transition={{ delay: 2.5, duration: 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
       >
-        <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-white/50">Scroll</span>
+        <span className="font-mono text-[10px] tracking-[0.15em] uppercase text-white/50">
+          Scroll
+        </span>
         <motion.div
           animate={{ y: [0, 5, 0] }}
           transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}

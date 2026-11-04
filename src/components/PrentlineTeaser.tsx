@@ -10,17 +10,25 @@ const stats = [
 
 export default function PrentlineTeaser() {
   return (
-    <section id="prentline" className="py-24 scroll-mt-24" style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
+    <section
+      id="prentline"
+      className="py-24 scroll-mt-24"
+      style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-7">
             <Reveal>
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-4 h-px bg-violet-light" />
-                <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">Deep Dive · Prentline</span>
+                <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">
+                  Deep Dive · Prentline
+                </span>
               </div>
-              <h2 className="font-display font-bold tracking-[-0.03em] text-white"
-                style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+              <h2
+                className="font-display font-bold tracking-[-0.03em] text-white"
+                style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+              >
                 Deterministic coach. <span className="text-gradient">Probabilistic model.</span>
               </h2>
               <p className="mt-3 text-[14px] text-white/55 font-light max-w-2xl leading-relaxed">
@@ -33,12 +41,19 @@ export default function PrentlineTeaser() {
 
           <div className="lg:col-span-5">
             <Reveal delay={0.1}>
-              <div className="grid grid-cols-2 gap-px rounded-2xl overflow-hidden"
-                style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+              <div
+                className="grid grid-cols-2 gap-px rounded-2xl overflow-hidden"
+                style={{
+                  border: '1px solid rgba(124,58,237,0.1)',
+                  background: 'rgba(124,58,237,0.06)',
+                }}
+              >
                 {stats.map((s, i) => (
                   <div key={i} className="p-5" style={{ background: 'rgba(10,10,15,1)' }}>
-                    <div className="font-display font-bold text-gradient leading-none"
-                      style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}>
+                    <div
+                      className="font-display font-bold text-gradient leading-none"
+                      style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}
+                    >
                       {s.v}
                     </div>
                     <div className="font-mono text-[10px] text-white/50 mt-1.5">{s.l}</div>

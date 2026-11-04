@@ -3,30 +3,84 @@ import Reveal from './Reveal'
 
 const groups = [
   { name: 'Languages', skills: ['Python', 'Golang', 'TypeScript / Node.js', 'Dart / Flutter'] },
-  { name: 'AI / GenAI', skills: ['Multi-Agent Systems', 'RAG Pipelines', 'LLM Orchestration', 'Gemini Live API — Voice + Video', 'Vertex AI · Imagen 3', 'Guardrailed Agents'] },
-  { name: 'Frontend', skills: ['React.js', 'TanStack Router', 'Flutter Web · BLoC', 'Tailwind CSS', 'Chrome Extensions', 'Framer Motion'] },
-  { name: 'Infrastructure', skills: ['AWS — ECS, RDS, S3, SNS', 'Google Cloud — Cloud Run, Pub/Sub', 'Render Blueprints · IaC', 'Docker · Kubernetes', 'GitHub Actions · CI/CD'] },
-  { name: 'Data & Realtime', skills: ['PostgreSQL · GORM · Atlas Migrations', 'WebSockets · Realtime Proxying', 'Deterministic State Machines', 'Redis · Celery', 'Distributed Systems'] },
-  { name: 'Tools', skills: ['Playwright · Selenium', 'Flask · FastAPI', 'Prometheus · OpenTelemetry', 'REST API Design'] },
+  {
+    name: 'AI / GenAI',
+    skills: [
+      'Multi-Agent Systems',
+      'RAG Pipelines',
+      'LLM Orchestration',
+      'Gemini Live API — Voice + Video',
+      'Vertex AI · Imagen 3',
+      'Guardrailed Agents',
+    ],
+  },
+  {
+    name: 'Frontend',
+    skills: [
+      'React.js',
+      'TanStack Router',
+      'Flutter Web · BLoC',
+      'Tailwind CSS',
+      'Chrome Extensions',
+      'Framer Motion',
+    ],
+  },
+  {
+    name: 'Infrastructure',
+    skills: [
+      'AWS — ECS, RDS, S3, SNS',
+      'Google Cloud — Cloud Run, Pub/Sub',
+      'Render Blueprints · IaC',
+      'Docker · Kubernetes',
+      'GitHub Actions · CI/CD',
+    ],
+  },
+  {
+    name: 'Data & Realtime',
+    skills: [
+      'PostgreSQL · GORM · Atlas Migrations',
+      'WebSockets · Realtime Proxying',
+      'Deterministic State Machines',
+      'Redis · Celery',
+      'Distributed Systems',
+    ],
+  },
+  {
+    name: 'Tools',
+    skills: [
+      'Playwright · Selenium',
+      'Flask · FastAPI',
+      'Prometheus · OpenTelemetry',
+      'REST API Design',
+    ],
+  },
 ]
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-32 px-6 lg:px-12" style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}>
+    <section
+      id="skills"
+      className="py-32 px-6 lg:px-12"
+      style={{ borderTop: '1px solid rgba(124,58,237,0.08)' }}
+    >
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-16 items-start">
-
           <div className="lg:sticky lg:top-24">
             <Reveal>
               <div className="flex items-center gap-3 mb-4">
                 <span className="w-4 h-px bg-violet-light" />
-                <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">Skills</span>
+                <span className="font-mono text-[11px] tracking-[0.15em] uppercase text-violet-light">
+                  Skills
+                </span>
               </div>
             </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="font-display font-bold tracking-[-0.03em] text-white mb-4"
-                style={{ fontSize: 'clamp(2.5rem,4.5vw,3.75rem)' }}>
-                What I<br />work <span className="text-gradient">with.</span>
+              <h2
+                className="font-display font-bold tracking-[-0.03em] text-white mb-4"
+                style={{ fontSize: 'clamp(2.5rem,4.5vw,3.75rem)' }}
+              >
+                What I<br />
+                work <span className="text-gradient">with.</span>
               </h2>
             </Reveal>
             <Reveal delay={0.15}>
@@ -36,8 +90,13 @@ export default function Skills() {
             </Reveal>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-2xl overflow-hidden"
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
+          >
             {groups.map((g, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <motion.div
@@ -52,7 +111,9 @@ export default function Skills() {
                     whileHover={{ scaleX: 1 }}
                     transition={{ duration: 0.4 }}
                   />
-                  <div className="font-mono text-[10px] text-violet-light tracking-[0.12em] uppercase mb-4">{g.name}</div>
+                  <div className="font-mono text-[10px] text-violet-light tracking-[0.12em] uppercase mb-4">
+                    {g.name}
+                  </div>
                   <ul className="space-y-2">
                     {g.skills.map((s, j) => (
                       <li key={j} className="flex items-center gap-2.5 text-[13px] text-white/50">

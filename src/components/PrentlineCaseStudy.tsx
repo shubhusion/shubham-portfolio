@@ -119,7 +119,12 @@ const numbers = [
 const tiers = [
   { nodes: [{ label: 'Prentline-frontend', sub: 'Flutter Web · PWA · BLoC' }] },
   {
-    nodes: [{ label: 'Prentline-server', sub: 'Go / Gin — JWT auth, RBAC, WebSocket hub, coach state machine' }],
+    nodes: [
+      {
+        label: 'Prentline-server',
+        sub: 'Go / Gin — JWT auth, RBAC, WebSocket hub, coach state machine',
+      },
+    ],
   },
   {
     nodes: [
@@ -128,15 +133,16 @@ const tiers = [
       { label: 'Prentline-ai', sub: 'FastAPI · reserved' },
     ],
   },
-  { nodes: [{ label: 'PostgreSQL', sub: 'GORM · Atlas versioned migrations · partial unique indexes' }] },
+  {
+    nodes: [
+      { label: 'PostgreSQL', sub: 'GORM · Atlas versioned migrations · partial unique indexes' },
+    ],
+  },
 ]
 
 export default function PrentlineCaseStudy() {
   return (
-    <section
-      id="prentline"
-      className="pt-12 pb-32 px-6 lg:px-12 scroll-mt-24"
-    >
+    <section id="prentline" className="pt-12 pb-32 px-6 lg:px-12 scroll-mt-24">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <Reveal>
@@ -150,20 +156,24 @@ export default function PrentlineCaseStudy() {
         <Reveal delay={0.1}>
           <h1
             className="font-display font-bold tracking-[-0.03em] text-white"
-            style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
-            Deterministic coach.<br />
+            style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}
+          >
+            Deterministic coach.
+            <br />
             <span className="text-gradient">Probabilistic model.</span>
           </h1>
           <p className="mt-4 text-[15px] text-white/50 font-light max-w-3xl leading-relaxed">
-            A multimodal AI coach that watches your hands, talks you through a physical
-            procedure, grades your work, and tells your supervisor before you get stuck.
-            Five independently deployable services, ~50,000 lines of code.
+            A multimodal AI coach that watches your hands, talks you through a physical procedure,
+            grades your work, and tells your supervisor before you get stuck. Five independently
+            deployable services, ~50,000 lines of code.
           </p>
         </Reveal>
 
         {/* Problem → Solution */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-px mt-16 mb-20 rounded-2xl overflow-hidden"
-          style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+        <div
+          className="grid grid-cols-1 lg:grid-cols-2 gap-px mt-16 mb-20 rounded-2xl overflow-hidden"
+          style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+        >
           {[
             {
               kicker: 'The problem',
@@ -205,6 +215,7 @@ export default function PrentlineCaseStudy() {
               playsInline
             >
               <source src="/media/prentline/demo.mp4" type="video/mp4" />
+              <track kind="captions" src="/media/prentline/captions.vtt" label="English" />
               Your browser does not support the video tag.
             </video>
             <p className="mt-3 font-mono text-[11px] text-white/45">
@@ -225,17 +236,25 @@ export default function PrentlineCaseStudy() {
 
         <Reveal delay={0.15}>
           <div className="overflow-x-auto pb-2">
-            <div className="min-w-[640px] flex flex-col items-center" role="img"
-              aria-label="Architecture: Flutter Web client to Go gateway, fanning out to Gemini Live, notification and AI services, all over PostgreSQL">
+            <div
+              className="min-w-[640px] flex flex-col items-center"
+              role="img"
+              aria-label="Architecture: Flutter Web client to Go gateway, fanning out to Gemini Live, notification and AI services, all over PostgreSQL"
+            >
               {tiers.map((tier, i) => (
                 <div key={i} className="flex flex-col items-center w-full">
                   {i > 0 && (
                     <div className="flex flex-col items-center h-10">
-                      <div className="w-px flex-1" style={{ background: 'rgba(124,58,237,0.35)' }} />
+                      <div
+                        className="w-px flex-1"
+                        style={{ background: 'rgba(124,58,237,0.35)' }}
+                      />
                       <div className="text-violet/60 text-[9px] leading-none">↓</div>
                     </div>
                   )}
-                  <div className={`grid gap-3 w-full ${tier.nodes.length > 1 ? 'grid-cols-3' : 'grid-cols-1 max-w-sm mx-auto'}`}>
+                  <div
+                    className={`grid gap-3 w-full ${tier.nodes.length > 1 ? 'grid-cols-3' : 'grid-cols-1 max-w-sm mx-auto'}`}
+                  >
                     {tier.nodes.map((n, j) => (
                       <motion.div
                         key={j}
@@ -244,7 +263,10 @@ export default function PrentlineCaseStudy() {
                           background: 'rgba(10,10,15,1)',
                           border: '1px solid rgba(124,58,237,0.18)',
                         }}
-                        whileHover={{ borderColor: 'rgba(167,139,250,0.5)', backgroundColor: 'rgba(14,14,24,1)' }}
+                        whileHover={{
+                          borderColor: 'rgba(167,139,250,0.5)',
+                          backgroundColor: 'rgba(14,14,24,1)',
+                        }}
                         transition={{ duration: 0.25 }}
                       >
                         <motion.div
@@ -254,8 +276,12 @@ export default function PrentlineCaseStudy() {
                           whileHover={{ scaleX: 1 }}
                           transition={{ duration: 0.4 }}
                         />
-                        <div className="font-mono text-[11px] text-white font-medium mb-1">{n.label}</div>
-                        <div className="font-mono text-[10px] text-white/50 leading-relaxed">{n.sub}</div>
+                        <div className="font-mono text-[11px] text-white font-medium mb-1">
+                          {n.label}
+                        </div>
+                        <div className="font-mono text-[10px] text-white/50 leading-relaxed">
+                          {n.sub}
+                        </div>
                       </motion.div>
                     ))}
                   </div>
@@ -267,11 +293,11 @@ export default function PrentlineCaseStudy() {
           <div className="mt-6 flex items-start gap-3">
             <span className="mt-2.5 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
             <p className="text-[12.5px] text-white/50 leading-relaxed font-light">
-              <span className="text-white/75 font-medium">Trust model:</span> Gemini
-              credentials never leave the server. The Flutter app authenticates to the Go
-              gateway with a custom JWT; the gateway validates the user, then brokers the
-              Gemini Live WebSocket server-side. Service-to-service calls authenticate with
-              generated shared secrets compared in constant time, enforced in production.
+              <span className="text-white/75 font-medium">Trust model:</span> Gemini credentials
+              never leave the server. The Flutter app authenticates to the Go gateway with a custom
+              JWT; the gateway validates the user, then brokers the Gemini Live WebSocket
+              server-side. Service-to-service calls authenticate with generated shared secrets
+              compared in constant time, enforced in production.
             </p>
           </div>
         </Reveal>
@@ -285,14 +311,21 @@ export default function PrentlineCaseStudy() {
                 The Five Repos
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               Five services, <span className="text-gradient">independently deployable.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
-            style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.08)' }}>
+          <div
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.08)',
+            }}
+          >
             {services.map((s, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <motion.div
@@ -317,16 +350,25 @@ export default function PrentlineCaseStudy() {
                   <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{s.role}</p>
                   <ul className="space-y-2 flex-1">
                     {s.bullets.map((b, j) => (
-                      <li key={j} className="flex gap-2.5 text-[12px] text-white/45 leading-relaxed">
+                      <li
+                        key={j}
+                        className="flex gap-2.5 text-[12px] text-white/45 leading-relaxed"
+                      >
                         <span className="mt-2 w-3 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                         <span>{b}</span>
                       </li>
                     ))}
                   </ul>
                   <div className="flex flex-wrap gap-1.5">
-                    {s.tags.map(t => (
-                      <span key={t} className="font-mono text-[10px] px-2 py-0.5 rounded text-white/45"
-                        style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)' }}>
+                    {s.tags.map((t) => (
+                      <span
+                        key={t}
+                        className="font-mono text-[10px] px-2 py-0.5 rounded text-white/45"
+                        style={{
+                          background: 'rgba(255,255,255,0.04)',
+                          border: '1px solid rgba(255,255,255,0.06)',
+                        }}
+                      >
                         {t}
                       </span>
                     ))}
@@ -346,20 +388,25 @@ export default function PrentlineCaseStudy() {
                 Engineering Highlights
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
-                What makes it <span className="text-gradient">hold up.</span>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
+              What makes it <span className="text-gradient">hold up.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}>
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 gap-px rounded-2xl overflow-hidden"
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
+          >
             {highlights.map((h, i) => (
               <Reveal key={i} delay={0.05 * i}>
                 <div className="p-7 h-full" style={{ background: 'rgba(10,10,15,1)' }}>
-                  <div className="font-mono text-[10px] text-violet-light mb-3">
-                    0{i + 1}
-                  </div>
+                  <div className="font-mono text-[10px] text-violet-light mb-3">0{i + 1}</div>
                   <div className="font-display font-semibold text-white text-[14px] leading-snug mb-2.5">
                     {h.title}
                   </div>
@@ -379,14 +426,21 @@ export default function PrentlineCaseStudy() {
                 What It Does
               </span>
             </div>
-            <h3 className="font-display font-bold tracking-[-0.03em] text-white mb-10"
-              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}>
+            <h3
+              className="font-display font-bold tracking-[-0.03em] text-white mb-10"
+              style={{ fontSize: 'clamp(1.75rem,3.5vw,2.5rem)' }}
+            >
               Two sides of <span className="text-gradient">the same session.</span>
             </h3>
           </Reveal>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-px"
-            style={{ background: 'rgba(124,58,237,0.08)', border: '1px solid rgba(124,58,237,0.08)' }}>
+          <div
+            className="grid grid-cols-1 lg:grid-cols-2 gap-px"
+            style={{
+              background: 'rgba(124,58,237,0.08)',
+              border: '1px solid rgba(124,58,237,0.08)',
+            }}
+          >
             {[
               { title: 'For the trainee', items: traineeFeatures },
               { title: 'For the supervisor', items: supervisorFeatures },
@@ -398,7 +452,10 @@ export default function PrentlineCaseStudy() {
                   </div>
                   <ul className="space-y-3">
                     {col.items.map((f, j) => (
-                      <li key={j} className="flex gap-3 text-[12.5px] text-white/50 leading-relaxed font-light">
+                      <li
+                        key={j}
+                        className="flex gap-3 text-[12.5px] text-white/50 leading-relaxed font-light"
+                      >
                         <span className="mt-2.5 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                         <span>{f}</span>
                       </li>
@@ -412,12 +469,19 @@ export default function PrentlineCaseStudy() {
 
         {/* By the numbers */}
         <Reveal delay={0.1}>
-          <div className="flex gap-8 flex-wrap mt-24 py-6"
-            style={{ borderTop: '1px solid rgba(124,58,237,0.1)', borderBottom: '1px solid rgba(124,58,237,0.1)' }}>
+          <div
+            className="flex gap-8 flex-wrap mt-24 py-6"
+            style={{
+              borderTop: '1px solid rgba(124,58,237,0.1)',
+              borderBottom: '1px solid rgba(124,58,237,0.1)',
+            }}
+          >
             {numbers.map((n, i) => (
               <div key={i}>
-                <div className="font-display font-bold text-gradient"
-                  style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}>
+                <div
+                  className="font-display font-bold text-gradient"
+                  style={{ fontSize: 'clamp(1.2rem,2vw,1.65rem)', letterSpacing: '-0.03em' }}
+                >
                   {n.v}
                 </div>
                 <div className="font-mono text-[10px] text-white/50 mt-0.5">{n.l}</div>

@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
+import { useCallback, useEffect, useState } from 'react'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -8,7 +8,8 @@ export default function Nav() {
   const [progress, setProgress] = useState(0)
 
   // On sub-pages (e.g. /prentline) section anchors must point back to the homepage
-  const isHome = window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')
+  const isHome =
+    window.location.pathname === '/' || window.location.pathname.endsWith('/index.html')
   const prefix = isHome ? '' : '/'
   const links = [
     { label: 'About', href: `${prefix}#about` },
@@ -30,7 +31,7 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const close = () => setOpen(false)
+  const close = useCallback(() => setOpen(false), [])
 
   useEffect(() => {
     if (!open) return
@@ -44,8 +45,8 @@ export default function Nav() {
         const focusables = menu
           ? Array.from(
               menu.querySelectorAll<HTMLElement>(
-                'a[href], button, [tabindex]:not([tabindex="-1"])'
-              )
+                'a[href], button, [tabindex]:not([tabindex="-1"])',
+              ),
             )
           : []
         if (focusables.length === 0) return
@@ -65,7 +66,7 @@ export default function Nav() {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', onKeyDown)
     }
-  }, [open])
+  }, [open, close])
 
   return (
     <>
@@ -84,12 +85,18 @@ export default function Nav() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2, duration: 0.5 }}
         className="fixed top-0 left-0 right-0 z-[150] h-8 overflow-hidden"
-        style={{ background: 'rgba(14,14,24,0.95)', backdropFilter: 'blur(12px)', borderBottom: '1px solid rgba(124,58,237,0.15)' }}
+        style={{
+          background: 'rgba(14,14,24,0.95)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: '1px solid rgba(124,58,237,0.15)',
+        }}
       >
         <div className="flex items-center h-full">
           <div className="flex items-center gap-2 px-4 border-r border-violet/20 h-full flex-shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_#4ade80] animate-pulse" />
-            <span className="font-mono text-[10px] text-violet-light tracking-widest uppercase">Now</span>
+            <span className="font-mono text-[10px] text-violet-light tracking-widest uppercase">
+              Now
+            </span>
           </div>
           <div className="overflow-hidden flex-1">
             <motion.div
@@ -97,16 +104,19 @@ export default function Nav() {
               animate={{ x: ['0%', '-50%'] }}
               transition={{ duration: 28, ease: 'linear', repeat: Infinity }}
             >
-              {[0, 1].map(i => (
+              {[0, 1].map((i) => (
                 <span
                   key={i}
                   className="font-mono text-[11px] text-white/50 px-8"
                   aria-hidden={i === 1}
                 >
                   Full Stack &amp; AI Engineer &nbsp;✦&nbsp;
-                  <span className="text-violet-light">Production systems</span> at scale · LLM pipelines · Distributed systems &nbsp;✦&nbsp;
-                  Open to full-time <span className="text-violet-light">Founding Engineer</span> / <span className="text-violet-light">AI Engineer</span> roles &nbsp;✦&nbsp;
-                  <span className="text-violet-light">Immediate availability</span> · Remote-first · India + Global &nbsp;✦&nbsp;
+                  <span className="text-violet-light">Production systems</span> at scale · LLM
+                  pipelines · Distributed systems &nbsp;✦&nbsp; Open to full-time{' '}
+                  <span className="text-violet-light">Founding Engineer</span> /{' '}
+                  <span className="text-violet-light">AI Engineer</span> roles &nbsp;✦&nbsp;
+                  <span className="text-violet-light">Immediate availability</span> · Remote-first ·
+                  India + Global &nbsp;✦&nbsp;
                 </span>
               ))}
             </motion.div>
@@ -129,13 +139,16 @@ export default function Nav() {
           borderBottom: scrolled ? '1px solid rgba(124,58,237,0.1)' : '1px solid transparent',
         }}
       >
-        <a href={isHome ? '#' : '/'} className="font-mono text-[13px] text-violet-light flex items-center gap-2">
+        <a
+          href={isHome ? '#' : '/'}
+          className="font-mono text-[13px] text-violet-light flex items-center gap-2"
+        >
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_#4ade80] animate-pulse" />
           shubham.dev
         </a>
 
         <div className="hidden md:flex items-center gap-8">
-          {links.map(l => (
+          {links.map((l) => (
             <a
               key={l.href}
               href={l.href}
@@ -162,6 +175,7 @@ export default function Nav() {
             Hire me
           </a>
           <button
+            type="button"
             onClick={() => setOpen(true)}
             className="md:hidden p-2 text-white/60 hover:text-white transition-colors"
           >
@@ -184,7 +198,11 @@ export default function Nav() {
             className="fixed inset-0 z-[200] flex flex-col items-center justify-center gap-8"
             style={{ background: 'rgba(10,10,15,0.97)', backdropFilter: 'blur(24px)' }}
           >
-            <button onClick={close} className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors">
+            <button
+              type="button"
+              onClick={close}
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
+            >
               <X size={24} />
             </button>
             {links.map((l, i) => (

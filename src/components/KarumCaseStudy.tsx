@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import Reveal from './Reveal'
 
 type Shot = {
@@ -203,7 +203,7 @@ const ownership = [
 const challenges = [
   {
     title: 'Resolution, not invention',
-    body: "Madre Mezcal did not exist in Qloo, and a search for “Blind Pig” resolved to a city in Ukraine. The seed builder resolves known entities locally, sends unknown brands as a search, and asks the user to confirm the exact point before a run.",
+    body: 'Madre Mezcal did not exist in Qloo, and a search for “Blind Pig” resolved to a city in Ukraine. The seed builder resolves known entities locally, sends unknown brands as a search, and asks the user to confirm the exact point before a run.',
   },
   {
     title: 'Parameters that fail silently',
@@ -350,7 +350,7 @@ export default function KarumCaseStudy() {
               'Built with Aadarsh Verma',
               'Team of 2',
               'Flutter Web · Go · Python',
-            ].map(c => (
+            ].map((c) => (
               <span
                 key={c}
                 className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
@@ -459,7 +459,10 @@ export default function KarumCaseStudy() {
 
           <div
             className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
           >
             {modes.map((m, i) => (
               <Reveal key={m.n} delay={0.05 * i}>
@@ -503,13 +506,15 @@ export default function KarumCaseStudy() {
           <Reveal delay={0.1}>
             <div
               className="rounded-2xl overflow-hidden"
-              style={{ border: '1px solid rgba(124,58,237,0.16)', background: 'rgba(124,58,237,0.06)' }}
+              style={{
+                border: '1px solid rgba(124,58,237,0.16)',
+                background: 'rgba(124,58,237,0.06)',
+              }}
             >
               <div
                 className="p-7 lg:p-10"
                 style={{
-                  background:
-                    'linear-gradient(135deg, rgba(14,14,24,1) 0%, rgba(19,15,34,1) 100%)',
+                  background: 'linear-gradient(135deg, rgba(14,14,24,1) 0%, rgba(19,15,34,1) 100%)',
                 }}
               >
                 <div className="font-mono text-[10px] text-white/50 uppercase tracking-[0.14em] mb-4">
@@ -529,10 +534,11 @@ export default function KarumCaseStudy() {
                   <span className="text-white/50">demographic fit</span>
                 </div>
                 <p className="mt-5 text-[13px] text-white/50 leading-relaxed font-light max-w-3xl">
-                  Raw Qloo match scores move with the brand and the city, so Karum never presents one
-                  as an absolute. Each store is ranked inside the current list, and the skip floor
-                  comes from tested runs, not a guessed number. If the menu check is unavailable, the
-                  shelf term is marked unknown and the score is recalculated from the other two.
+                  Raw Qloo match scores move with the brand and the city, so Karum never presents
+                  one as an absolute. Each store is ranked inside the current list, and the skip
+                  floor comes from tested runs, not a guessed number. If the menu check is
+                  unavailable, the shelf term is marked unknown and the score is recalculated from
+                  the other two.
                 </p>
               </div>
 
@@ -564,7 +570,10 @@ export default function KarumCaseStudy() {
 
           <div
             className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden mt-4"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
           >
             {provenance.map((p, i) => (
               <Reveal key={p.label} delay={0.05 * i}>
@@ -617,7 +626,10 @@ export default function KarumCaseStudy() {
 
           <div
             className="grid grid-cols-1 md:grid-cols-2 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
           >
             {services.map((s, i) => (
               <Reveal
@@ -667,7 +679,10 @@ export default function KarumCaseStudy() {
 
           <div
             className="rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
           >
             {ownership.map((o, i) => (
               <Reveal key={o.repo} delay={0.04 * i}>
@@ -683,8 +698,13 @@ export default function KarumCaseStudy() {
                     <div className="font-mono text-[9.5px] text-white/50 mt-1.5 tracking-wide">
                       {o.role}
                     </div>
-                    <div className="inline-flex mt-2 font-mono text-[9px] text-violet-light/80 px-1.5 py-0.5 rounded"
-                      style={{ background: 'rgba(124,58,237,0.12)', border: '1px solid rgba(124,58,237,0.18)' }}>
+                    <div
+                      className="inline-flex mt-2 font-mono text-[9px] text-violet-light/80 px-1.5 py-0.5 rounded"
+                      style={{
+                        background: 'rgba(124,58,237,0.12)',
+                        border: '1px solid rgba(124,58,237,0.18)',
+                      }}
+                    >
                       {o.commits}
                     </div>
                   </div>
@@ -713,14 +733,15 @@ export default function KarumCaseStudy() {
 
           <div
             className="grid grid-cols-1 lg:grid-cols-2 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
           >
             {challenges.map((c, i) => (
               <Reveal key={c.title} delay={0.05 * i}>
                 <div className="p-7 h-full" style={{ background: 'rgba(10,10,15,1)' }}>
-                  <div className="font-mono text-[10px] text-violet-light mb-3">
-                    0{i + 1}
-                  </div>
+                  <div className="font-mono text-[10px] text-violet-light mb-3">0{i + 1}</div>
                   <div className="font-display font-semibold text-white text-[14px] leading-snug mb-2.5">
                     {c.title}
                   </div>
@@ -739,7 +760,10 @@ export default function KarumCaseStudy() {
 
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px"
-            style={{ border: '1px solid rgba(124,58,237,0.08)', background: 'rgba(124,58,237,0.08)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.08)',
+              background: 'rgba(124,58,237,0.08)',
+            }}
           >
             {stack.map((s, i) => (
               <Reveal key={s.group} delay={0.05 * i}>
@@ -748,7 +772,7 @@ export default function KarumCaseStudy() {
                     {s.group}
                   </div>
                   <div className="flex flex-wrap gap-1.5">
-                    {s.items.map(t => (
+                    {s.items.map((t) => (
                       <span
                         key={t}
                         className="font-mono text-[10px] px-2 py-1 rounded text-white/50"
@@ -798,7 +822,10 @@ export default function KarumCaseStudy() {
 
           <div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px rounded-2xl overflow-hidden"
-            style={{ border: '1px solid rgba(124,58,237,0.1)', background: 'rgba(124,58,237,0.06)' }}
+            style={{
+              border: '1px solid rgba(124,58,237,0.1)',
+              background: 'rgba(124,58,237,0.06)',
+            }}
           >
             {links.map((l, i) => (
               <Reveal key={l.href} delay={0.05 * i}>
@@ -816,7 +843,9 @@ export default function KarumCaseStudy() {
                   </div>
                   <div className="font-display font-semibold text-white text-[15px] leading-snug mb-2 flex items-center gap-2">
                     {l.label}
-                    <span className="text-white/50 text-[13px]" aria-hidden="true">↗</span>
+                    <span className="text-white/50 text-[13px]" aria-hidden="true">
+                      ↗
+                    </span>
                   </div>
                   <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{l.desc}</p>
                 </motion.a>
