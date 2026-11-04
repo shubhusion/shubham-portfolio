@@ -148,12 +148,13 @@ export default function PrentlineCaseStudy() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-bold tracking-[-0.03em] text-white"
+          <h1
+            className="font-display font-bold tracking-[-0.03em] text-white"
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
             Deterministic coach.<br />
             <span className="text-gradient">Probabilistic model.</span>
-          </h2>
-          <p className="mt-4 text-[15px] text-white/55 font-light max-w-3xl leading-relaxed">
+          </h1>
+          <p className="mt-4 text-[15px] text-white/50 font-light max-w-3xl leading-relaxed">
             A multimodal AI coach that watches your hands, talks you through a physical
             procedure, grades your work, and tells your supervisor before you get stuck.
             Five independently deployable services, ~50,000 lines of code.
@@ -254,7 +255,7 @@ export default function PrentlineCaseStudy() {
                           transition={{ duration: 0.4 }}
                         />
                         <div className="font-mono text-[11px] text-white font-medium mb-1">{n.label}</div>
-                        <div className="font-mono text-[10px] text-white/40 leading-relaxed">{n.sub}</div>
+                        <div className="font-mono text-[10px] text-white/50 leading-relaxed">{n.sub}</div>
                       </motion.div>
                     ))}
                   </div>

@@ -143,11 +143,12 @@ export default function LumenslateCaseStudy() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2 className="font-display font-bold tracking-[-0.03em] text-white"
+          <h1
+            className="font-display font-bold tracking-[-0.03em] text-white"
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
             Less paperwork.<br />
             <span className="text-gradient">More teaching.</span>
-          </h2>
+          </h1>
           <p className="mt-4 text-[15px] text-white/55 font-light max-w-3xl leading-relaxed">
             An AI teaching assistant that assesses every question type, writes per-student
             feedback, generates unique question variations and assembles tailored assignments —
@@ -181,7 +182,7 @@ export default function LumenslateCaseStudy() {
           ].map((b, i) => (
             <Reveal key={i} delay={0.05 * i}>
               <div className="p-7 h-full" style={{ background: 'rgba(10,10,15,1)' }}>
-                <div className="font-mono text-[10px] text-white/45 uppercase tracking-[0.12em] mb-3">
+                <div className="font-mono text-[10px] text-white/50 uppercase tracking-[0.12em] mb-3">
                   {b.kicker}
                 </div>
                 <p className="text-[13.5px] text-white/50 leading-relaxed font-light">{b.body}</p>
@@ -212,7 +213,7 @@ export default function LumenslateCaseStudy() {
                 className="absolute inset-0 w-full h-full"
               />
             </div>
-            <p className="mt-3 font-mono text-[11px] text-white/45">
+            <p className="mt-3 font-mono text-[11px] text-white/50">
               Product demo — click play in the player
             </p>
           </Reveal>
@@ -244,7 +245,7 @@ export default function LumenslateCaseStudy() {
                 className="w-full h-auto block"
               />
             </div>
-            <p className="mt-3 font-mono text-[11px] text-white/45">{shots[0].caption}</p>
+            <p className="mt-3 font-mono text-[11px] text-white/50">{shots[0].caption}</p>
           </Reveal>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
@@ -261,7 +262,7 @@ export default function LumenslateCaseStudy() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <p className="mt-3 font-mono text-[11px] text-white/45">{s.caption}</p>
+                <p className="mt-3 font-mono text-[11px] text-white/50">{s.caption}</p>
               </Reveal>
             ))}
           </div>
@@ -336,7 +337,7 @@ export default function LumenslateCaseStudy() {
                     className="w-full h-auto block"
                   />
                 </div>
-                <p className="mt-3 font-mono text-[11px] text-white/45">{a.caption}</p>
+                <p className="mt-3 font-mono text-[11px] text-white/50">{a.caption}</p>
               </Reveal>
             ))}
           </div>
@@ -368,7 +369,7 @@ export default function LumenslateCaseStudy() {
                   <div className="font-display font-semibold text-white text-[14px] leading-snug mb-2.5">
                     {h.title}
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{h.body}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{h.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -461,16 +462,16 @@ export default function LumenslateCaseStudy() {
                   </div>
                   <div className="font-display font-semibold text-white text-[15px] leading-snug mb-2 flex items-center gap-2">
                     {l.label}
-                    <span className="text-white/40 text-[13px]" aria-hidden="true">↗</span>
+                    <span className="text-white/50 text-[13px]" aria-hidden="true">↗</span>
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{l.desc}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{l.desc}</p>
                 </motion.a>
               </Reveal>
             ))}
           </div>
 
           <Reveal delay={0.15}>
-            <p className="mt-6 font-mono text-[11px] text-white/40 leading-relaxed">
+            <p className="mt-6 font-mono text-[11px] text-white/50 leading-relaxed">
               Built with Kartikey Singh and Aadarsh Verma — submitted to the AI in Action hackathon, 2025.
             </p>
           </Reveal>

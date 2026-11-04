@@ -40,7 +40,7 @@ export default function Contact() {
                   style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
                   Let's build<br />something <span className="text-gradient">great.</span>
                 </h2>
-                <p className="text-[15px] text-white/45 font-light leading-relaxed mb-8 max-w-md">
+                <p className="text-[15px] text-white/50 font-light leading-relaxed mb-8 max-w-md">
                   Open to full-time roles as a Full Stack, AI, or Founding Engineer. Also selectively available for technical consulting and architecture advisory.
                 </p>
                 <motion.a
@@ -62,7 +62,7 @@ export default function Contact() {
                     href={l.href}
                     target={l.href.startsWith('http') ? '_blank' : undefined}
                     rel="noopener noreferrer"
-                    className="flex items-center gap-4 p-4 rounded-xl relative overflow-hidden"
+                    className="flex items-center gap-4 p-4 rounded-xl relative overflow-hidden min-w-0"
                     style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(124,58,237,0.12)' }}
                     whileHover={{ x: 5, borderColor: 'rgba(124,58,237,0.4)', backgroundColor: 'rgba(124,58,237,0.06)' }}
                     transition={{ duration: 0.2 }}
@@ -71,8 +71,8 @@ export default function Contact() {
                       style={{ background: 'rgba(124,58,237,0.15)', border: '1px solid rgba(124,58,237,0.2)', color: '#A78BFA' }}>
                       {l.icon}
                     </div>
-                    <div>
-                      <div className="font-mono text-[10px] text-white/45 tracking-widest uppercase mb-0.5">{l.label}</div>
+                    <div className="min-w-0 break-all">
+                      <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-0.5">{l.label}</div>
                       <div className="font-display text-[13px] font-medium text-white">{l.value}</div>
                     </div>
                   </motion.a>

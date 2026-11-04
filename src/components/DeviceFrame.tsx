@@ -50,7 +50,7 @@ export function DeviceFrame({ variant, src, alt, url, width, height, className =
         <span className="w-2.5 h-2.5 rounded-full bg-red-500/70" aria-hidden="true" />
         <span className="w-2.5 h-2.5 rounded-full bg-yellow-500/70" aria-hidden="true" />
         <span className="w-2.5 h-2.5 rounded-full bg-green-500/70" aria-hidden="true" />
-        {url && <span className="font-mono text-[10px] text-white/45 ml-2 truncate">{url}</span>}
+        {url && <span className="font-mono text-[10px] text-white/50 ml-2 truncate">{url}</span>}
       </div>
       <img
         src={src}

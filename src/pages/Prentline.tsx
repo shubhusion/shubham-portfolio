@@ -9,7 +9,13 @@ export default function PrentlinePage() {
     <div className="noise-overlay min-h-screen" style={{ background: '#0A0A0F' }}>
       <Cursor />
       <Nav />
-      <main>
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-6 focus:left-6 focus:z-50 focus:px-6 focus:py-3 focus:text-white focus:bg-violet focus:rounded"
+      >
+        Skip to main content
+      </a>
+      <main id="main" tabIndex={-1}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12" style={{ paddingTop: '9.5rem' }}>
           <motion.a
             href="/"

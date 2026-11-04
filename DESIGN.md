@@ -166,7 +166,7 @@ A near-monochrome dark console lit by one accent family (violet warming to blue)
 
 **The One Signal Rule.** Signal Violet and Electric Sky are the only saturated colors on the page. Everything else is Void Ink, white-opacity steps, or the two status accents. A new component reaching for a third hue is off-system.
 
-**The 45% Floor.** No text renders below `white/45` (4.5:1 against Void Ink, WCAG AA for normal text) — not even captions, index numbers, or tags. `white/45` and `white/50` are the two lowest steps in active use; nothing goes lower.
+**The 50% Floor.** No text renders below `white/50` (5.33:1 against Void Ink, safely WCAG AA for normal text) — not even captions, index numbers, or tags. `white/50` is the lowest step in active use; nothing goes lower.
 
 ## Typography
 
@@ -184,7 +184,7 @@ A near-monochrome dark console lit by one accent family (violet warming to blue)
 - **Metric** (700, `clamp(1.2rem, 2vw, 1.65rem)`, letter-spacing -0.03em): in-card metric numbers (Projects card stats).
 - **Title** (700, `clamp(1.2rem, 2vw, 1.6rem)`, letter-spacing -0.02em): every role/company/card-name title site-wide (Experience roles and companies, Project card names, Client Work full-width card names) — the single canonical size for this role after a consolidation pass unified four near-duplicate clamps.
 - **Body Large** (300, 16px, line-height 1.85): About's intro paragraphs, the one place body copy runs at the larger step.
-- **Body** (300, 15px, line-height 1.85): standard paragraph copy, rendered at `white/45`–`white/55` opacity over Void Ink.
+- **Body** (300, 15px, line-height 1.85): standard paragraph copy, rendered at `white/50`–`white/55` opacity over Void Ink.
 - **Meta** (300, 13–14px, line-height 1.6): card descriptions, bullet text, secondary sentence-level copy that isn't full body prose.
 - **Label** (400–500, 11px, letter-spacing 0.15em, uppercase where used as an eyebrow): section eyebrows, primary tags, nav links' mono siblings.
 - **Small** (400, 12px, letter-spacing 0.1em): secondary mono metadata (dates, sub-labels).

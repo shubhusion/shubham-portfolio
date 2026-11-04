@@ -308,7 +308,7 @@ function GalleryShot({ shot, delay = 0.1 }: { shot: Shot; delay?: number }) {
           className="w-full h-auto block"
         />
       </div>
-      <p className="mt-3 font-mono text-[11px] text-white/45 leading-relaxed">{shot.caption}</p>
+      <p className="mt-3 font-mono text-[11px] text-white/50 leading-relaxed">{shot.caption}</p>
     </Reveal>
   )
 }
@@ -327,14 +327,14 @@ export default function KarumCaseStudy() {
           </div>
         </Reveal>
         <Reveal delay={0.1}>
-          <h2
+          <h1
             className="font-display font-bold tracking-[-0.03em] text-white"
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}
           >
             Knock on the
             <br />
             <span className="text-gradient">right doors.</span>
-          </h2>
+          </h1>
           <p className="mt-4 text-[15px] text-white/55 font-light max-w-3xl leading-relaxed">
             Karum turns a brand and a city into a ranked field plan — which stores to pitch, where
             to open a pop-up, who to partner with, which doors to skip, and the route between them.
@@ -382,7 +382,7 @@ export default function KarumCaseStudy() {
           ].map((b, i) => (
             <Reveal key={i} delay={0.05 * i}>
               <div className="p-7 h-full" style={{ background: 'rgba(10,10,15,1)' }}>
-                <div className="font-mono text-[10px] text-white/45 uppercase tracking-[0.12em] mb-3">
+                <div className="font-mono text-[10px] text-white/50 uppercase tracking-[0.12em] mb-3">
                   {b.kicker}
                 </div>
                 <p className="text-[13.5px] text-white/50 leading-relaxed font-light">{b.body}</p>
@@ -418,7 +418,7 @@ export default function KarumCaseStudy() {
                 className="absolute inset-0 w-full h-full"
               />
             </div>
-            <p className="mt-3 font-mono text-[11px] text-white/45">
+            <p className="mt-3 font-mono text-[11px] text-white/50">
               Product demo — the full run, from a brand seed to a field route
             </p>
           </Reveal>
@@ -468,7 +468,7 @@ export default function KarumCaseStudy() {
                   <div className="font-display font-semibold text-white text-[15px] leading-snug mb-2.5">
                     {m.title}
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{m.body}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{m.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -487,7 +487,7 @@ export default function KarumCaseStudy() {
                   <div className="font-display font-semibold text-white text-[13px] leading-snug mb-2">
                     {c.title}
                   </div>
-                  <p className="text-[12px] text-white/45 leading-relaxed font-light">{c.body}</p>
+                  <p className="text-[12px] text-white/50 leading-relaxed font-light">{c.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -512,7 +512,7 @@ export default function KarumCaseStudy() {
                     'linear-gradient(135deg, rgba(14,14,24,1) 0%, rgba(19,15,34,1) 100%)',
                 }}
               >
-                <div className="font-mono text-[10px] text-white/45 uppercase tracking-[0.14em] mb-4">
+                <div className="font-mono text-[10px] text-white/50 uppercase tracking-[0.14em] mb-4">
                   Store score
                 </div>
                 <div
@@ -520,13 +520,13 @@ export default function KarumCaseStudy() {
                   style={{ fontSize: 'clamp(1.45rem,2.8vw,2.2rem)' }}
                 >
                   <span className="text-gradient">50%</span>
-                  <span className="text-white/40">taste fit</span>
+                  <span className="text-white/50">taste fit</span>
                   <span className="text-white/20">+</span>
                   <span className="text-gradient">30%</span>
-                  <span className="text-white/40">shelf opportunity</span>
+                  <span className="text-white/50">shelf opportunity</span>
                   <span className="text-white/20">+</span>
                   <span className="text-gradient">20%</span>
-                  <span className="text-white/40">demographic fit</span>
+                  <span className="text-white/50">demographic fit</span>
                 </div>
                 <p className="mt-5 text-[13px] text-white/50 leading-relaxed font-light max-w-3xl">
                   Raw Qloo match scores move with the brand and the city, so Karum never presents one
@@ -549,10 +549,10 @@ export default function KarumCaseStudy() {
                         </div>
                         <div className="font-mono text-[11px] text-violet-light">{s.weight}</div>
                       </div>
-                      <div className="font-mono text-[9.5px] text-white/35 uppercase tracking-[0.12em] mb-2.5">
+                      <div className="font-mono text-[9.5px] text-white/50 uppercase tracking-[0.12em] mb-2.5">
                         {s.source}
                       </div>
-                      <p className="text-[12px] text-white/45 leading-relaxed font-light">
+                      <p className="text-[12px] text-white/50 leading-relaxed font-light">
                         {s.body}
                       </p>
                     </div>
@@ -577,13 +577,13 @@ export default function KarumCaseStudy() {
                     />
                     <span className="font-mono text-[10px] text-white/70">{p.label}</span>
                   </div>
-                  <div className="font-mono text-[9.5px] text-white/35 tracking-wide">{p.desc}</div>
+                  <div className="font-mono text-[9.5px] text-white/50 tracking-wide">{p.desc}</div>
                 </div>
               </Reveal>
             ))}
           </div>
           <Reveal delay={0.15}>
-            <p className="mt-3 font-mono text-[11px] text-white/40 leading-relaxed">
+            <p className="mt-3 font-mono text-[11px] text-white/50 leading-relaxed">
               Four labels, enforced in the shared protos — no number ships without its source.
             </p>
           </Reveal>
@@ -604,7 +604,7 @@ export default function KarumCaseStudy() {
               }}
             >
               <div className="font-mono text-[11px] text-white/55 leading-relaxed whitespace-normal sm:whitespace-nowrap">
-                <span className="text-white/30">client</span>
+                <span className="text-white/50">client</span>
                 <span className="text-violet-light"> → </span>
                 go gateway
                 <span className="text-violet-light"> → </span>
@@ -631,11 +631,11 @@ export default function KarumCaseStudy() {
                       <div className="font-mono text-[10px] text-violet-light mb-1.5">{s.n}</div>
                       <div className="font-mono text-[12px] text-white/85">{s.repo}</div>
                     </div>
-                    <div className="font-mono text-[9.5px] text-white/35 text-right pt-0.5">
+                    <div className="font-mono text-[9.5px] text-white/50 text-right pt-0.5">
                       {s.role}
                     </div>
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{s.body}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{s.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -680,7 +680,7 @@ export default function KarumCaseStudy() {
                 >
                   <div className="lg:col-span-4">
                     <div className="font-mono text-[11.5px] text-white/80">{o.repo}</div>
-                    <div className="font-mono text-[9.5px] text-white/35 mt-1.5 tracking-wide">
+                    <div className="font-mono text-[9.5px] text-white/50 mt-1.5 tracking-wide">
                       {o.role}
                     </div>
                     <div className="inline-flex mt-2 font-mono text-[9px] text-violet-light/80 px-1.5 py-0.5 rounded"
@@ -697,7 +697,7 @@ export default function KarumCaseStudy() {
           </div>
 
           <Reveal delay={0.15}>
-            <p className="mt-4 font-mono text-[10.5px] text-white/35 leading-relaxed">
+            <p className="mt-4 font-mono text-[10.5px] text-white/50 leading-relaxed">
               Non-merge commits authored by Shubham Sharma across the five repositories, verified
               from git history. Aadarsh built the original client and coordinator flows; the product
               shipped as one system.
@@ -724,7 +724,7 @@ export default function KarumCaseStudy() {
                   <div className="font-display font-semibold text-white text-[14px] leading-snug mb-2.5">
                     {c.title}
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{c.body}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{c.body}</p>
                 </div>
               </Reveal>
             ))}
@@ -816,16 +816,16 @@ export default function KarumCaseStudy() {
                   </div>
                   <div className="font-display font-semibold text-white text-[15px] leading-snug mb-2 flex items-center gap-2">
                     {l.label}
-                    <span className="text-white/40 text-[13px]" aria-hidden="true">↗</span>
+                    <span className="text-white/50 text-[13px]" aria-hidden="true">↗</span>
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{l.desc}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{l.desc}</p>
                 </motion.a>
               </Reveal>
             ))}
           </div>
 
           <Reveal delay={0.15}>
-            <p className="mt-6 font-mono text-[11px] text-white/40 leading-relaxed">
+            <p className="mt-6 font-mono text-[11px] text-white/50 leading-relaxed">
               Built with Aadarsh Verma for the Qloo Agentic Hackathon, 2026. MIT licensed.
             </p>
           </Reveal>

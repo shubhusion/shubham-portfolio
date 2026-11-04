@@ -53,7 +53,11 @@ export default function Marquee() {
         transition={{ duration: 40, ease: 'linear', repeat: Infinity }}
       >
         {items.map((skill, i) => (
-          <span key={i} className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/50 tracking-widest">
+          <span
+            key={i}
+            className="inline-flex items-center gap-4 px-6 font-mono text-[11px] text-white/50 tracking-widest"
+            aria-hidden={i >= SKILLS.length}
+          >
             {skill}
             <span className="text-violet/50 text-sm">·</span>
           </span>

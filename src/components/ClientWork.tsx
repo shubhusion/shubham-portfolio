@@ -104,7 +104,7 @@ export default function ClientWork() {
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}>
             Live in <span className="text-gradient">production.</span>
           </h2>
-          <p className="text-[15px] text-white/55 font-light mb-4">8 live products across 4 clients. Click any to see the work.</p>
+          <p className="text-[15px] text-white/50 font-light mb-4">8 live products across 4 clients. Click any to see the work.</p>
         </Reveal>
 
         {/* Stats bar */}
@@ -198,7 +198,7 @@ function ClientCard({ num, client, name, url, link, highlights, tags, media, ful
         {!fullWidth && (
           <ul className="space-y-2 mb-4">
             {highlights.map((h: string, j: number) => (
-              <li key={j} className="flex gap-2.5 text-[12px] text-white/55 leading-relaxed">
+              <li key={j} className="flex gap-2.5 text-[12px] text-white/50 leading-relaxed">
                 <span className="mt-2 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                 {h}
               </li>

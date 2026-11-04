@@ -35,8 +35,30 @@ export default function Nav() {
   useEffect(() => {
     if (!open) return
     document.body.style.overflow = 'hidden'
+    const menu = document.querySelector('[role="dialog"]') as HTMLElement | null
+    menu?.focus()
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') close()
+      // trap focus inside the dialog
+      if (e.key === 'Tab') {
+        const focusables = menu
+          ? Array.from(
+              menu.querySelectorAll<HTMLElement>(
+                'a[href], button, [tabindex]:not([tabindex="-1"])'
+              )
+            )
+          : []
+        if (focusables.length === 0) return
+        const first = focusables[0]
+        const last = focusables[focusables.length - 1]
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault()
+          last.focus()
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault()
+          first.focus()
+        }
+      }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => {
@@ -76,7 +98,11 @@ export default function Nav() {
               transition={{ duration: 28, ease: 'linear', repeat: Infinity }}
             >
               {[0, 1].map(i => (
-                <span key={i} className="font-mono text-[11px] text-white/45 px-8">
+                <span
+                  key={i}
+                  className="font-mono text-[11px] text-white/50 px-8"
+                  aria-hidden={i === 1}
+                >
                   Full Stack &amp; AI Engineer &nbsp;✦&nbsp;
                   <span className="text-violet-light">Production systems</span> at scale · LLM pipelines · Distributed systems &nbsp;✦&nbsp;
                   Open to full-time <span className="text-violet-light">Founding Engineer</span> / <span className="text-violet-light">AI Engineer</span> roles &nbsp;✦&nbsp;
@@ -90,6 +116,7 @@ export default function Nav() {
 
       {/* Main nav */}
       <motion.nav
+        aria-label="Main"
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
@@ -147,6 +174,9 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
+            role="dialog"
+            aria-modal="true"
+            aria-label="Navigation"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
