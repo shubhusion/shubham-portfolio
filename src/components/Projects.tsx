@@ -69,6 +69,31 @@ const projects: Project[] = [
   },
   {
     num: '03',
+    cat: 'Property Management · Workflow · Full Stack',
+    name: 'Maintix — Multi-Property Maintenance Platform',
+    client: 'Property Management Automation Challenge · 2026',
+    span: 'lg:col-span-12',
+    desc: 'Multi-property maintenance platform with one ticket at the centre — tenants report, managers assign and approve, technicians complete. A six-state workflow is enforced by a single transition table, backed by property-scoped RBAC, optimistic concurrency on every mutation and an append-only activity trail. Next.js 15 web app + NestJS/Prisma API in one Turborepo.',
+    metrics: [
+      { v: '6', l: 'Stage ticket workflow' },
+      { v: '43', l: 'Backend tests', green: true },
+    ],
+    tags: [
+      'Next.js 15',
+      'NestJS',
+      'Prisma · PostgreSQL',
+      'TanStack Query',
+      'Turborepo',
+    ],
+    link: '/maintix',
+    media: {
+      desktop: '/images/projects/maintix/desktop.webp',
+      mobile: '/images/projects/maintix/mobile.webp',
+      url: 'maintix-web.vercel.app',
+    },
+  },
+  {
+    num: '04',
     cat: 'Agentic AI · Cultural Taste · Hackathon',
     name: 'Karum — Retail Expansion Agent',
     client: 'Qloo Agentic Hackathon · 2026',
@@ -88,7 +113,7 @@ const projects: Project[] = [
     },
   },
   {
-    num: '04',
+    num: '05',
     cat: 'AI · Automation · Chrome Extension',
     name: 'LinkedIn Lead Discovery Platform',
     client: 'KEEL — 2026',
@@ -107,7 +132,7 @@ const projects: Project[] = [
     },
   },
   {
-    num: '05',
+    num: '06',
     cat: 'Distributed · OSINT',
     name: 'OSINT Investigation Platform',
     client: 'S2T AI · 2025–2026',
@@ -126,7 +151,7 @@ const projects: Project[] = [
     },
   },
   {
-    num: '06',
+    num: '07',
     cat: 'Full Stack · AI · Production',
     name: 'AI Ordering Platform',
     client: 'Platelink.ai · 2024–2025',
@@ -141,7 +166,7 @@ const projects: Project[] = [
     media: null,
   },
   {
-    num: '07',
+    num: '08',
     cat: 'GenAI · RAG · Multi-Agent',
     name: 'Lumen Slate',
     client: 'AI in Action Hackathon · 2025',
@@ -153,7 +178,7 @@ const projects: Project[] = [
     media: null,
   },
   {
-    num: '08',
+    num: '09',
     cat: 'GenAI · Fintech · 🏆 Winner',
     name: 'Aarthik Setu',
     client: 'Google GenAI Exchange Hackathon · 2024',

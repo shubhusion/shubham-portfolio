@@ -13,6 +13,7 @@ export default defineConfig({
         aarthiksetu: fileURLToPath(new URL('aarthik-setu.html', import.meta.url)),
         lumenslate: fileURLToPath(new URL('lumenslate.html', import.meta.url)),
         karum: fileURLToPath(new URL('karum.html', import.meta.url)),
+        maintix: fileURLToPath(new URL('maintix.html', import.meta.url)),
         okuvu: fileURLToPath(new URL('okuvu.html', import.meta.url)),
       },
     },
