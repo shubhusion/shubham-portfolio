@@ -32,6 +32,6 @@
   ],
   "rewrites": [
     { "source": "/404", "destination": "/404.html" },
-    { "source": "/:path*((?!assets|images|media|robots.txt|sitemap.xml|favicon.svg|karum|prentline|lumenslate|aarthik-setu).*)", "destination": "/404.html", "statusCode": 404 }
+    { "source": "/:path*((?!assets|images|media|robots.txt|sitemap.xml|favicon.svg|karum|okuvu|prentline|lumenslate|aarthik-setu).*)", "destination": "/404.html", "statusCode": 404 }
   ]
 }

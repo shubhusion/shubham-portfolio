@@ -2,7 +2,34 @@ import { motion } from 'framer-motion'
 import { DevicePair } from './DeviceFrame'
 import Reveal from './Reveal'
 
-const clients = [
+type ClientStatus = {
+  label: string
+  tone: 'live' | 'beta'
+}
+
+type ClientCover = {
+  src: string
+  alt: string
+  w: number
+  h: number
+}
+
+type Client = {
+  num: string
+  client: string
+  name: string
+  url: string
+  link: string
+  highlights: string[]
+  tags: string[]
+  media?: { desktop: string; mobile: string }
+  cover?: ClientCover
+  caseStudy?: string
+  status?: ClientStatus
+  wide?: boolean
+}
+
+const clients: Client[] = [
   {
     num: '01',
     client: 'Transportvibes',
@@ -146,6 +173,29 @@ const clients = [
     },
     wide: true,
   },
+  {
+    num: '09',
+    client: 'Suvok Systems LLP · Senior Engineer',
+    name: 'Okuvu — AI Mental Wellness Companion',
+    url: 'okuvu.in',
+    link: 'https://okuvu.in',
+    highlights: [
+      'Therapist-led, invite-only model — a licensed therapist adds every client',
+      'Five deployable services on one Prisma schema and shared TypeScript types',
+      'Four-agent turn pipeline with safety checks on every message',
+      'Clinical boundaries enforced in code — private journal, isolated therapist notes',
+    ],
+    tags: ['Flutter', 'Fastify', 'Next.js 14', 'PostgreSQL · Prisma', 'Redis'],
+    cover: {
+      src: '/images/projects/okuvu/cover.webp',
+      alt: 'Okuvu brand cover — the tapered spiral mark on a dark violet field, with the line “The week between sessions.”',
+      w: 1600,
+      h: 900,
+    },
+    caseStudy: '/okuvu',
+    status: { label: 'Beta', tone: 'beta' },
+    wide: true,
+  },
 ]
 
 export default function ClientWork() {
@@ -172,10 +222,10 @@ export default function ClientWork() {
             className="font-display font-bold tracking-[-0.03em] text-white mb-4"
             style={{ fontSize: 'clamp(2.5rem,5vw,4rem)' }}
           >
-            Live in <span className="text-gradient">production.</span>
+            Shipped for <span className="text-gradient">clients.</span>
           </h2>
           <p className="text-[15px] text-white/50 font-light mb-4">
-            8 live products across 4 clients. Click any to see the work.
+            9 products across 5 clients — 8 live, 1 invite-only beta. Click any to see the work.
           </p>
         </Reveal>
 
@@ -189,10 +239,10 @@ export default function ClientWork() {
             }}
           >
             {[
-              { v: '8', l: 'Live products' },
+              { v: '9', l: 'Products' },
+              { v: '5', l: 'Clients' },
+              { v: '1', l: 'Invite-only beta' },
               { v: 'CI/CD', l: 'GitHub Actions' },
-              { v: 'VPS', l: 'Production infra' },
-              { v: 'CRM', l: 'GoHighLevel' },
             ].map((s, i) => (
               <div key={i}>
                 <div
@@ -240,17 +290,7 @@ export default function ClientWork() {
   )
 }
 
-type ClientCardProps = {
-  num: string
-  client: string
-  name: string
-  url: string
-  link: string
-  highlights: string[]
-  tags: string[]
-  media?: { desktop: string; mobile: string }
-  fullWidth?: boolean
-}
+type ClientCardProps = Omit<Client, 'wide'> & { fullWidth?: boolean }
 
 function ClientCard({
   num,
@@ -261,8 +301,36 @@ function ClientCard({
   highlights,
   tags,
   media,
+  cover,
+  caseStudy,
+  status,
   fullWidth,
 }: ClientCardProps) {
+  const isBeta = status?.tone === 'beta'
+  const statusLabel = status?.label ?? 'Live'
+  const statusColor = isBeta ? '#F59E0B' : '#10B981'
+  const statusBackground = isBeta ? 'rgba(245,158,11,0.1)' : 'rgba(16,185,129,0.1)'
+  const statusBorder = isBeta ? 'rgba(245,158,11,0.2)' : 'rgba(16,185,129,0.2)'
+
+  const cardMedia = cover ? (
+    <div
+      className="overflow-hidden rounded-xl"
+      style={{ border: '1px solid rgba(124,58,237,0.2)', background: 'rgba(10,10,15,1)' }}
+    >
+      <img
+        src={cover.src}
+        alt={cover.alt}
+        width={cover.w}
+        height={cover.h}
+        loading="lazy"
+        decoding="async"
+        className="w-full h-auto block"
+      />
+    </div>
+  ) : media ? (
+    <DevicePair desktop={media.desktop} mobile={media.mobile} alt={name} url={url} />
+  ) : null
+
   return (
     <motion.div
       className={`flex flex-col gap-4 p-7 relative ${fullWidth ? 'grid grid-cols-1 lg:grid-cols-2 gap-8' : ''}`}
@@ -278,7 +346,7 @@ function ClientCard({
         transition={{ duration: 0.4 }}
       />
 
-      <div className={fullWidth ? '' : ''}>
+      <div>
         <div className="flex justify-between items-start mb-4">
           <div>
             <div className="font-mono text-[10px] text-violet-light mb-1">
@@ -296,28 +364,25 @@ function ClientCard({
             href={link}
             target="_blank"
             rel="noopener noreferrer"
-            aria-label={`Open ${name} live site`}
+            aria-label={`Open ${name} ${isBeta ? 'beta' : 'live site'}`}
             className="flex items-center gap-1.5 font-mono text-[10px] px-2.5 py-1.5 rounded-lg flex-shrink-0 ml-4"
             style={{
-              background: 'rgba(16,185,129,0.1)',
-              color: '#10b981',
-              border: '1px solid rgba(16,185,129,0.2)',
+              background: statusBackground,
+              color: statusColor,
+              border: `1px solid ${statusBorder}`,
             }}
             whileHover={{ scale: 1.05 }}
           >
             <span
-              className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"
+              className={`w-1.5 h-1.5 rounded-full ${isBeta ? '' : 'animate-pulse'}`}
+              style={{ background: statusColor }}
               aria-hidden="true"
             />
-            Live <span aria-hidden="true">↗</span>
+            {statusLabel} <span aria-hidden="true">↗</span>
           </motion.a>
         </div>
 
-        {!fullWidth && media && (
-          <div className="mb-4">
-            <DevicePair desktop={media.desktop} mobile={media.mobile} alt={name} url={url} />
-          </div>
-        )}
+        {!fullWidth && cardMedia && <div className="mb-4">{cardMedia}</div>}
 
         {!fullWidth && (
           <ul className="space-y-2 mb-4">
@@ -344,13 +409,21 @@ function ClientCard({
             </span>
           ))}
         </div>
+
+        {caseStudy && (
+          <a
+            href={caseStudy}
+            aria-label={`Read the ${name} case study`}
+            className="inline-flex items-center gap-1.5 mt-4 font-mono text-[10px] tracking-[0.12em] uppercase text-violet-light hover:text-white transition-colors duration-200"
+          >
+            Read the case study <span aria-hidden="true">→</span>
+          </a>
+        )}
       </div>
 
       {fullWidth && (
         <div className="flex flex-col gap-6">
-          {media && (
-            <DevicePair desktop={media.desktop} mobile={media.mobile} alt={name} url={url} />
-          )}
+          {cardMedia}
           <ul className="space-y-2.5">
             {highlights.map((h: string, j: number) => (
               <li key={j} className="flex gap-3 text-[13px] text-white/45 leading-relaxed">

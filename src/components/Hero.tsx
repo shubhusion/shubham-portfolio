@@ -214,7 +214,7 @@ export default function Hero() {
             { n: '10K+', l: 'Orders/month in production' },
             { n: '99.95%', l: 'Production uptime' },
             { n: '100+', l: 'Teams beaten at GenAI Exchange Hackathon 2024' },
-            { n: '8', l: 'Live products shipped' },
+            { n: '10', l: 'Products built' },
           ].map((s, i) => (
             <div key={i} className="pt-6 pr-6">
               <div
