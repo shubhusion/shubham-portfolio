@@ -49,7 +49,11 @@ All metrics currently on the site are real and confirmed by the user as fixed fa
 - 10K+ records/search, 40% wait-time reduction (S2T AI / GoldenSpear)
 - 30% API response time reduction (AarthikSetu)
 - 40% teacher productivity increase (Lumenslate)
+- 60% tracking-time reduction, 45% DAUs, 92% accuracy (Platelink.ai)
+- 30% failed executions (S2T AI)
+- Asia's largest student technical festival (IIT Bombay Abyuday) and Asia's largest tech festival (Tech: Paradox, IIT Madras)
 - 9 products across 5 clients (8 live, 1 invite-only beta); Google GenAI Hackathon 1st place (Fintech Track, 100+ teams, 2024)
+- The Hero stat "10 Products built" is a curated headline count across Client Work and personal Projects; the two sections show a selection and overlap on some products, so it is not a sum of their cards.
 
 Real assets in repo: headshot at `/images/shubham-headshot.webp`, resume PDF, case-study media under `public/images` and `public/media`, interactive diagram HTML under `public/diagrams`, and verified client URLs (safeedsautotransport.com, transportvibe.com, broadwayautotransport.com, trustlinecarriers.com, reclevo.in, usekeel.in, s2t.ai, roothscale-web.azurewebsites.net).
 

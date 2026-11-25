@@ -230,7 +230,7 @@ const numbers = [
   { v: '122', l: 'Commits authored' },
   { v: '2', l: 'Shared packages' },
   { v: '5', l: 'In-app tools' },
-  { v: '18+', l: 'Adults only' },
+  { v: '18+', l: 'Adults 18+' },
 ]
 
 const links = [

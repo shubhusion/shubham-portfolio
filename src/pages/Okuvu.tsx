@@ -18,7 +18,7 @@ export default function OkuvuPage() {
       <main id="main" tabIndex={-1}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12" style={{ paddingTop: '9.5rem' }}>
           <motion.a
-            href="/"
+            href="/#projects"
             className="inline-flex items-center gap-2 font-mono text-[11px] tracking-[0.15em] uppercase text-white/50 hover:text-white transition-colors duration-200"
             whileHover={{ x: -3 }}
           >

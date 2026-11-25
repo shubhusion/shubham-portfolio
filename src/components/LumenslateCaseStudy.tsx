@@ -115,12 +115,6 @@ const numbers = [
 
 const links = [
   {
-    kicker: 'Live product',
-    label: 'lumen-slate.firebaseapp.com',
-    href: 'https://lumen-slate.firebaseapp.com/',
-    desc: 'The deployed Flutter Web build — the full product, running.',
-  },
-  {
     kicker: 'Hackathon submission',
     label: 'Devpost entry',
     href: 'https://devpost.com/software/lumen-slate',
