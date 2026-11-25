@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import ArchifyEmbed from './ArchifyEmbed'
 import Reveal from './Reveal'
 
 type Shot = {
@@ -605,23 +606,14 @@ export default function KarumCaseStudy() {
           </SectionHead>
 
           <Reveal delay={0.1}>
-            <div
-              className="rounded-xl px-5 py-4 mb-4 overflow-x-auto"
-              style={{
-                border: '1px solid rgba(124,58,237,0.16)',
-                background: 'rgba(14,14,24,0.75)',
-              }}
-            >
-              <div className="font-mono text-[11px] text-white/55 leading-relaxed whitespace-normal sm:whitespace-nowrap">
-                <span className="text-white/50">client</span>
-                <span className="text-violet-light"> → </span>
-                go gateway
-                <span className="text-violet-light"> → </span>
-                taste · ai · places · routes
-                <span className="text-violet-light"> → </span>
-                ranked doors + evidence
-              </div>
-            </div>
+            <ArchifyEmbed
+              src="/diagrams/karum-dataflow.html"
+              title="Interactive Karum scout data flow diagram"
+              width={855}
+              height={740}
+              minWidth={620}
+              caption="A brand and a city become a scout job. Taste, AI, Places and Routes enrich the shortlist; the output is ranked doors with source-labelled evidence and a field plan."
+            />
           </Reveal>
 
           <div

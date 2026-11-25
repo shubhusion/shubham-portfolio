@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import ArchifyEmbed from './ArchifyEmbed'
 import Reveal from './Reveal'
 
 const shots = [
@@ -61,18 +62,20 @@ const engineFeatures = [
 const architecture = [
   {
     src: '/images/diagrams/lumen-slate-architecture.svg',
+    embedSrc: '/diagrams/lumen-slate-architecture.html',
     alt: 'Lumen Slate system architecture — Flutter app, Go Gin backend, Python gRPC AI service, PostgreSQL on Cloud SQL, Redis task queue, Go worker and Vertex AI RAG',
     w: 830,
-    h: 816,
+    h: 1140,
     minW: 560,
     caption:
       'High-level system view — the Flutter app calls the Go backend, which hands AI work to the Python gRPC service. Postgres on Cloud SQL on both sides, Redis for async grading, and Vertex AI RAG. The agent tree below shows the six specialists.',
   },
   {
     src: '/images/projects/lumen-slate/agents.webp',
+    embedSrc: '/diagrams/lumen-slate-agents.html',
     alt: 'Agent orchestration — root ADK agent with six specialist sub-agents',
-    w: 1800,
-    h: 1060,
+    w: 800,
+    h: 950,
     minW: 0,
     caption:
       'Agent orchestration — a root agent routes to specialists: conversation, summarisation, assessment, and general or tailored assignment generation.',
@@ -361,24 +364,37 @@ export default function LumenslateCaseStudy() {
           <div className="space-y-8">
             {architecture.map((a, i) => (
               <Reveal key={i} delay={0.1 + 0.05 * i}>
-                <div
-                  className="overflow-x-auto rounded-xl"
-                  style={{
-                    border: '1px solid rgba(124,58,237,0.2)',
-                    background: 'rgba(10,10,15,1)',
-                  }}
-                >
-                  <img
-                    src={a.src}
-                    alt={a.alt}
+                {a.embedSrc ? (
+                  <ArchifyEmbed
+                    src={a.embedSrc}
+                    title={a.alt}
                     width={a.w}
                     height={a.h}
-                    loading="lazy"
-                    style={a.minW ? { minWidth: a.minW } : undefined}
-                    className="w-full h-auto block"
+                    minWidth={a.minW}
+                    caption={a.caption}
                   />
-                </div>
-                <p className="mt-3 font-mono text-[11px] text-white/50">{a.caption}</p>
+                ) : (
+                  <>
+                    <div
+                      className="overflow-x-auto rounded-xl"
+                      style={{
+                        border: '1px solid rgba(124,58,237,0.2)',
+                        background: 'rgba(10,10,15,1)',
+                      }}
+                    >
+                      <img
+                        src={a.src}
+                        alt={a.alt}
+                        width={a.w}
+                        height={a.h}
+                        loading="lazy"
+                        style={a.minW ? { minWidth: a.minW } : undefined}
+                        className="w-full h-auto block"
+                      />
+                    </div>
+                    <p className="mt-3 font-mono text-[11px] text-white/50">{a.caption}</p>
+                  </>
+                )}
               </Reveal>
             ))}
           </div>

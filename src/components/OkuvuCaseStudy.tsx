@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import ArchifyEmbed from './ArchifyEmbed'
 import Reveal from './Reveal'
 
 const model = [
@@ -40,29 +41,6 @@ const agents = [
     n: '04',
     title: 'Output review',
     body: 'Reads the generated reply before it reaches the client and can block or replace it.',
-  },
-]
-
-const branches = [
-  {
-    label: 'Crisis',
-    detail: 'Fixed reply · never rate-limited',
-    color: '#F87171',
-  },
-  {
-    label: 'Grounding',
-    detail: 'Fixed reply · no generation',
-    color: '#FBBF24',
-  },
-  {
-    label: 'Blocked',
-    detail: 'Policy reply · no normal path',
-    color: '#60A5FA',
-  },
-  {
-    label: 'Normal',
-    detail: 'Therapeutic agent → review',
-    color: '#4ADE80',
   },
 ]
 
@@ -469,65 +447,14 @@ export default function OkuvuCaseStudy() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div
-              className="rounded-2xl overflow-hidden mb-4"
-              style={{
-                border: '1px solid rgba(124,58,237,0.16)',
-                background: 'rgba(14,14,24,0.75)',
-              }}
-            >
-              <div className="p-6 lg:p-8">
-                <div className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/40 mb-4">
-                  User turn
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                  {['Safety gate', 'Governance pre-check'].map((step) => (
-                    <div
-                      key={step}
-                      className="rounded-lg px-4 py-3 font-mono text-[11px] text-white/70"
-                      style={{
-                        background: 'rgba(124,58,237,0.1)',
-                        border: '1px solid rgba(124,58,237,0.22)',
-                      }}
-                    >
-                      {step}
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 my-3">
-                  <span className="font-mono text-[10px] text-violet-light" aria-hidden="true">
-                    ↓
-                  </span>
-                  <span className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/40">
-                    Deterministic router · code, no model
-                  </span>
-                </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">
-                  {branches.map((b) => (
-                    <div
-                      key={b.label}
-                      className="rounded-lg px-4 py-3"
-                      style={{
-                        background: `${b.color}0D`,
-                        border: `1px solid ${b.color}2E`,
-                      }}
-                    >
-                      <div className="flex items-center gap-2 mb-1">
-                        <span
-                          className="w-1.5 h-1.5 rounded-full flex-shrink-0"
-                          style={{ background: b.color }}
-                          aria-hidden="true"
-                        />
-                        <span className="font-mono text-[10px] text-white/80">{b.label}</span>
-                      </div>
-                      <div className="font-mono text-[9px] text-white/45 leading-relaxed">
-                        {b.detail}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <ArchifyEmbed
+              src="/diagrams/okuvu-per-turn.html"
+              title="Interactive Okuvu per-turn safety flow diagram"
+              width={832}
+              height={1600}
+              minWidth={560}
+              caption="Every message passes the safety gate and governance pre-check, then a deterministic router picks the path. The model writes only on the normal path; fixed paths never use generated text."
+            />
           </Reveal>
 
           <div

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import ArchifyEmbed from './ArchifyEmbed'
 import Reveal from './Reveal'
 
 type Shot = {
@@ -492,26 +493,14 @@ export default function MaintixCaseStudy() {
           </Reveal>
 
           <Reveal delay={0.12}>
-            <div
-              className="overflow-x-auto rounded-xl mb-3"
-              style={{
-                border: '1px solid rgba(124,58,237,0.2)',
-                background: 'rgba(10,10,15,1)',
-              }}
-            >
-              <img
-                src="/images/diagrams/maintix-ticket-lifecycle.svg"
-                alt="Maintix ticket lifecycle — Open, Assigned, In Progress, Awaiting Approval and Done, with Cancelled branching from Open or Assigned"
-                width={1388}
-                height={368}
-                loading="lazy"
-                className="w-full h-auto min-w-[720px] block"
-              />
-            </div>
-            <p className="font-mono text-[11px] text-white/50 leading-relaxed">
-              The lifecycle at a glance — five ordered states, one reassign path and two terminal
-              exits. The transition table below lists who can move each ticket.
-            </p>
+            <ArchifyEmbed
+              src="/diagrams/maintix-ticket-lifecycle.html"
+              title="Interactive Maintix ticket lifecycle diagram"
+              width={1388}
+              height={913}
+              minWidth={720}
+              caption="The lifecycle at a glance — five ordered states, one reassign path and two terminal exits. The transition table below lists who can move each ticket."
+            />
           </Reveal>
 
           <Reveal delay={0.15}>
@@ -609,26 +598,14 @@ export default function MaintixCaseStudy() {
           </SectionHead>
 
           <Reveal delay={0.1}>
-            <div
-              className="rounded-xl px-5 py-4 mb-4 overflow-x-auto"
-              style={{
-                border: '1px solid rgba(124,58,237,0.16)',
-                background: 'rgba(14,14,24,0.75)',
-              }}
-            >
-              <div className="font-mono text-[11px] text-white/55 leading-relaxed whitespace-normal sm:whitespace-nowrap">
-                <span className="text-white/50">browser</span>
-                <span className="text-violet-light"> → </span>
-                Next.js 15
-                <span className="text-violet-light"> → </span>
-                REST /api/v1
-                <span className="text-violet-light"> → </span>
-                auth · roles · property guard
-                <span className="text-violet-light"> → </span>
-                state machine · Prisma 6<span className="text-violet-light"> → </span>
-                PostgreSQL + Storage
-              </div>
-            </div>
+            <ArchifyEmbed
+              src="/diagrams/maintix-architecture.html"
+              title="Interactive Maintix request architecture diagram"
+              width={797}
+              height={524}
+              minWidth={560}
+              caption="One request path — browser to Next.js to the API, through auth, roles and property scope, into the state machine and Prisma. The public preview's hosted API is offline; this is not a deployment claim."
+            />
           </Reveal>
 
           <div

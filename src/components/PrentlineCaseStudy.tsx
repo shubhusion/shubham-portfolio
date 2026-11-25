@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import ArchifyEmbed from './ArchifyEmbed'
 import Reveal from './Reveal'
 
 const services = [
@@ -116,30 +117,6 @@ const numbers = [
   { v: '~210', l: 'Commits' },
 ]
 
-const tiers = [
-  { nodes: [{ label: 'Prentline-frontend', sub: 'Flutter Web · PWA · BLoC' }] },
-  {
-    nodes: [
-      {
-        label: 'Prentline-server',
-        sub: 'Go / Gin — JWT auth, RBAC, WebSocket hub, coach state machine',
-      },
-    ],
-  },
-  {
-    nodes: [
-      { label: 'Gemini Live API', sub: 'wss proxy via google ADK v2' },
-      { label: 'Prentline-notification', sub: 'FastAPI · Brevo email' },
-      { label: 'Prentline-ai', sub: 'FastAPI · reserved' },
-    ],
-  },
-  {
-    nodes: [
-      { label: 'PostgreSQL', sub: 'GORM · Atlas versioned migrations · partial unique indexes' },
-    ],
-  },
-]
-
 export default function PrentlineCaseStudy() {
   return (
     <section id="prentline" className="pt-12 pb-32 px-6 lg:px-12 scroll-mt-24">
@@ -235,71 +212,14 @@ export default function PrentlineCaseStudy() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="overflow-x-auto pb-2">
-            <div
-              className="min-w-[640px] flex flex-col items-center"
-              role="img"
-              aria-label="Architecture: Flutter Web client to Go gateway, fanning out to Gemini Live, notification and AI services, all over PostgreSQL"
-            >
-              {tiers.map((tier, i) => (
-                <div key={i} className="flex flex-col items-center w-full">
-                  {i > 0 && (
-                    <div className="flex flex-col items-center h-10">
-                      <div
-                        className="w-px flex-1"
-                        style={{ background: 'rgba(124,58,237,0.35)' }}
-                      />
-                      <div className="text-violet/60 text-[9px] leading-none">↓</div>
-                    </div>
-                  )}
-                  <div
-                    className={`grid gap-3 w-full ${tier.nodes.length > 1 ? 'grid-cols-3' : 'grid-cols-1 max-w-sm mx-auto'}`}
-                  >
-                    {tier.nodes.map((n, j) => (
-                      <motion.div
-                        key={j}
-                        className="p-4 text-center relative overflow-hidden rounded-xl"
-                        style={{
-                          background: 'rgba(10,10,15,1)',
-                          border: '1px solid rgba(124,58,237,0.18)',
-                        }}
-                        whileHover={{
-                          borderColor: 'rgba(167,139,250,0.5)',
-                          backgroundColor: 'rgba(14,14,24,1)',
-                        }}
-                        transition={{ duration: 0.25 }}
-                      >
-                        <motion.div
-                          className="absolute top-0 left-0 right-0 h-px origin-left"
-                          style={{ background: 'linear-gradient(to right, #7C3AED, #60A5FA)' }}
-                          initial={{ scaleX: 0 }}
-                          whileHover={{ scaleX: 1 }}
-                          transition={{ duration: 0.4 }}
-                        />
-                        <div className="font-mono text-[11px] text-white font-medium mb-1">
-                          {n.label}
-                        </div>
-                        <div className="font-mono text-[10px] text-white/50 leading-relaxed">
-                          {n.sub}
-                        </div>
-                      </motion.div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-6 flex items-start gap-3">
-            <span className="mt-2.5 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
-            <p className="text-[12.5px] text-white/50 leading-relaxed font-light">
-              <span className="text-white/75 font-medium">Trust model:</span> Gemini credentials
-              never leave the server. The Flutter app authenticates to the Go gateway with a custom
-              JWT; the gateway validates the user, then brokers the Gemini Live WebSocket
-              server-side. Service-to-service calls authenticate with generated shared secrets
-              compared in constant time, enforced in production.
-            </p>
-          </div>
+          <ArchifyEmbed
+            src="/diagrams/prentline-architecture.html"
+            title="Interactive Prentline system architecture diagram"
+            width={1085}
+            height={1290}
+            minWidth={600}
+            caption="Trust model — Gemini credentials never leave the server. The Flutter app authenticates to the Go gateway, which brokers the Live WebSocket; service-to-service secrets are compared in constant time, and PostgreSQL enforces the workflow invariants."
+          />
         </Reveal>
 
         {/* Five services */}
