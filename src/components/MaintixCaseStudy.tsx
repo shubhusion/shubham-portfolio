@@ -485,7 +485,7 @@ export default function MaintixCaseStudy() {
                   ↳
                 </span>
                 <StatusChip name="Cancelled" color="#F87171" />
-                <span className="font-mono text-[10px] text-white/35">
+                <span className="font-mono text-[10px] text-white/50">
                   from Open or Assigned — Done and Cancelled are terminal
                 </span>
               </div>
@@ -512,7 +512,7 @@ export default function MaintixCaseStudy() {
               }}
             >
               <div
-                className="hidden md:grid grid-cols-12 gap-6 px-6 py-4 font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/40"
+                className="hidden md:grid grid-cols-12 gap-6 px-6 py-4 font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/50"
                 style={{ background: 'rgba(10,10,15,1)' }}
               >
                 <div className="col-span-3">From</div>
@@ -533,7 +533,9 @@ export default function MaintixCaseStudy() {
                   </div>
                   <div className="md:col-span-5 flex flex-wrap items-center gap-1.5">
                     {t.to.length === 0 ? (
-                      <span className="font-mono text-[10px] text-white/30">—</span>
+                      <span className="font-mono text-[10px] text-white/30" aria-hidden="true">
+                        -
+                      </span>
                     ) : (
                       t.to.map((name) => (
                         <span
@@ -549,7 +551,7 @@ export default function MaintixCaseStudy() {
                       ))
                     )}
                   </div>
-                  <div className="md:col-span-4 font-mono text-[10.5px] text-white/45 leading-relaxed">
+                  <div className="md:col-span-4 font-mono text-[10.5px] text-white/50 leading-relaxed">
                     {t.guard}
                   </div>
                 </div>
@@ -654,7 +656,7 @@ export default function MaintixCaseStudy() {
                 background: 'rgba(255,255,255,0.02)',
               }}
             >
-              <div className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/40 mb-3">
+              <div className="font-mono text-[9.5px] uppercase tracking-[0.14em] text-white/50 mb-3">
                 Eight Prisma models
               </div>
               <div className="flex flex-wrap gap-1.5">

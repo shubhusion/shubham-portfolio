@@ -34,10 +34,13 @@ function TypewriterLine({ text, delay }: { text: string; delay: number }) {
   }, [text, delay])
 
   return (
-    <span>
-      {displayed}
-      {!done && <span className="animate-pulse">▌</span>}
-    </span>
+    <>
+      <span aria-hidden="true">
+        {displayed}
+        {!done && <span className="animate-pulse">▌</span>}
+      </span>
+      <span className="sr-only">{text}</span>
+    </>
   )
 }
 
@@ -148,7 +151,7 @@ export default function Hero() {
               <span className="w-3 h-3 rounded-full bg-red-500/70" />
               <span className="w-3 h-3 rounded-full bg-yellow-500/70" />
               <span className="w-3 h-3 rounded-full bg-green-500/70" />
-              <span className="font-mono text-[11px] text-white/45 ml-2">~/portfolio — zsh</span>
+              <span className="font-mono text-[11px] text-white/50 ml-2">~/portfolio — zsh</span>
             </div>
             {/* Terminal lines */}
             <div className="px-4 py-4 space-y-2">

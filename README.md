@@ -25,17 +25,9 @@ Deploy the `dist/` folder to Vercel:
 
 Or drag-drop the `dist/` folder at vercel.com/new.
 
-## Adding your photo
+## Changing your photo
 
-In `src/components/About.tsx`, replace the placeholder div with:
-
-```tsx
-<div className="about-photo">
-  <img src="/photo.jpg" alt="Shubham Sharma" />
-</div>
-```
-
-Put `photo.jpg` in the `public/` folder.
+`src/components/About.tsx` already renders the headshot from `/images/shubham-headshot.webp`. To change it, replace that image in `public/images/` with an optimized WebP of the same name — no component edit is needed.
 
 ## Resume
 

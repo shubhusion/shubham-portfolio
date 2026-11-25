@@ -426,7 +426,7 @@ function ClientCard({
           {cardMedia}
           <ul className="space-y-2.5">
             {highlights.map((h: string, j: number) => (
-              <li key={j} className="flex gap-3 text-[13px] text-white/45 leading-relaxed">
+              <li key={j} className="flex gap-3 text-[13px] text-white/50 leading-relaxed">
                 <span className="mt-2 w-4 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                 {h}
               </li>

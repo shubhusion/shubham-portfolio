@@ -527,10 +527,14 @@ export default function KarumCaseStudy() {
                 >
                   <span className="text-gradient">50%</span>
                   <span className="text-white/50">taste fit</span>
-                  <span className="text-white/20">+</span>
+                  <span className="text-white/20" aria-hidden="true">
+                    +
+                  </span>
                   <span className="text-gradient">30%</span>
                   <span className="text-white/50">shelf opportunity</span>
-                  <span className="text-white/20">+</span>
+                  <span className="text-white/20" aria-hidden="true">
+                    +
+                  </span>
                   <span className="text-gradient">20%</span>
                   <span className="text-white/50">demographic fit</span>
                 </div>

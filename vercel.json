@@ -27,7 +27,7 @@
       ]
     },
     {
-      "source": "/(robots.txt|sitemap.xml|favicon.svg)",
+      "source": "/(robots.txt|sitemap.xml|favicon.svg|site.webmanifest|Shubham_Sharma_Resume.pdf)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=86400, must-revalidate" }
       ]
@@ -38,6 +38,6 @@
   ],
   "rewrites": [
     { "source": "/404", "destination": "/404.html" },
-    { "source": "/:path*((?!assets|images|media|robots.txt|sitemap.xml|favicon.svg|diagrams|karum|maintix|okuvu|prentline|lumenslate|aarthik-setu).*)", "destination": "/404.html", "statusCode": 404 }
+    { "source": "/:path*((?!assets|images|media|robots.txt|sitemap.xml|favicon.svg|site.webmanifest|Shubham_Sharma_Resume.pdf|diagrams|karum|maintix|okuvu|prentline|lumenslate|aarthik-setu).*)", "destination": "/404.html", "statusCode": 404 }
   ]
 }

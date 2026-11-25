@@ -131,7 +131,7 @@ export default function Experience() {
 
                 {/* Meta */}
                 <div className="lg:sticky lg:top-24 lg:self-start">
-                  <div className="font-mono text-[10px] text-white/45 tracking-widest uppercase mb-3">
+                  <div className="font-mono text-[10px] text-white/50 tracking-widest uppercase mb-3">
                     {exp.period}
                   </div>
                   <div
@@ -171,7 +171,7 @@ export default function Experience() {
                   >
                     {exp.role}
                   </h3>
-                  <p className="text-[14px] text-white/45 leading-relaxed mb-5 font-light">
+                  <p className="text-[14px] text-white/50 leading-relaxed mb-5 font-light">
                     {exp.desc}
                   </p>
                   <ul className="space-y-2.5 mb-6">

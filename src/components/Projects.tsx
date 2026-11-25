@@ -78,13 +78,7 @@ const projects: Project[] = [
       { v: '6', l: 'Stage ticket workflow' },
       { v: '43', l: 'Backend tests', green: true },
     ],
-    tags: [
-      'Next.js 15',
-      'NestJS',
-      'Prisma · PostgreSQL',
-      'TanStack Query',
-      'Turborepo',
-    ],
+    tags: ['Next.js 15', 'NestJS', 'Prisma · PostgreSQL', 'TanStack Query', 'Turborepo'],
     link: '/maintix',
     media: {
       desktop: '/images/projects/maintix/desktop.webp',
@@ -255,7 +249,7 @@ export default function Projects() {
 
                   <div className="flex justify-between items-start relative z-10">
                     <div>
-                      <div className="font-mono text-[10px] text-white/45 mb-1">{p.num}</div>
+                      <div className="font-mono text-[10px] text-white/50 mb-1">{p.num}</div>
                       <div className="font-mono text-[10px] text-violet-light tracking-wider">
                         {p.cat}
                       </div>
@@ -308,7 +302,7 @@ export default function Projects() {
                     </div>
                   )}
 
-                  <p className="text-[13px] text-white/45 leading-relaxed font-light flex-1 relative z-10">
+                  <p className="text-[13px] text-white/50 leading-relaxed font-light flex-1 relative z-10">
                     {p.desc}
                   </p>
 

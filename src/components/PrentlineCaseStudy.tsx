@@ -163,7 +163,7 @@ export default function PrentlineCaseStudy() {
           ].map((b, i) => (
             <Reveal key={i} delay={0.05 * i}>
               <div className="p-7 h-full" style={{ background: 'rgba(10,10,15,1)' }}>
-                <div className="font-mono text-[10px] text-white/45 uppercase tracking-[0.12em] mb-3">
+                <div className="font-mono text-[10px] text-white/50 uppercase tracking-[0.12em] mb-3">
                   {b.kicker}
                 </div>
                 <p className="text-[13.5px] text-white/50 leading-relaxed font-light">{b.body}</p>
@@ -192,12 +192,15 @@ export default function PrentlineCaseStudy() {
               playsInline
             >
               <source src="/media/prentline/demo.mp4" type="video/mp4" />
-              <track kind="captions" src="/media/prentline/captions.vtt" label="English" />
+              <track
+                kind="captions"
+                src="/media/prentline/captions.vtt"
+                srcLang="en"
+                label="English"
+              />
               Your browser does not support the video tag.
             </video>
-            <p className="mt-3 font-mono text-[11px] text-white/45">
-              80 seconds · no audio · click to play
-            </p>
+            <p className="mt-3 font-mono text-[11px] text-white/50">no audio · click to play</p>
           </Reveal>
         </div>
 
@@ -272,7 +275,7 @@ export default function PrentlineCaseStudy() {
                     {s.bullets.map((b, j) => (
                       <li
                         key={j}
-                        className="flex gap-2.5 text-[12px] text-white/45 leading-relaxed"
+                        className="flex gap-2.5 text-[12px] text-white/50 leading-relaxed"
                       >
                         <span className="mt-2 w-3 h-px bg-gradient-to-r from-violet to-blue-400 flex-shrink-0" />
                         <span>{b}</span>
@@ -283,7 +286,7 @@ export default function PrentlineCaseStudy() {
                     {s.tags.map((t) => (
                       <span
                         key={t}
-                        className="font-mono text-[10px] px-2 py-0.5 rounded text-white/45"
+                        className="font-mono text-[10px] px-2 py-0.5 rounded text-white/50"
                         style={{
                           background: 'rgba(255,255,255,0.04)',
                           border: '1px solid rgba(255,255,255,0.06)',
@@ -330,7 +333,7 @@ export default function PrentlineCaseStudy() {
                   <div className="font-display font-semibold text-white text-[14px] leading-snug mb-2.5">
                     {h.title}
                   </div>
-                  <p className="text-[12.5px] text-white/45 leading-relaxed font-light">{h.body}</p>
+                  <p className="text-[12.5px] text-white/50 leading-relaxed font-light">{h.body}</p>
                 </div>
               </Reveal>
             ))}

@@ -1,11 +1,13 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 export default function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
   const [progress, setProgress] = useState(0)
+  const menuRef = useRef<HTMLDivElement>(null)
+  const toggleRef = useRef<HTMLButtonElement>(null)
 
   // On sub-pages (e.g. /prentline) section anchors must point back to the homepage
   const isHome =
@@ -36,35 +38,37 @@ export default function Nav() {
   useEffect(() => {
     if (!open) return
     document.body.style.overflow = 'hidden'
-    const menu = document.querySelector('[role="dialog"]') as HTMLElement | null
+    const menu = menuRef.current
     menu?.focus()
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
-      // trap focus inside the dialog
-      if (e.key === 'Tab') {
-        const focusables = menu
-          ? Array.from(
-              menu.querySelectorAll<HTMLElement>(
-                'a[href], button, [tabindex]:not([tabindex="-1"])',
-              ),
-            )
-          : []
-        if (focusables.length === 0) return
-        const first = focusables[0]
-        const last = focusables[focusables.length - 1]
-        if (e.shiftKey && document.activeElement === first) {
-          e.preventDefault()
-          last.focus()
-        } else if (!e.shiftKey && document.activeElement === last) {
-          e.preventDefault()
-          first.focus()
-        }
+      if (e.key === 'Escape') {
+        close()
+        return
+      }
+      if (e.key !== 'Tab') return
+      const focusables = menu
+        ? Array.from(
+            menu.querySelectorAll<HTMLElement>(
+              'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])',
+            ),
+          )
+        : []
+      if (focusables.length === 0) return
+      const first = focusables[0]
+      const last = focusables[focusables.length - 1]
+      if (e.shiftKey && (document.activeElement === first || document.activeElement === menu)) {
+        e.preventDefault()
+        last.focus()
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault()
+        first.focus()
       }
     }
     window.addEventListener('keydown', onKeyDown)
     return () => {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', onKeyDown)
+      toggleRef.current?.focus()
     }
   }, [open, close])
 
@@ -175,8 +179,12 @@ export default function Nav() {
             Hire me
           </a>
           <button
+            ref={toggleRef}
             type="button"
             onClick={() => setOpen(true)}
+            aria-label="Open navigation menu"
+            aria-expanded={open}
+            aria-controls="mobile-nav-dialog"
             className="md:hidden p-2 text-white/60 hover:text-white transition-colors"
           >
             <Menu size={20} />
@@ -188,9 +196,12 @@ export default function Nav() {
       <AnimatePresence>
         {open && (
           <motion.div
+            ref={menuRef}
+            id="mobile-nav-dialog"
             role="dialog"
             aria-modal="true"
             aria-label="Navigation"
+            tabIndex={-1}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -201,6 +212,7 @@ export default function Nav() {
             <button
               type="button"
               onClick={close}
+              aria-label="Close navigation menu"
               className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors"
             >
               <X size={24} />

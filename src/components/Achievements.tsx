@@ -83,7 +83,7 @@ export default function Achievements() {
                   whileHover={{ opacity: 1 }}
                   transition={{ duration: 0.4 }}
                 />
-                <div className="font-mono text-[10px] text-white/45 mb-3">{a.n}</div>
+                <div className="font-mono text-[10px] text-white/50 mb-3">{a.n}</div>
                 <div className="text-2xl mb-3" aria-hidden="true">
                   {a.icon}
                 </div>

@@ -24,14 +24,14 @@ AI-native engineering with production-grade backend depth: a full-stack/backend 
 
 ## Operating Context
 
-- Currently freelancing independently (Oct 2025–present) across four concurrent early-stage startup clients (Transportvibes, Reclevo, KEEL) while open to full-time offers.
+- Currently freelancing independently (Oct 2025–present) across client engagements including Transportvibes, Reclevo, KEEL and S2T AI, while open to full-time offers. Okuvu was a Jun–Sep 2026 engagement at Suvok Systems LLP.
 - Prior full-time roles: S2T AI (Full Stack Engineer, OSINT platform), Platelink.ai (Founding Full Stack Engineer).
-- 8 live, production products across 4 clients are the core proof points (Client Work section).
+- 9 products across 5 clients are the core proof points in Client Work — 8 live and 1 invite-only beta.
 - Resume is served as a static PDF at `/Shubham_Sharma_Resume.pdf`; content across sections (Projects, Experience, Client Work, Achievements) is maintained as hardcoded data arrays per component, not a CMS.
 
 ## Capabilities and Constraints
 
-- Static multi-page site (two Vite HTML entries — no router): `/` (home) and `/prentline` (Prentline case study; also reachable at `/prentline.html` without Vercel clean URLs). React + TypeScript + Vite + Tailwind CSS + Framer Motion, deployed as a static build (README targets Vercel).
+- Static multi-page site (seven Vite HTML entries — no router): `/`, `/prentline`, `/aarthik-setu`, `/lumenslate`, `/karum`, `/maintix` and `/okuvu`. React + TypeScript + Vite + Tailwind CSS + Framer Motion, deployed as a static build (README targets Vercel). Interactive Archify diagrams are standalone HTML under `public/diagrams`.
 - No backend, CMS, or forms on the site itself — contact is via `mailto:` and external links (LinkedIn, GitHub).
 - Content updates mean editing the data arrays directly in `src/components/*.tsx` (Projects, Experience, ClientWork, Achievements, About).
 
@@ -49,9 +49,9 @@ All metrics currently on the site are real and confirmed by the user as fixed fa
 - 10K+ records/search, 40% wait-time reduction (S2T AI / GoldenSpear)
 - 30% API response time reduction (AarthikSetu)
 - 40% teacher productivity increase (Lumenslate)
-- 8 live products across 4 clients; Google GenAI Hackathon 1st place (Fintech Track, 100+ teams, 2024)
+- 9 products across 5 clients (8 live, 1 invite-only beta); Google GenAI Hackathon 1st place (Fintech Track, 100+ teams, 2024)
 
-Real assets in repo: headshot at `/images/shubham-headshot.webp` (optimized; source PNG and unused gallery/project media live in `/assets`, outside the deployed bundle), resume PDF path, verified client URLs (safeedsautotransport.com, transportvibe.com, broadwayautotransport.com, trustlinecarriers.com, reclevo.in, usekeel.in, s2t.ai, roothscale-web.azurewebsites.net).
+Real assets in repo: headshot at `/images/shubham-headshot.webp`, resume PDF, case-study media under `public/images` and `public/media`, interactive diagram HTML under `public/diagrams`, and verified client URLs (safeedsautotransport.com, transportvibe.com, broadwayautotransport.com, trustlinecarriers.com, reclevo.in, usekeel.in, s2t.ai, roothscale-web.azurewebsites.net).
 
 Future work must not fabricate new metrics, testimonials, client names, or claims — only add facts the user confirms.
 
