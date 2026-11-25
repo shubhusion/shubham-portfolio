@@ -491,6 +491,29 @@ export default function MaintixCaseStudy() {
             </div>
           </Reveal>
 
+          <Reveal delay={0.12}>
+            <div
+              className="overflow-x-auto rounded-xl mb-3"
+              style={{
+                border: '1px solid rgba(124,58,237,0.2)',
+                background: 'rgba(10,10,15,1)',
+              }}
+            >
+              <img
+                src="/images/diagrams/maintix-ticket-lifecycle.svg"
+                alt="Maintix ticket lifecycle — Open, Assigned, In Progress, Awaiting Approval and Done, with Cancelled branching from Open or Assigned"
+                width={1388}
+                height={368}
+                loading="lazy"
+                className="w-full h-auto min-w-[720px] block"
+              />
+            </div>
+            <p className="font-mono text-[11px] text-white/50 leading-relaxed">
+              The lifecycle at a glance — five ordered states, one reassign path and two terminal
+              exits. The transition table below lists who can move each ticket.
+            </p>
+          </Reveal>
+
           <Reveal delay={0.15}>
             <div
               className="rounded-2xl overflow-hidden"

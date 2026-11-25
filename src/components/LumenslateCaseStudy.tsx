@@ -60,18 +60,20 @@ const engineFeatures = [
 
 const architecture = [
   {
-    src: '/images/projects/lumen-slate/architecture.webp',
-    alt: 'System architecture — Flutter, Golang (Gin) backend, Python gRPC AI microservice, Cloud SQL and GKE',
-    w: 1800,
-    h: 1304,
+    src: '/images/diagrams/lumen-slate-architecture.svg',
+    alt: 'Lumen Slate system architecture — Flutter app, Go Gin backend, Python gRPC AI service, PostgreSQL on Cloud SQL, Redis task queue, Go worker and Vertex AI RAG',
+    w: 830,
+    h: 816,
+    minW: 560,
     caption:
-      'System architecture — Flutter talks to a Golang (Gin) backend; the AI microservice sits behind gRPC on HTTP/2 and calls the Vertex AI RAG engine. Postgres on Cloud SQL on both sides, a Redis task queue for async jobs, everything shipping on GKE.',
+      'High-level system view — the Flutter app calls the Go backend, which hands AI work to the Python gRPC service. Postgres on Cloud SQL on both sides, Redis for async grading, and Vertex AI RAG. The agent tree below shows the six specialists.',
   },
   {
     src: '/images/projects/lumen-slate/agents.webp',
     alt: 'Agent orchestration — root ADK agent with six specialist sub-agents',
     w: 1800,
     h: 1060,
+    minW: 0,
     caption:
       'Agent orchestration — a root agent routes to specialists: conversation, summarisation, assessment, and general or tailored assignment generation.',
   },
@@ -360,7 +362,7 @@ export default function LumenslateCaseStudy() {
             {architecture.map((a, i) => (
               <Reveal key={i} delay={0.1 + 0.05 * i}>
                 <div
-                  className="overflow-hidden rounded-xl"
+                  className="overflow-x-auto rounded-xl"
                   style={{
                     border: '1px solid rgba(124,58,237,0.2)',
                     background: 'rgba(10,10,15,1)',
@@ -372,6 +374,7 @@ export default function LumenslateCaseStudy() {
                     width={a.w}
                     height={a.h}
                     loading="lazy"
+                    style={a.minW ? { minWidth: a.minW } : undefined}
                     className="w-full h-auto block"
                   />
                 </div>
