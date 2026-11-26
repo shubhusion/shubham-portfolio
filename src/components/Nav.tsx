@@ -143,10 +143,7 @@ export default function Nav() {
           borderBottom: scrolled ? '1px solid rgba(124,58,237,0.1)' : '1px solid transparent',
         }}
       >
-        <a
-          href={isHome ? '#' : '/'}
-          className="font-mono text-[13px] text-violet-light flex items-center gap-2"
-        >
+        <a href="/" className="font-mono text-[13px] text-violet-light flex items-center gap-2">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 shadow-[0_0_6px_#4ade80] animate-pulse" />
           shubham sharma
         </a>

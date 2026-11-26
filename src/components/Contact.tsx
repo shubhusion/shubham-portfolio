@@ -1,7 +1,15 @@
 import { motion } from 'framer-motion'
 import Reveal from './Reveal'
 
-const links = [
+type ContactLink = {
+  icon: string
+  label: string
+  value: string
+  href: string
+  badge?: string
+}
+
+const links: ContactLink[] = [
   {
     icon: '✉',
     label: 'Email',
@@ -19,6 +27,13 @@ const links = [
     label: 'GitHub',
     value: 'github.com/shubhusion',
     href: 'https://github.com/shubhusion',
+  },
+  {
+    icon: '▣',
+    label: 'Book a call',
+    value: 'calendly.com/shubham27-sharma03/30min',
+    href: 'https://calendly.com/shubham27-sharma03/30min',
+    badge: '30 MIN',
   },
 ]
 
@@ -84,16 +99,30 @@ export default function Contact() {
                   Open to full-time roles as a Full Stack, AI, or Founding Engineer. Also
                   selectively available for technical consulting and architecture advisory.
                 </p>
-                <motion.a
-                  href="mailto:shubham27.sharma03@gmail.com"
-                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-display font-semibold text-white text-[15px]"
-                  style={{ background: 'linear-gradient(135deg, #7C3AED, #6D28D9)' }}
-                  whileHover={{ scale: 1.03, boxShadow: '0 12px 40px rgba(124,58,237,0.4)' }}
-                  whileTap={{ scale: 0.98 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  Send me an email ↗
-                </motion.a>
+                <div className="flex flex-col items-start gap-3">
+                  <motion.a
+                    href="mailto:shubham27.sharma03@gmail.com"
+                    className="inline-flex items-center gap-3 px-8 py-4 rounded-full font-display font-semibold text-white text-[15px]"
+                    style={{ background: 'linear-gradient(135deg, #7C3AED, #6D28D9)' }}
+                    whileHover={{ scale: 1.03, boxShadow: '0 12px 40px rgba(124,58,237,0.4)' }}
+                    whileTap={{ scale: 0.98 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    Send me an email ↗
+                  </motion.a>
+                  <a
+                    href="https://calendly.com/shubham27-sharma03/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-display text-[13px] font-semibold text-white/80 border-gradient transition-colors duration-300 hover:bg-violet/10"
+                  >
+                    <span aria-hidden="true">▣</span> Book a 30-min call{' '}
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <p className="font-mono text-[10px] text-white/40 leading-relaxed max-w-sm">
+                    Please include an agenda — I review requests before confirming.
+                  </p>
+                </div>
               </div>
 
               <div className="flex flex-col gap-3">
@@ -133,6 +162,17 @@ export default function Contact() {
                         {l.value}
                       </div>
                     </div>
+                    {l.badge && (
+                      <span
+                        className="ml-auto flex-shrink-0 font-mono text-[9px] tracking-widest px-2 py-1 rounded text-violet-light"
+                        style={{
+                          background: 'rgba(124,58,237,0.08)',
+                          border: '1px solid rgba(124,58,237,0.25)',
+                        }}
+                      >
+                        {l.badge}
+                      </span>
+                    )}
                   </motion.a>
                 ))}
               </div>
